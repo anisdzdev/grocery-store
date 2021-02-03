@@ -1,3 +1,9 @@
+/* Fonts */
+@font-face {
+    font-family: Anton-Regular;
+    src: url("../fonts/Anton/Anton-Regular.ttf");
+}
+
 #deals {
     color: #8f8389;
 }
@@ -5,3 +11,61 @@
 
 /* Cart Page */
 
+.productImage {
+    width: 100%;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    padding-left: -30px;
+    padding-right: -30px;
+}
+
+.productName {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.productPrice{
+    font-family: Anton-Regular, serif;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+
+div.container {
+    border: 5px solid black;
+}
+
+
+
+div.product {
+    border: 5px solid white;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    padding: 0 0;
+    background-color: cadetblue;
+}
+
+div.productDetails {
+    width: 15.5em;
+}
+
+.all {
+    display: flex;
+}
+
+div.filter {
+    border: 5px solid black;
+    padding-right: 0;
+    margin-right: 0;
+    width: 15em;
+    display: inline-block;
+    margin-left: 4em;
+}
+
+.card:hover {
+    border: 5px #0E69BE solid;
+    padding: 0 0;
+}
