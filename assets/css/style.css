@@ -22,7 +22,7 @@ body{
 }
 
 .nav-link{
-    font-family: Trattatello, fantasy;
+    font-family: 'Londrina Solid';
     font-size: large;
 }
 .nav-link:hover{
@@ -120,8 +120,21 @@ h5 {
     color: black;
 }
 
-.navbar {
-    padding-right: 5%;
+
+
+.homepage-header{
+    padding: 1%;
+
+
+}
+
+.icon-label:hover{
+    text-underline: red;
+}
+@media(max-width: 768px){
+    .icon-label{
+        display: none;
+    }
 }
 
 .card-text {
@@ -351,5 +364,6 @@ input[type=number]:focus {
 .varela {
     font-family: 'Varela Round', sans-serif !important;
 }
+
 
 
