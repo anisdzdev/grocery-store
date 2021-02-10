@@ -1,6 +1,249 @@
-#deals {
-    color: #8f8389;
+body{
+    text-align: center;
 }
+
+.main-body{
+    font-family: 'Londrina Solid';
+    font-size: 16px;
+    background-image:url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#666;
+    text-align: center;
+    margin: 0 ;
+}
+
+.ignore-css{all:unset;}
+
+/* Nav bar */
+.navbar-custom{
+    background-color:rgb(210, 229, 233);
+    opacity: 0.85;
+}
+
+.nav-link{
+    font-family: Trattatello, fantasy;
+    font-size: large;
+}
+.nav-link:hover{
+    color:#0c9769;
+}
+
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 300px;
+    caret-color:#0c9769;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+    background: #0c9769;
+
+}
+
+.search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+}
+
+/* HomePage */
+footer {
+    font-family: 'Londrina Solid';
+    color: black;
+    display: inline-flex;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h1 {
+    font-family: 'Londrina Solid';
+}
+
+h5 {
+    display: inline-block;
+    font-family: 'Londrina Solid';
+}
+
+
+.divider {
+    border-top: 10px solid #01a0c4;
+    opacity: 0.9;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.text {
+    font-family: 'Londrina Solid';
+    color: black;
+}
+
+.welcome-message {
+    color: #fff;
+}
+
+.title {
+    font-family: 'Londrina Solid', bold;
+    color: black;
+    line-height: 1em;
+}
+
+.container {
+    /* position: relative; */
+    font-family: 'Londrina Solid';
+    color: black;
+}
+
+.navbar {
+    padding-right: 5%;
+}
+
+.card-text {
+    font-family: 'Londrina Solid';
+    font-size: 1.3em;
+}
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.jumbotron {
+    background-image: url("../images/margined-background.png");
+    background-size: cover;
+    padding-bottom: 20%;
+    padding-top: 20%;
+}
+
+.faq {
+    font-family: 'Londrina Solid';
+    color: black;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.card:hover {
+    border-color: #01a0c4;
+    border-width: medium;
+}
+
+.footer-icon {
+    color: black;
+    letter-spacing: 1.5rem;
+}
+
+.footer-icon:hover{
+    color: white;
+}
+
+.link {
+    display: inline-block;
+}
+
+
+
+#footer {
+    background-color: #01a0c4;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 4%;
+    width: 100%;
+    justify-content: center;
+
+}
+
+
+/* LOGIN/SIGNUP */
+.signin-container{
+    width: 100%;
+    height: 95vh;
+    padding-bottom: 130px;
+}
+.signup-container{
+    width: 100%;
+    height: 95vh;
+    padding-bottom: 50px;
+}
+.recovery-container{
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 130px;
+}
+.sign-form{
+    margin: auto;
+    width: 500px;
+    padding: 15px 40px 50px;
+    max-width: 100%;
+    background-color: rgb(210, 229, 233);
+    opacity: 0.85;
+    border-radius: 10px;
+}
+.sign-form .form-control{
+    font-size: 15px;
+    min-height: 48px;
+    font-weight: 500;
+}
+.sign-form a{
+    text-decoration: none;
+    color:#666;
+}
+.sign-form a:hover{
+    color:#0c9769;
+}
+.forgot-link{
+    font-size: 13px;
+}
+.form-control:focus{
+    border-color:#0c9769;
+    box-shadow: 0 0 0 0.2rem #0c9769;
+}
+.btn{
+    background-color: #1f568a;
+    border-color: #1f568a;
+}
+.btn:hover{
+    background-color: #0c9769;
+    border-color: #0c9769;
+}
+.navbar-custom{
+    background-color:rgb(210, 229, 233);
+    opacity: 0.85;
+}
+.nav-link{
+    color:#0c9769;
+}
+
+
+
 
 
 /* Cart Page */
@@ -105,7 +348,6 @@ input[type=number]:focus {
 .icon-trash:hover{
     color:red;
 }
-
 .varela {
     font-family: 'Varela Round', sans-serif !important;
 }
