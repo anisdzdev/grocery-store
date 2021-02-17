@@ -373,6 +373,8 @@ input[type=number]:focus {
 
 }
 
+
+
 #add-button{
     margin-left: 0;
     background-color: #3bd921;
@@ -387,6 +389,7 @@ input[type=number]:focus {
 @media(max-width: 768px){
     #add-button{
         margin-left: 1%;
+        padding-bottom: 1%;
     }
 }
 
@@ -436,6 +439,10 @@ only screen and (max-width: 760px),
 .backstore-nav{
 
  padding: 0.5%;
+}
+
+#backstore-nav{
+   background: rgb(210, 229, 233)
 }
 
 
