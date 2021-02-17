@@ -4,31 +4,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../assets/css/style.css">
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
     <title>Sign Up</title>
 </head>
 
 <body class="main-body">
 
-  <nav class="navbar navbar-custom sticky-top navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" height="40" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="signin.html">Sign In</a>
-          <a class="nav-link" href="signup.html">Sign Up</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+<nav class="navbar navbar-light bg-light homepage-header ">
+    <a class="navbar-brand" href="#">
+        <img src="../assets/images/logo.png" style="height: 85px;">
+    </a>
 
-    <div class="d-flex justify-content-center align-items-center signup-container">
+    <nav>
+        <a class="navbar-brand text" href="#register/signin">
+            <i class="fas fa-user"></i> <span class="icon-label">Sign In </span> </a>
+        <a class="navbar-brand text" href="#">
+            <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
+    </nav>
+
+</nav>
+
+
+<nav class="navbar sticky-top navbar-custom navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav ">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link " href="!#">Price</a>
+                <a class="nav-link " href="!#">Featuring</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Aisles </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Fruits and Vegetables</a>
+                        <a class="dropdown-item" href="#">Dairy & Eggs</a>
+                        <a class="dropdown-item" href="#">Meat and Poultry</a>
+                        <a class="dropdown-item" href="#">Snacks</a>
+                        <a class="dropdown-item" href="#">Bread and Bakery</a>
+                        <a class="dropdown-item" href="#">Beverages</a>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="d-flex justify-content-center align-items-center signup-container">
         <form class="sign-form text-center" action="../index.html">
             <h1 class="mb-5 font-weight-light">Sign Up</h1>
             <div class="form-group">
@@ -72,7 +104,23 @@
               </div>
         </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<footer id="footer">
+
+    <a class="footer-icon" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a class="footer-icon" href="https://facebook.com/"><i target="_blank" class="fab fa-facebook-f"></i></a>
+    <a class="footer-icon" href="https://instagram.com/"><i target="_blank" class="fab fa-instagram"></i></a>
+    <a class="footer-icon" href="mailto:"><i class="fas fa-envelope"></i></a>
+    <p class="copyright-message">© Copyright 2021: SOEN 287</p>
+
+</footer>
+<script src="https://kit.fontawesome.com/45836f3eb4.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 
 </html>
