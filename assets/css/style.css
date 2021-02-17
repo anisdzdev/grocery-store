@@ -1,3 +1,10 @@
+/* Fonts */
+@font-face {
+    font-family: Anton-Regular;
+    src: url("../fonts/Anton/Anton-Regular.ttf");
+}
+
+
 body{
     text-align: center;
 }
@@ -137,7 +144,7 @@ h5 {
     margin-top: 10%;
 }
 
-.jumbotron {
+.jumbotron-homepage {
     background-image: url("../images/margined-background.png");
     background-size: cover;
     padding-bottom: 20%;
@@ -362,5 +369,188 @@ input[type=number]:focus {
     font-family: 'Varela Round', sans-serif !important;
 }
 
+
+.background{
+    background-color: #F2F2F2;
+}
+
+
+
+.allProductBg{
+    background-attachment: fixed;
+    background-position: center -350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/all_products.png"););
+    height: 30em;
+}
+
+.centerWhite{
+    color: white;
+    text-align: center;
+}
+
+.productImage {
+    width: 100%;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    padding-left: -30px;
+    padding-right: -30px;
+}
+
+.productName {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.productPrice{
+    font-family: Anton-Regular, serif;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+.product {
+    border: 5px solid white;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    padding: 0 0;
+    background-color: cadetblue;
+}
+
+.productDetails {
+    width: 15.5em;
+}
+
+.all {
+    display: flex;
+}
+
+.font-word{
+    font-size: 30px;
+}
+
+.filter-option:hover{
+    color:cadetblue;
+    text-decoration: none;
+}
+
+.filter {
+    background-color:rgb(210, 229, 233);
+    border-right: 1px solid rgba(0, 0, 0, .5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    padding-right: 0;
+    margin-right: 0;
+    width: 15em;
+    display: inline-block;
+    margin-left: 0;
+    text-align: left;
+}
+
+.filter-option{
+    color:black;
+    text-decoration: none;
+}
+
+.current {
+    color:cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.current:hover {
+    color:cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+.whiteBorder{
+    position: relative;
+    padding: 1em;
+    border: 5px white solid;
+    width: 27em;
+    font-family: Anton-Regular, serif; /* CHANGE FONT TO MATCH OTHERS*/
+}
+
+.card-aisle:hover {
+    border: 5px #0E69BE solid;
+    padding: 0 0;
+}
+
+/*Order list*/
+
+.order-title{
+    text-align: left;
+
+
+}
+
+#add-button{
+    margin-left: 0;
+    background-color: #3bd921;
+    border-color: white;
+
+}
+
+#add-button:hover{
+    background-color: #77ff00;
+}
+
+@media(max-width: 768px){
+    #add-button{
+        margin-left: 1%;
+    }
+}
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before { content: "Buyer Name"; }
+    td:nth-of-type(2):before { content: "Total"; }
+    td:nth-of-type(3):before { content: "Status"; }
+
+
+}
+
+
+/*Backstore Navbar*/
+.backstore-nav{
+
+ padding: 0.5%;
+}
 
 
