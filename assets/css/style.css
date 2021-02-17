@@ -195,7 +195,7 @@ h5 {
 .main-body{
     font-family: 'Londrina Solid';
     font-size: 16px;
-    background-image:url("background.png");
+    background-image:url("../images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     color:#666;
