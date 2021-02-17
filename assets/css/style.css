@@ -10,6 +10,25 @@
 
 
 /* Cart Page */
+.background{
+    background-color: #F2F2F2;
+}
+
+
+
+.allProductBg{
+    background-attachment: fixed;
+    background-position: center -350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/all_products.png"););
+    height: 30em;
+}
+
+.centerWhite{
+    color: white;
+    text-align: center;
+}
 
 .productImage {
     width: 100%;
@@ -33,13 +52,6 @@
 }
 
 
-
-div.container {
-    border: 5px solid black;
-}
-
-
-
 div.product {
     border: 5px solid white;
     margin-top: 13px;
@@ -56,13 +68,47 @@ div.productDetails {
     display: flex;
 }
 
+a.filter{
+    color:black;
+    text-decoration: none;
+}
+
+a.filter:hover{
+    color:cadetblue;
+    text-decoration: none;
+}
+
+a.current {
+    color:cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.current:hover {
+    color:cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 div.filter {
-    border: 5px solid black;
+    background-color:rgb(210, 229, 233);
+    border-right: 1px solid rgba(0, 0, 0, .5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
     padding-right: 0;
     margin-right: 0;
     width: 15em;
     display: inline-block;
-    margin-left: 4em;
+    margin-left: 0;
+    padding-left: 4em;
+}
+
+.whiteBorder{
+    position: relative;
+    padding: 1em;
+    border: 5px white solid;
+    width: 27em;
+    font-family: Anton-Regular, serif; /* CHANGE FONT TO MATCH OTHERS*/
 }
 
 .card:hover {
