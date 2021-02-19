@@ -204,36 +204,28 @@ h5 {
 }
 .signin-container{
     width: 100%;
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 0;
+    padding-bottom: 2rem;
+    margin-top: 10rem;
+    margin-bottom: 13rem;
 }
 .signup-container{
     width: 100%;
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 0;
+    padding-bottom: 2rem;
+    margin-top: 11.5rem;
+    margin-bottom: 0.5rem;
 }
-/*.recovery-container{*/
-/*    width: 100%;*/
-/*    height: 100vh;*/
-/*    padding-bottom: 130px;*/
-/*}*/
+
 .sign-form{
-    margin: auto;
-    width: 500px;
-    padding: 15px 40px 30px;
+    width: 35rem;
+    padding: 1rem 3rem 2rem;
     max-width: 100%;
     background-color: rgb(210, 229, 233);
     opacity: 0.85;
-    margin-top: 50px;
-    border-radius: 10px;
+    border-radius: 0.75rem;
 }
 .sign-form .form-control{
-    font-size: 15px;
-    min-height: 48px;
+    font-size: 1rem;
+    min-height: 3rem;
     font-weight: 500;
 }
 .sign-form a{
@@ -276,10 +268,14 @@ h5 {
     padding-bottom: 1%;
     width: 100%;
     justify-content: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+}
+.user-img img{
+    height: 9rem;
+    width: 9rem;
+}
+.user-img{
+    margin-top: -5.5rem;
+    padding-bottom: 2rem;
 }
 
 
