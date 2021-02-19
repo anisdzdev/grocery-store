@@ -192,7 +192,7 @@ h5 {
 
 
 /* LOGIN/SIGNUP */
-.main-body{
+.sign-body{
     font-family: 'Londrina Solid';
     font-size: 16px;
     background-image:url("../images/background.png");
@@ -204,11 +204,17 @@ h5 {
 }
 .signin-container{
     width: 100%;
-    padding-bottom: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0;
 }
 .signup-container{
     width: 100%;
-    padding-bottom: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0;
 }
 /*.recovery-container{*/
 /*    width: 100%;*/
@@ -270,6 +276,10 @@ h5 {
     padding-bottom: 1%;
     width: 100%;
     justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 
