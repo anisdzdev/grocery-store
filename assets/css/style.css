@@ -579,4 +579,10 @@ only screen and (max-width: 760px),
     padding: 0.5%;
 }
 
-
+/*Backstore Eddit/save */
+.mb-5{
+    font-family: 'Londrina Solid';
+}
+.label{
+    font-family: 'Londrina Solid';
+}
