@@ -393,10 +393,68 @@ input[type=number]:focus {
     background-color: #F2F2F2;
 }
 
-
-
 .allProductBg {
-    background-image: url("../images/all_products.png");
+    background-image: url("../images/ProductBgs/all_products.png");
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 0;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    background-position: center center;
+}
+
+.fruitsVegBg {
+    background-image: url("../images/ProductBgs/fruits_and_veggies.png");
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 0;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    background-position: center center;
+}
+
+.dairyEggBg {
+    background-image: url("../images/ProductBgs/dairy_and_eggs.png");
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 0;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    background-position: center center;
+}
+
+.breadBakeBg {
+    background-image: url("../images/ProductBgs/bread_and_bakery.png");
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 0;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    background-position: center center;
+}
+
+.meatDairyBg {
+    background-image: url("../images/ProductBgs/meat_and_poultry.png");
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 0;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    background-position: center center;
+}
+
+.beveragesBg {
+    background-image: url("../images/ProductBgs/Beverages.png");
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 0;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    background-position: center center;
+}
+
+.snacksBg {
+    background-image: url("../images/ProductBgs/snacks.png");
     background-attachment: fixed;
     background-size: cover;
     margin-bottom: 0;
@@ -411,13 +469,15 @@ input[type=number]:focus {
 }
 
 .productImage {
-    width: 100%;
+    width: 296px;
+    height: 222px;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 0;
     padding-left: -30px;
     padding-right: -30px;
+    object-fit: contain;
 }
 
 .productName {
@@ -431,6 +491,17 @@ input[type=number]:focus {
     margin-top: 0;
 }
 
+.productPriceSpec{
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.productLink{
+    text-decoration: none;
+}
+.productLink:hover {
+    text-decoration: none;
+}
 
 .product {
     border: 5px solid white !important;
