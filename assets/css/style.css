@@ -219,8 +219,7 @@ h5 {
     width: 35rem;
     padding: 1rem 3rem 2rem;
     max-width: 100%;
-    background-color: rgb(210, 229, 233);
-    opacity: 0.85;
+    background-color: rgba(210, 229, 233, 0.85);
     border-radius: 0.75rem;
 }
 .sign-form .form-control{
@@ -285,6 +284,11 @@ h5 {
 
 
 /* Cart Page */
+.cart-body{
+    background-image:url("../images/background.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+}
 .rounded-5 {
     border-radius: 1rem!important;
 }
