@@ -221,6 +221,8 @@ h5 {
     background-color: rgb(210, 229, 233);
     opacity: 0.85;
     border-radius: 0.75rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 .sign-form .form-control{
     font-size: 1rem;
