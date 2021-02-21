@@ -195,9 +195,8 @@ h5 {
 .sign-body{
     font-family: 'Londrina Solid';
     font-size: 16px;
-    background-image:url("../images/background.png");
-    background-size: auto;
-    background-repeat: no-repeat;
+    background: url("../images/background.png") no-repeat center center fixed;
+    background-size: cover;
     color:#666;
     height: 100%;
     min-height: 100%;
@@ -205,14 +204,14 @@ h5 {
 .signin-container{
     width: 100%;
     padding-bottom: 2rem;
-    margin-top: 10rem;
-    margin-bottom: 13rem;
+    margin-top: 15rem;
+    margin-bottom: 24rem;
 }
 .signup-container{
     width: 100%;
     padding-bottom: 2rem;
-    margin-top: 11.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 15rem;
+    margin-bottom: 24rem;
 }
 
 .sign-form{
@@ -222,6 +221,8 @@ h5 {
     background-color: rgb(210, 229, 233);
     opacity: 0.85;
     border-radius: 0.75rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 .sign-form .form-control{
     font-size: 1rem;
@@ -270,6 +271,8 @@ h5 {
     justify-content: center;
     margin-right: 0px;
     margin-left: 0px;
+    overflow: hidden;
+    bottom: 0;
 }
 .user-img img{
     height: 9rem;
