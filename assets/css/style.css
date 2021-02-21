@@ -656,4 +656,5 @@ only screen and (max-width: 760px),
 }
 .label{
     font-family: 'Londrina Solid';
+    text-align: left;
 }
