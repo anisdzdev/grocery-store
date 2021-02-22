@@ -804,7 +804,13 @@ only screen and (max-width: 760px),
 }
 
 .quantity {
-    width: 120px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    height: 33px;
+    text-align: center;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px ;
 }
 
 .pro-img-list {
@@ -826,6 +832,43 @@ only screen and (max-width: 760px),
 
 .inline-product {
     display: inline-block;
+}
+
+.marg{
+    text-align: left;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: coral;
+}
+
+.inStock{
+    color: #22b877 !important;
+    text-decoration: none;
+}
+
+.inStock:hover{
+    color: #22b877;
+    text-decoration: none;
+}
+.product-title{
+    color: #505050;
+    font-size: xx-large;
+    text-decoration: none;
+}
+.product-title:hover {
+    color: #505050;
+    font-size: xx-large;
+    text-decoration: none;
+}
+
+.add-cart{
+
+}
+
+.form-group{
 }
 
 /* Credit Card layout */
