@@ -352,6 +352,10 @@ input[type=number]:focus {
     font-size: 1.2rem !important;
 }
 
+.text-5:hover{
+    font-size: 1.2rem !important;
+}
+
 .text-bold{
     font-weight: bold;
 }
@@ -396,6 +400,10 @@ input[type=number]:focus {
     font-family: 'Varela Round', sans-serif !important;
 }
 
+.varela:hover{
+    font-family: 'Varela Round', sans-serif !important;
+    text-decoration: none;
+}
 
 .background{
     background-color: #F2F2F2;
@@ -870,6 +878,7 @@ only screen and (max-width: 760px),
 
 .form-group{
 }
+
 
 /* Credit Card layout */
 
