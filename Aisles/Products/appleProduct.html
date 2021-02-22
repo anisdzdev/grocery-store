@@ -1,182 +1,130 @@
-<script>
-    $(document).ready(function () {
-        // MDB Lightbox Init
-        $(function () {
-            $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-        });
-    });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
 
+    <link rel="icon" type="image/png" href="../../assets/images/Favicon/favicon-16x16.png"/>
 
-<!--Section: Block Content-->
-<section class="mb-5">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300&display=swap" rel="stylesheet">
 
-    <div class="row">
-        <div class="col-md-6 mb-4 mb-md-0">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!--    <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />-->
 
-            <div id="mdb-lightbox-ui"></div>
+    <meta charset="UTF-8">
+    <title>All Products</title>
+</head>
+<body>
+<div class="background">
+    <nav class="navbar navbar-light bg-light homepage-header ">
+        <a class="navbar-brand" href="../../index.html">
+            <img src="../../assets/images/logo.png" style="height: 85px;">
+        </a>
 
-            <div class="mdb-lightbox">
+        <nav>
+            <a class="navbar-brand text" href="../../register/signin.html">
+                <i class="fas fa-user"></i> <span class="icon-label">Sign In </span> </a>
+            <a class="navbar-brand text" href="../../cart/index.html">
+                <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
+        </nav>
+    </nav>
 
-                <div class="row product-gallery mx-1">
+    <nav class="navbar sticky-top navbar-custom navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav ">
 
-                    <div class="col-12 mb-0">
-                        <figure class="view overlay rounded z-depth-1 main-img">
-                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                               data-size="710x823">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                                     class="img-fluid z-depth-1">
+                    <a class="nav-link " href="../../index.html">Home</a>
+                    <a class="nav-link " href="../Products.html">All Products</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aisles </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../FruitsVeg.html">Fruits and Vegetables</a>
+                            <a class="dropdown-item" href="../DairyEgg.html">Dairy & Eggs</a>
+                            <a class="dropdown-item" href="../MeatPoultry.html">Meat and Poultry</a>
+                            <a class="dropdown-item" href="../Snacks.html">Snacks</a>
+                            <a class="dropdown-item" href="../BreadBake.html">Bread and Bakery</a>
+                            <a class="dropdown-item" href="../Beverages.html">Beverages</a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col-md-6">
+            <section class="panel">
+                <div class="row">
+                    <div class="col-md-8 left-product">
+                        <div class="pro-img-details">
+                            <img src="../../assets/images/Apple_Product_Page.jpg" alt="">
+                        </div>
+                        <div class="pro-img-list">
+                            <a href="#">
+                                <img src="https://via.placeholder.com/115x100/87CEFA/000000" alt="">
                             </a>
-                        </figure>
-                        <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                               data-size="710x823">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                                     class="img-fluid z-depth-1">
+                            <a href="#">
+                                <img src="https://via.placeholder.com/115x100/FF7F50/000000" alt="">
                             </a>
-                        </figure>
-                        <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                               data-size="710x823">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                                     class="img-fluid z-depth-1">
+                            <a href="#">
+                                <img src="https://via.placeholder.com/115x100/20B2AA/000000" alt="">
                             </a>
-                        </figure>
-                        <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
-                               data-size="710x823">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
-                                     class="img-fluid z-depth-1">
+                            <a href="#">
+                                <img src="https://via.placeholder.com/120x100/20B2AA/000000" alt="">
                             </a>
-                        </figure>
-                    </div>
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="view overlay rounded z-depth-1 gallery-item">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                                         class="img-fluid">
-                                    <div class="mask rgba-white-slight"></div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="view overlay rounded z-depth-1 gallery-item">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                                         class="img-fluid">
-                                    <div class="mask rgba-white-slight"></div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="view overlay rounded z-depth-1 gallery-item">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
-                                         class="img-fluid">
-                                    <div class="mask rgba-white-slight"></div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="view overlay rounded z-depth-1 gallery-item">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                                         class="img-fluid">
-                                    <div class="mask rgba-white-slight"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
+                    <div class="col-md-4 inline-product">
+                        <h4 class="pro-d-title">
+                            <a href="#" class="pro-d-head">
+                                Apples
+                            </a>
+                        </h4>
+                        <p>
+                            These apples were freshly picked just for you. At Tropical Flavours, we always want to give you the best products.
+                        </p>
+                        <div class="product_meta">
+                            <span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">Jackets</a>, <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>, <a rel="tag" href="#">T-shirt</a>.</span>
+                            <span class="tagged_as"><strong>Tags:</strong> <a rel="tag" href="#">mens</a>, <a rel="tag" href="#">womens</a>.</span>
+                        </div>
+                        <div class="m-bot15"> <strong>Price : </strong> <span class="amount-old">2.99$/Lb</span>  <span class="pro-price"> 1.99$/Lb</span></div>
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <label>
+                                <input type="quantiy" placeholder="1" class="form-control quantity">
+                            </label>
+                        </div>
+                        <p>
+                            <button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </p>
+                    </div>
                 </div>
-
-            </div>
-
-        </div>
-        <div class="col-md-6">
-
-            <h5>Fantasy T-shirt</h5>
-            <p class="mb-2 text-muted text-uppercase small">Shirts</p>
-            <ul class="rating">
-                <li>
-                    <i class="fas fa-star fa-sm text-primary"></i>
-                </li>
-                <li>
-                    <i class="fas fa-star fa-sm text-primary"></i>
-                </li>
-                <li>
-                    <i class="fas fa-star fa-sm text-primary"></i>
-                </li>
-                <li>
-                    <i class="fas fa-star fa-sm text-primary"></i>
-                </li>
-                <li>
-                    <i class="far fa-star fa-sm text-primary"></i>
-                </li>
-            </ul>
-            <p><span class="mr-1"><strong>$12.99</strong></span></p>
-            <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-                error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-                officia quis dolore quos sapiente tempore alias.</p>
-            <div class="table-responsive">
-                <table class="table table-sm table-borderless mb-0">
-                    <tbody>
-                    <tr>
-                        <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
-                        <td>Shirt 5407X</td>
-                    </tr>
-                    <tr>
-                        <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
-                        <td>Black</td>
-                    </tr>
-                    <tr>
-                        <th class="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
-                        <td>USA, Europe</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <hr>
-            <div class="table-responsive mb-2">
-                <table class="table table-sm table-borderless">
-                    <tbody>
-                    <tr>
-                        <td class="pl-0 pb-0 w-25">Quantity</td>
-                        <td class="pb-0">Select size</td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <div class="def-number-input number-input safari_only mb-0">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                        class="minus"></button>
-                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                        class="plus"></button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="mt-1">
-                                <div class="form-check form-check-inline pl-0">
-                                    <input type="radio" class="form-check-input" id="small" name="materialExampleRadios"
-                                           checked>
-                                    <label class="form-check-label small text-uppercase card-link-secondary"
-                                           for="small">Small</label>
-                                </div>
-                                <div class="form-check form-check-inline pl-0">
-                                    <input type="radio" class="form-check-input" id="medium" name="materialExampleRadios">
-                                    <label class="form-check-label small text-uppercase card-link-secondary"
-                                           for="medium">Medium</label>
-                                </div>
-                                <div class="form-check form-check-inline pl-0">
-                                    <input type="radio" class="form-check-input" id="large" name="materialExampleRadios">
-                                    <label class="form-check-label small text-uppercase card-link-secondary"
-                                           for="large">Large</label>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-            <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
-                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+            </section>
         </div>
     </div>
 
-</section>
-<!--Section: Block Content-->
+
+    <footer id="footer">
+        <a class="footer-icon" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="footer-icon" href="https://facebook.com/"><i target="_blank" class="fab fa-facebook-f"></i></a>
+        <a class="footer-icon" href="https://instagram.com/"><i target="_blank" class="fab fa-instagram"></i></a>
+        <a class="footer-icon" href="mailto:"><i class="fas fa-envelope"></i></a>
+        <p class="copyright-message">© Copyright 2021: SOEN 287</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/45836f3eb4.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
