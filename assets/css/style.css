@@ -288,9 +288,8 @@ h5 {
 
 /* Cart Page */
 .cart-body{
-    background-image:url("../images/background.png");
     background-size: auto;
-    background-repeat: no-repeat;
+    background: url("../images/background.png") no-repeat fixed center center;
 }
 .rounded-5 {
     border-radius: 1rem!important;
