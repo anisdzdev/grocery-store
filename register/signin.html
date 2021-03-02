@@ -72,12 +72,12 @@
         </div>
         <h1 class="mb-5">Sign In</h1>
         <div class="form-group mb-2">
-            <input name="email" id="emailIn" type="email" class="form-control form-control-lg" placeholder="Email"
+            <input name="email" id="emailIn" type="email" class="form-control form-control-lg" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"
                    required autofocus>
         </div>
         <div class="form-group mb-2">
             <input name="password" id="passwordIn" type="password" class="form-control form-control-lg"
-                   placeholder="Password" required>
+                   placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         </div>
         <div class="forgot-link form-group mb-2 d-flex justify-content-between align-items-center">
             <div class="form-check">
