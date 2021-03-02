@@ -695,6 +695,11 @@ only screen and (max-width: 760px),
     font-family: 'Londrina Solid';
     text-align: left;
 }
+.signBack-container{
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
 
 /* Product css */
 
