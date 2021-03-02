@@ -228,6 +228,9 @@ h5 {
     min-height: 3rem;
     font-weight: 500;
 }
+.form-group{
+    text-align: left;
+}
 .sign-form a{
     text-decoration: none;
     color:#666;
@@ -284,6 +287,17 @@ h5 {
 .form-check-label{
     margin-top: 2px;
 }
+.error{
+    visibility: hidden;
+    color: #e74c3c;
+}
+
+
+
+
+
+
+
 
 
 

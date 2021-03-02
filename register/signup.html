@@ -67,7 +67,7 @@
 
 
 <div class="d-flex justify-content-center align-items-center signup-container">
-    <form class="sign-form text-center" id="myForm" onsubmit="return checkSignUp()" action="../index.html">
+    <form class="sign-form text-center" id="myForm" onsubmit="return checkSignUp()" action="signin.html">
         <div class="user-img">
             <img src="../assets/images/face.png">
         </div>
@@ -82,11 +82,10 @@
             <input name="address" id="address" type="text" class="form-control" placeholder="Address" required>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4"><input type="text" name="city" id="city" class="form-control form-control-lg"
-                                                    placeholder="City" required></div>
-            <div class="form-group col-md-4"><input type="text" name="zip" id="zip" class="form-control form-control-lg"
-                                                    pattern="[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d" placeholder="Postal code"
-                                                    maxlength="7" required></div>
+            <div class="form-group col-md-4"><input type="text" name="city" id="city" class="form-control form-control-lg" placeholder="City" required>
+            </div>
+            <div class="form-group col-md-4"><input type="text" name="zip" id="zip" class="form-control form-control-lg" pattern="[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d" placeholder="Postal code" maxlength="7" required>
+            </div>
             <div class="form-group col-md-4">
                 <select id="province" name="province" class="form-control required">
                     <option selected>Quebec</option>
@@ -99,24 +98,30 @@
             </div>
         </div>
         <div class="form-group">
-            <input name="phone" id="phone" type="tel" class="form-control form-control-lg" placeholder="Phone"
-                   pattern="[0-9]{3}-? ?[0-9]{3}-? ?[0-9]{4}" required>
+            <input name="phone" id="phone" type="tel" class="form-control form-control-lg" placeholder="Phone" pattern="[0-9]{3}-? ?[0-9]{3}-? ?[0-9]{4}" required>
+            <div class="error">
+                <small>Error message</small>
+            </div>
         </div>
         <div class="form-group">
             <input name="email" id="emailUp" type="email" class="form-control form-control-lg" placeholder="Email" required>
         </div>
         <div class="form-group">
-            <input name="confirmEmail" id="confirmEmailUp" type="email" class="form-control form-control-lg" placeholder="Confirm email"
-                   required>
+            <input name="confirmEmail" id="confirmEmailUp" type="email" class="form-control form-control-lg" placeholder="Confirm email" required>
+            <div class="error">
+                <i class="fas fa-exclamation-circle" id="emailFas"></i>
+                <small id="errorConfirmEmail">Email doesn't match</small>
+            </div>
         </div>
         <div class="form-group">
-            <input name="password" id="passwordUp" type="password" class="form-control form-control-lg" placeholder="Password"
-                   minlength="8" required>
+            <input name="password" id="passwordUp" type="password" class="form-control form-control-lg" placeholder="Password" minlength="8" required>
         </div>
         <div class="form-group">
-            <input name="confirmPassword" id="confirmPasswordUp" type="password" class="form-control form-control-lg"
-                   placeholder="Confirm password"
-                   required>
+            <input name="confirmPassword" id="confirmPasswordUp" type="password" class="form-control form-control-lg" placeholder="Confirm password" required>
+            <div class="error">
+                <i class="fas fa-exclamation-circle" id="passwordFas"></i>
+                <small id="errorConfirmPassword">Password doesn't match</small>
+            </div>
         </div>
         <div class="forgot-link form-group d-flex justify-content-between align-items-center">
             <div class="form-check">
@@ -156,7 +161,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-<script src="script.js"></script>
+<script src="checkSignUp.js"></script>
 </body>
 
 </html>
