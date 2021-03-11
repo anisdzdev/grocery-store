@@ -676,6 +676,7 @@ only screen and (max-width: 760px),
     td:nth-of-type(1):before { content: "Buyer Name"; }
     td:nth-of-type(2):before { content: "Total"; }
     td:nth-of-type(3):before { content: "Status"; }
+    td:nth-of-type(4):before { content: "Order #"; }
 
 
 }
@@ -1182,4 +1183,23 @@ ul li:hover {
     .pay-btn {
         border-radius:0px;
     }
+}
+
+/*contact us*/
+.contactus {
+    font-family: 'Londrina Solid';
+    font-size: 16px;
+    background: url("../images/background.png") ;
+    background-size: cover;
+    color:#666;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+
+}
+
+.contactus-container{
+    width: 100%;
+    padding-bottom: 2rem;
+    margin-top: 12rem;
 }
