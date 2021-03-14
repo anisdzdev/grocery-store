@@ -1,5 +1,5 @@
 
-function deleteOrder(row){
+function deleteRow(row){
     row.closest('tr').remove();
 }
 
