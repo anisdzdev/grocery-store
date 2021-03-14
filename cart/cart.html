@@ -89,10 +89,10 @@
                                         <div class=" align-self-center align-right">
                                             <div class="d-inline-block mr-5">
                                                 <i class="fas plus-icon fa-plus align-self-center mr-2"></i>
-                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number">
+                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number" disabled>
                                                 <i class="fas minus-icon fa-minus align-self-center ml-2"></i>
                                             </div>
-                                            <span class="text-dark text-bold mr-5 text-5">$5.99</span>
+                                            <span class="text-dark text-bold mr-5 text-5 element-price">$5.99</span>
                                             <i class="far fa-trash-alt align-self-center icon-trash"></i>
                                         </div>
                                     </div>
@@ -108,16 +108,17 @@
                                         <div class=" align-self-center align-right">
                                             <div class="d-inline-block mr-5">
                                                 <i class="fas plus-icon fa-plus align-self-center mr-2"></i>
-                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number">
+                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number" disabled>
                                                 <i class="fas minus-icon fa-minus align-self-center ml-2"></i>
                                             </div>
-                                            <span class="text-dark text-bold mr-5 text-5">$5.99</span>
+                                            <span class="text-dark text-bold mr-5 text-5 element-price">$5.99</span>
                                             <i class="far fa-trash-alt align-self-center icon-trash"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- ITEM -->
                                 <div class="uk-card full-width uk-card-default uk-card-body rounded-5 varela p-4 mb-4">
+
                                     <div class="row ml-0 mr-0">
                                         <img class="cart-img" src="../assets/images/articles/bread.jpg" alt="Bread"/>
                                         <div class="col-md-4 align-self-center">
@@ -126,12 +127,13 @@
                                         </div>
                                         <div class=" align-self-center align-right">
                                             <div class="d-inline-block mr-5">
-                                                <i class="fas plus-icon fa-plus align-self-center mr-2"></i>
-                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number">
-                                                <i class="fas minus-icon fa-minus align-self-center ml-2"></i>
+                                                <i class="fas plus-icon fa-plus align-self-center mr-2" name="plus" onclick="changeCount(this)"></i>
+                                                <input type="hidden" value="5.99" name="unitary">
+                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number" disabled>
+                                                <i class="fas minus-icon fa-minus align-self-center ml-2" name="minus" onclick="changeCount(this)"></i>
                                             </div>
-                                            <span class="text-dark text-bold mr-5 text-5">$5.99</span>
-                                            <i class="far fa-trash-alt align-self-center icon-trash"></i>
+                                            <span class="text-dark text-bold mr-5 text-5 element-price" name="price">$5.99</span>
+                                            <i class="far fa-trash-alt align-self-center icon-trash" onclick="removeElement(this)"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +156,7 @@
                                 <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'></img>
 
                                 <label for="card-number">Card Number</label>
-                                <input id="card-number" class='input-field'/>
+                                <input id="card-number" type="number" onkeypress="return (event.charCode !==8 && event.charCode ===0 || (event.charCode >= 48 && event.charCode <= 57))" class='input-field'/>
 
 
                                 <label for="card-holder">Card Holder</label>
@@ -163,11 +165,11 @@
                                     <tr>
                                         <td>
                                             <label for="expires">Expires</label>
-                                            <input id="expires" class='input-field'/>
+                                            <input id="expires" type="text" class='input-field' placeholder="MM/YY"/>
                                         </td>
                                         <td>
                                             <label for="cvc">CVC</label>
-                                            <input id="cvc" class='input-field'/>
+                                            <input id="cvc" type="number" onkeypress="return (event.charCode !==8 && event.charCode ===0 || (event.charCode >= 48 && event.charCode <= 57))" class='input-field'/>
                                         </td>
                                     </tr>
                                 </table>
@@ -177,7 +179,7 @@
                                         <div class="col-md-6 text-5">
                                             Subtotal :
                                         </div>
-                                        <div class="col-md-6 text-5 text-align-right">
+                                        <div id="subtotal" class="col-md-6 text-5 text-align-right">
                                             $17.97
                                         </div>
                                     </div>
@@ -185,7 +187,7 @@
                                         <div class="col-md-6 text-5">
                                             Taxes :
                                         </div>
-                                        <div class="col-md-6 text-5 text-align-right">
+                                        <div id="taxes" class="col-md-6 text-5 text-align-right">
                                             $2.70
                                         </div>
                                     </div>
@@ -193,13 +195,12 @@
                                         <div class="col-md-6 text-5">
                                             Total :
                                         </div>
-                                        <div class="col-md-6 text-5 text-align-right">
+                                        <div id="total" class="col-md-6 text-5 text-align-right">
                                             $20.67
                                         </div>
                                     </div>
                                 </div>
-                                <button class='pay-btn'>Checkout</button>
-
+                                <button class='pay-btn' onclick="checkCheckout()">Checkout</button>
                             </div>
                         </div>
                     </div>
@@ -223,5 +224,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit-icons.min.js"></script>
+        <script src="../assets/js/cart.js"></script>
     </body>
 </html>
