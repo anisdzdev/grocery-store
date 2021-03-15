@@ -56,12 +56,17 @@
         <h1 class="mb-5 font-weight-light">Edit users</h1>
         <label class="label">User name</label>
         <div class="form-group mb-2">
-            <input name="name" type="name" class="form-control form-control-lg" placeholder="Name"
+            <input name="name" id="fullName" type="name" class="form-control form-control-lg" placeholder="Name"
                    required autofocus>
         </div>
         <label class="label">User orders</label>
         <div class="form-group mb-2">
-            <input name="orders" type="orders" class="form-control form-control-lg" placeholder="Orders"
+            <input name="orders" id="orders" type="orders" class="form-control form-control-lg" placeholder="Orders"
+                   required autofocus>
+        </div>
+        <label class="label">Total Order Amount</label>
+        <div class="form-group mb-2">
+            <input name="totOrderAmount" id="totOrderAmount" type="totOrderAmount" class="form-control form-control-lg" placeholder="Total order amount"
                    required autofocus>
         </div>
 
