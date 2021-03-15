@@ -26,6 +26,7 @@ function calculateTotal() {
 function removeElement(e) {
     e.parentElement.parentElement.parentElement.remove();
     displayTotal();
+    displayNumberOfItems();
 }
 
 function changeCount(e) {
@@ -73,4 +74,11 @@ function checkCheckout(){
     }
 }
 
+function displayNumberOfItems(){
+    let items = document.getElementsByClassName('uk-card full-width uk-card-default')
+    let numOfItems = document.getElementById('number-of-items');
+    numOfItems.innerText = items.length + " item" + ((items.length!==1) ? 's' : '');
+}
+
 displayTotal();
+displayNumberOfItems();
