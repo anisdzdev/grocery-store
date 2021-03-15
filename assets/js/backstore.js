@@ -35,7 +35,7 @@ function checkOrderMatch(){
 
 
 
-function edit() {
+function editProduct() {
     var name1 = document.getElementById("name").value;
     var proDes1 = document.getElementById("proDes").value;
     var price1 = document.getElementById("price").value;
@@ -52,6 +52,40 @@ function edit() {
     price.innerHtml = price1;
     aisle.innerHtML = aisleSelect;
 
+
+}
+function editUser() {
+    var fullName1 = document.getElementById("fullName").value;
+    var orders1 = document.getElementById("orders").value;
+    var totOrderAmount1 = document.getElementById("totOrderAmount").value;
+
+
+    var fullName = document.getElementById("fullName");
+    var orders = document.getElementById("orders");
+    var totOrderAmount = document.getElementById("totOrderAmount");
+
+
+    fullName.innerHtml = fullName1;
+    orders.innerHtml = orders1;
+    totOrderAmount.innerHtml = totOrderAmount1;
+
+}
+function editOrder() {
+    var buyerName1 = document.getElementById("buyerName").value;
+    var total1 = document.getElementById("total").value;
+    var status1 = document.getElementById("status").value;
+    var orderNum1 = document.getElementById("orders#");
+
+
+    var buyerName = document.getElementById("buyerName");
+    var total = document.getElementById("total");
+    var status = document.getElementById("status");
+    var orderNum = document.getElementById("orders#");
+
+    buyerName.innerHtml = buyerName1;
+    total.innerHtml = total1;
+    status.innerHtml = status1;
+    orderNum.innerHtML = orderNum1;
 
 
 }
@@ -110,8 +144,6 @@ function addProduct(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-
-
     edit();
 
 }
@@ -167,11 +199,7 @@ function addOrder(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-
-
     edit();
-
-
 
 }
 function addUser(){
