@@ -57,34 +57,28 @@
         <h1 class="mb-5 font-weight-light">Edit products</h1>
         <label class="label">Product name</label>
         <div class="form-group mb-2">
-            <input name="name" id="name" type="name" class="form-control form-control-lg" placeholder="Name"
-                   required autofocus>
+            <input name="name" id="name" class="form-control form-control-lg" placeholder="Name"
+                   required>
         </div>
         <label class="label">Product description</label>
         <div class="form-group mb-2">
-            <input name="description" id="proDes" type="description" class="form-control form-control-lg" placeholder="Description"
-                   required autofocus>
+            <input name="description" id="proDes" class="form-control form-control-lg" placeholder="Description"
+                   required>
         </div>
         <label class="label">Price</label>
         <div class="form-group mb-2">
-            <input name="description" id="price" type="price"  class="form-control form-control-lg" placeholder="Price"
-                   required autofocus>
+            <input name="description" id="price" class="form-control form-control-lg" placeholder="Price"
+                   required>
         </div>
 
 
         <label class="label">Product aisle</label>
         <div class="form-group mb-2">
-            <select id="aisle" name="aisle" class="form-control required">
-                <option>Fruits</option>
-                <option>Alberta</option>
-                <option>British Columbia</option>
-                <option>Manitoba</option>
-                <option>Snacks</option>
-                <option>beckery</option>
-            </select>
+            <input name="aisle" id="aisle" class="form-control form-control-lg" placeholder="Aisle"
+                   required>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="AddProduct()" >Save changes</button>
+            <button type="button" class="btn btn-primary" onclick="editProduct()" >Save changes</button>
 
         </div>
     </form>

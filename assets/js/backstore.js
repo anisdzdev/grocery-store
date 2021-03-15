@@ -37,8 +37,7 @@ function editProduct() {
     var name1 = document.getElementById("name").value;
     var proDes1 = document.getElementById("proDes").value;
     var price1 = document.getElementById("price").value;
-    var aisle1 = document.getElementById("aisle");
-    var aisleSelect = aisle1.options[aisle1.selectedIndex].value;
+    var aisle1 = document.getElementById("aisle").value;
 
     var name = document.getElementById("name");
     var proDes = document.getElementById("proDes");
@@ -48,7 +47,7 @@ function editProduct() {
     name.innerHtml = name1;
     proDes.innerHtml = proDes1;
     price.innerHtml = price1;
-    aisle.innerHtML = aisleSelect;
+    aisle.innerHtML = aisle1;
 
 
 }
@@ -142,8 +141,6 @@ function addProduct(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-    editProduct();
-
 }
 function addOrder(){
 
@@ -197,8 +194,6 @@ function addOrder(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-    editOrder();
-
 }
 function addUser(){
 
@@ -247,8 +242,6 @@ function addUser(){
 
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
-
-    editUser();
 
 }
 
