@@ -143,7 +143,7 @@ function addProduct(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-    edit();
+    editProduct();
 
 }
 function addOrder(){
@@ -198,7 +198,7 @@ function addOrder(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-    edit();
+    editOrder();
 
 }
 function addUser(){
@@ -249,7 +249,7 @@ function addUser(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-    edit();
+    editUser();
 
 }
 
