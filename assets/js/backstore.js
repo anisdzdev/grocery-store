@@ -108,6 +108,7 @@ function addProduct(){
     butt1.innerHTML = "Edit";
     butt1.setAttribute("type", "button");
     butt1.setAttribute("class", "btn btn-primary btn-sm")
+    butt1.style.marginRight = "4px";
     butt2.innerHTML = "Remove";
     butt2.setAttribute("onclick", "deleteRow($(this))");
     butt2.setAttribute("type", "button");
@@ -161,7 +162,8 @@ function addOrder(){
     var butt2 = document.createElement("button");
     butt1.innerHTML = "Edit";
     butt1.setAttribute("type", "button");
-    butt1.setAttribute("class", "btn btn-primary btn-sm")
+    butt1.setAttribute("class", "btn btn-primary btn-sm");
+    butt1.style.marginRight = "4px";
     butt2.innerHTML = "Remove";
     butt2.setAttribute("onclick", "deleteRow($(this))");
     butt2.setAttribute("type", "button");
@@ -212,7 +214,8 @@ function addUser(){
     var butt2 = document.createElement("button");
     butt1.innerHTML = "Edit";
     butt1.setAttribute("type", "button");
-    butt1.setAttribute("class", "btn btn-primary btn-sm")
+    butt1.setAttribute("class", "btn btn-primary btn-sm");
+    butt1.style.marginRight = "4px";
     butt2.innerHTML = "Remove";
     butt2.setAttribute("onclick", "deleteRow($(this))");
     butt2.setAttribute("type", "button");
