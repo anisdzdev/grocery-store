@@ -1,4 +1,4 @@
-function checkSignUp() {
+function register() {
     checkEmail();
     checkPassword();
 
