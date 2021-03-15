@@ -1,27 +1,25 @@
-// onload.initialize();
+
 var orders = ['12345AB','71412AB'];
 
-// function initialize(){
-//     if ()
-// }
-
-
-
-
-
-
+// deletes row on click
 function deleteRow(row){
     row.closest('tr').remove();
 }
 
+// checks if the order enter corresponds to an order in the backstore.
 function checkOrderMatch(){
+
+    // grabs order entered.
     orderInput = $("#order-number").val();
 
+    //  checks if order entered corresponds to the format.
     if (!(/[0-9]{5}[A-Za-z]{2}/g.test(orderInput))){
         alert("Order format is incorrect, please try again.")
         return;
     }
 
+
+    // checks if a match is found and responds accordingly.
     for (i=0; i<orders.length; i++) {
         if (orderInput != orders[i]) {
             alert("Unknown order. Please check your order number and try again.")
@@ -39,8 +37,7 @@ function editProduct() {
     var name1 = document.getElementById("name").value;
     var proDes1 = document.getElementById("proDes").value;
     var price1 = document.getElementById("price").value;
-    var aisle1 = document.getElementById("aisle");
-    var aisleSelect = aisle1.options[aisle1.selectedIndex].value;
+    var aisle1 = document.getElementById("aisle").value;
 
     var name = document.getElementById("name");
     var proDes = document.getElementById("proDes");
@@ -50,7 +47,7 @@ function editProduct() {
     name.innerHtml = name1;
     proDes.innerHtml = proDes1;
     price.innerHtml = price1;
-    aisle.innerHtML = aisleSelect;
+    aisle.innerHtML = aisle1;
 
 
 }
@@ -144,8 +141,6 @@ function addProduct(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-    edit();
-
 }
 function addOrder(){
 
@@ -199,8 +194,6 @@ function addOrder(){
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
 
-    edit();
-
 }
 function addUser(){
 
@@ -249,8 +242,6 @@ function addUser(){
 
     var tbody = document.getElementById("tbody");
     tbody.appendChild(tr1);
-
-    edit();
 
 }
 
