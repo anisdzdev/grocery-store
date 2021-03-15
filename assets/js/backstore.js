@@ -1,13 +1,5 @@
-// onload.initialize();
+
 var orders = ['12345AB','71412AB'];
-
-// function initialize(){
-//     if ()
-// }
-
-
-
-
 
 
 function deleteRow(row){
@@ -15,12 +7,19 @@ function deleteRow(row){
 }
 
 function checkOrderMatch(){
+
     orderInput = $("#order-number").val();
+
+    var rowCount = $('#order-table tr').length
+
+
+    console.log(rowCount)
 
     if (!(/[0-9]{5}[A-Za-z]{2}/g.test(orderInput))){
         alert("Order format is incorrect, please try again.")
         return;
     }
+
 
     for (i=0; i<orders.length; i++) {
         if (orderInput != orders[i]) {
