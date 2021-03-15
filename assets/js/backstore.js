@@ -71,7 +71,7 @@ function editOrder() {
     var buyerName1 = document.getElementById("buyerName").value;
     var total1 = document.getElementById("total").value;
     var status1 = document.getElementById("status").value;
-    var orderNum1 = document.getElementById("order#");
+    var orderNum1 = document.getElementById("order#").value;
 
 
     var buyerName = document.getElementById("buyerName");
