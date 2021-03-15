@@ -1,26 +1,25 @@
 
 var orders = ['12345AB','71412AB'];
 
-
+// deletes row on click
 function deleteRow(row){
     row.closest('tr').remove();
 }
 
+// checks if the order enter corresponds to an order in the backstore.
 function checkOrderMatch(){
 
+    // grabs order entered.
     orderInput = $("#order-number").val();
 
-    var rowCount = $('#order-table tr').length
-
-
-    console.log(rowCount)
-
+    //  checks if order entered corresponds to the format.
     if (!(/[0-9]{5}[A-Za-z]{2}/g.test(orderInput))){
         alert("Order format is incorrect, please try again.")
         return;
     }
 
 
+    // checks if a match is found and responds accordingly.
     for (i=0; i<orders.length; i++) {
         if (orderInput != orders[i]) {
             alert("Unknown order. Please check your order number and try again.")
