@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!--    <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../assets/js/productsJQ.js"></script>
 
     <meta charset="UTF-8">
     <title>Tropical Flavors</title>
@@ -71,25 +73,27 @@
 
             <div class="col-md-7 marg">
                 <br>
-                <h4 class="pro-d-title">
-                    <a href="#" class="product-title">
-                        Oranges
-                    </a>
+                <h4 class="pro-d-title product-title" id="title">
+                    Oranges
                 </h4>
                 <p>
                     Our famous oranges are all grown in the great state of Florida! Florida oranges are famous for the sweetness and juiciness, and now you get to enjoy them!
                 </p>
                 <p class="product-price">
-                    $1.50 each
+                    $<span id="productPrice">1.50</span> each
                 </p>
                 <div class="product_meta">
                     <span class="posted_in"> <strong>Availability:</strong> <a class="inStock" href="#">In Stock</a></span>
                 </div>
                 <label>Quantity: </label>
                 <label>
-                    <input type="quantiy" placeholder="1" class="quantity">
+                    <i class="fas plus-icon fa-plus align-self-center mr-2 plus" name="plus"></i>
+                    <input type="hidden" value="1.50" name="unitary">
+                    <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" id="input" value="1" type="number" disabled>
+                    <i class="fas minus-icon fa-minus align-self-center ml-2 minus" name="minus"></i>
                 </label>
                 <button type="button" class="btn btn-outline-success">Add to cart</button>
+                <p id="change"></p>
                 <p>
             </div>
         </div>
