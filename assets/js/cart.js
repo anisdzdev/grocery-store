@@ -1,7 +1,9 @@
+//Global variables
 let subtotal_value = 0;
 let taxes_value = 0;
 let total_value = 0;
 
+//Display total function which displays the subtotal, taxes and total
 function displayTotal() {
     let subtotal = document.getElementById('subtotal')
     let taxes = document.getElementById('taxes')
@@ -12,6 +14,7 @@ function displayTotal() {
     total.innerText = "$" + total_value.toFixed(2);
 }
 
+//Display total function which calculates the subtotal, taxes and total
 function calculateTotal() {
     let prices = document.getElementsByClassName('element-price');
     subtotal_value = 0;
@@ -23,12 +26,14 @@ function calculateTotal() {
     total_value = subtotal_value + taxes_value;
 }
 
+//Deletes an item of the cart and recalculates the total
 function removeElement(e) {
     e.parentElement.parentElement.parentElement.remove();
     displayTotal();
     displayNumberOfItems();
 }
 
+//Functions that changes the count of an item in the cart and recalculates the total
 function changeCount(e) {
     let isPlus = true;
     if(e.getAttribute('name') === "minus")
@@ -46,6 +51,7 @@ function changeCount(e) {
     displayTotal();
 }
 
+//Form validation for the checkout button
 function checkCheckout(){
     let card_number = document.getElementById("card-number");
     let card_holder = document.getElementById("card-holder");
@@ -74,11 +80,13 @@ function checkCheckout(){
     }
 }
 
+//Displays the "You have n items in your cart" message appropriately
 function displayNumberOfItems(){
     let items = document.getElementsByClassName('uk-card full-width uk-card-default')
     let numOfItems = document.getElementById('number-of-items');
     numOfItems.innerText = items.length + " item" + ((items.length!==1) ? 's' : '');
 }
 
+//First calls to the functions (when the user opens the page)
 displayTotal();
 displayNumberOfItems();
