@@ -313,6 +313,10 @@ h5 {
 
 
 /* Cart Page */
+.copyright-message{
+    margin-top: 0!important;
+}
+
 .cart-body{
     background-size: auto;
     background: url("../images/background.png") no-repeat fixed center center;
@@ -1207,8 +1211,6 @@ ul li:hover {
     color:#666;
     margin-bottom: 0;
     padding-bottom: 0;
-
-
 }
 
 .contactus-container{
