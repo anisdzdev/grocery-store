@@ -1,13 +1,70 @@
+window.onload = initialize()
 
-    var orders = JSON.parse(localStorage.getItem("order-number-array"));
-    console.log(orders)
+function initialize(){
+    updateTable();
+}
 
+function updateTable(){
+    console.log("loading");
+    var ordersArray2 = JSON.parse(localStorage.getItem('orders-array'));
+    for(let i=0; i<ordersArray2.length; i++){
+        // Creat all elements and set their respective attributes
+        var tr1 = document.createElement("tr");
+        var td1 = document.createElement("td");
+        td1.setAttribute("id", "buyerName");
+        var td2 = document.createElement("td");
+        td2.setAttribute("id", "total");
+        var td3 = document.createElement("td");
+        td3.setAttribute("id", "status");
+        var td4 = document.createElement("td");
+        td4.setAttribute("id", "order#")
+        var td5 = document.createElement("td");
 
+//create the two buttons "Edit" and "Add" and set their respective attributes
+        var butt1 = document.createElement("button");
+        var butt2 = document.createElement("button");
+        butt1.innerHTML = "Edit";
+        butt1.setAttribute("type", "button");
+        butt1.setAttribute("class", "btn btn-primary btn-sm");
+        butt1.style.marginRight = "4px";
+        butt2.innerHTML = "Remove";
+        butt2.setAttribute("onclick", "deleteRow($(this))");
+        butt2.setAttribute("type", "button");
+        butt2.setAttribute("class", "btn btn-danger btn-sm");
 
+// Create an a tag and set its attribute
+        var aTag = document.createElement("a");
+        aTag.setAttribute("href", "product-order.html");
 
+// Create a new text node for each of the variables for the orders
+        var buyerName = document.createTextNode(ordersArray2[i].name);
+        var total = document.createTextNode(ordersArray2[i].total);
+        var status = document.createTextNode(ordersArray2[i].status);
+        var orderNum = document.createTextNode(ordersArray2[i].orderNum);
 
-var word = $(".number").text();
+// Append child all the variables inside of their respective td that we created earlier
+        td1.appendChild(buyerName);
+        td2.appendChild(total);
+        td3.appendChild(status);
+        td4.appendChild(orderNum);
 
+        td5.appendChild(aTag);
+        aTag.appendChild(butt1);
+        td5.appendChild(butt2);
+
+        tr1.appendChild(td1);
+        tr1.appendChild(td2);
+        tr1.appendChild(td3);
+        tr1.appendChild(td4);
+        tr1.appendChild(td5);
+
+// Create a tbody by his id
+        var tbody = document.getElementById("tbody");
+
+// Append child everything inside of the tbody tag
+        tbody.appendChild(tr1);
+    }
+}
 
 // deletes row on click
 function deleteRow(row){
@@ -96,6 +153,52 @@ function editOrder() {
     var total1 = document.getElementById("total").value;
     var status1 = document.getElementById("status").value;
     var orderNum1 = document.getElementById("order#").value;
+
+    //--------------------ADD ORDER TO LOCAL STORAGE--------------------//
+
+    //create a JSON object of order
+    var object = {
+        name: buyerName1,
+        total: total1,
+        status: status1,
+        orderNum: orderNum1
+    }
+
+    //if the array does not exist in local storage, create an array and push the item in it as first element
+    if(localStorage.getItem('orders-array')=== null){
+        console.log(1);
+        let myArray = [];
+        myArray.push(object);
+        localStorage.setItem('orders-array', JSON.stringify(myArray));
+    }
+
+    //if array already exists
+    else {
+        console.log(2);
+        var ordersArray = JSON.parse(localStorage.getItem('orders-array')); //get the array from local storage
+        console.log(ordersArray);
+
+
+        //go through the array and and find if ordernumber exists, if so, edit it and get out of the function
+        for(var i=0; i<ordersArray.length; i++){
+            console.log(ordersArray[i]);
+            if(ordersArray[i].orderNum == orderNum1){
+                ordersArray[i].name = buyerName1;
+                ordersArray[i].total = total1;
+                ordersArray[i].status = status1;
+                localStorage.setItem('orders-array', JSON.stringify(ordersArray));
+                return;
+            }
+        }
+
+        //if order number does not exist, add it as new element
+        console.log("about to push " + object);
+        ordersArray.push(object);
+        localStorage.setItem('orders-array', JSON.stringify(ordersArray));
+
+    }
+
+    //--------------------ADD ORDER TO LOCAL STORAGE--------------------//
 
     // get each element of the product list by their id
     var buyerName = document.getElementById("buyerName");
