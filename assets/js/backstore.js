@@ -32,7 +32,7 @@ function checkOrderMatch(){
 }
 
 
-
+// edit function for the product
 function editProduct() {
     var name1 = document.getElementById("name").value;
     var proDes1 = document.getElementById("proDes").value;
@@ -51,6 +51,7 @@ function editProduct() {
 
 
 }
+// edit function for the user
 function editUser() {
     var fullName1 = document.getElementById("fullName").value;
     var orders1 = document.getElementById("orders").value;
@@ -67,6 +68,7 @@ function editUser() {
     totOrderAmount.innerHtml = totOrderAmount1;
 
 }
+// edit function for the order
 function editOrder() {
     var buyerName1 = document.getElementById("buyerName").value;
     var total1 = document.getElementById("total").value;
@@ -86,9 +88,10 @@ function editOrder() {
 
 
 }
+//Add function for the product
 function addProduct(){
 
-
+    // Creat all elements and sets their attributes
     var tr1 = document.createElement("tr");
     var td1 = document.createElement("td");
     td1.setAttribute("id", "name");
@@ -143,9 +146,10 @@ function addProduct(){
     tbody.appendChild(tr1);
 
 }
+//Add function for the order
 function addOrder(){
 
-
+    // Creat all elements and sets their attributes
     var tr1 = document.createElement("tr");
     var td1 = document.createElement("td");
     td1.setAttribute("id", "buyerName");
@@ -197,9 +201,10 @@ function addOrder(){
     tbody.appendChild(tr1);
 
 }
+//Add function for the user
 function addUser(){
 
-
+    // Creat all elements and sets their attributes
     var tr1 = document.createElement("tr");
     var td1 = document.createElement("td");
     td1.setAttribute("id", "fullName");
