@@ -4,6 +4,7 @@ function initialize(){
     updateTable();
 }
 
+
 function updateTable(){
     console.log("loading");
     var ordersArray2 = JSON.parse(localStorage.getItem('orders-array'));
@@ -59,7 +60,7 @@ function updateTable(){
         tr1.appendChild(td5);
 
 // Create a tbody by his id
-        var tbody = document.getElementById("tbody");
+        var tbody = document.getElementById("tbodyorder");
 
 // Append child everything inside of the tbody tag
         tbody.appendChild(tr1);
@@ -74,6 +75,8 @@ function deleteRow(row){
 // checks if the order enter corresponds to an order in the backstore.
 function checkOrderMatch(){
 
+    var numbersArray = JSON.parse(localStorage.getItem('orders-array'));
+    console.log(numbersArray)
 
     // grabs order entered.
     orderInput = $("#order-number").val();
@@ -90,11 +93,11 @@ function checkOrderMatch(){
 
 
     // checks if a match is found and responds accordingly.
-    for (i=0; i<orders.length; i++) {
-        if (orderInput != orders[i]) {
+    for (i=0; i<numbersArray.length; i++) {
+        if (orderInput != numbersArray[i].orderNum) {
             alert("Unknown order. Please check your order number and try again.")
             break;
-        } else if (orderInput == orders[i]) {
+        } else if (orderInput == numbersArray[i].orderNum) {
             $("#form-contact-body").text("Thank you for contacting us. Our team will be in touch as soon as possible!")
             break;
         }
