@@ -34,16 +34,20 @@ function checkOrderMatch(){
 
 // edit function for the product
 function editProduct() {
+
+    // get the new value of each element by their id
     var name1 = document.getElementById("name").value;
     var proDes1 = document.getElementById("proDes").value;
     var price1 = document.getElementById("price").value;
     var aisle1 = document.getElementById("aisle").value;
 
+    // get each element of the product list by their id
     var name = document.getElementById("name");
     var proDes = document.getElementById("proDes");
     var price = document.getElementById("price");
     var aisle = document.getElementById("aisle");
 
+    // change the old value of the element by the new one
     name.innerHtml = name1;
     proDes.innerHtml = proDes1;
     price.innerHtml = price1;
@@ -53,16 +57,18 @@ function editProduct() {
 }
 // edit function for the user
 function editUser() {
+
+    // get the new value of each element by their id
     var fullName1 = document.getElementById("fullName").value;
     var orders1 = document.getElementById("orders").value;
     var totOrderAmount1 = document.getElementById("totOrderAmount").value;
 
-
+    // get each element of the product list by their id
     var fullName = document.getElementById("fullName");
     var orders = document.getElementById("orders");
     var totOrderAmount = document.getElementById("totOrderAmount");
 
-
+    // change the old value of the element by the new one
     fullName.innerHtml = fullName1;
     orders.innerHtml = orders1;
     totOrderAmount.innerHtml = totOrderAmount1;
@@ -70,17 +76,20 @@ function editUser() {
 }
 // edit function for the order
 function editOrder() {
+
+    // get the new value of each element by their id
     var buyerName1 = document.getElementById("buyerName").value;
     var total1 = document.getElementById("total").value;
     var status1 = document.getElementById("status").value;
     var orderNum1 = document.getElementById("order#").value;
 
-
+    // get each element of the product list by their id
     var buyerName = document.getElementById("buyerName");
     var total = document.getElementById("total");
     var status = document.getElementById("status");
     var orderNum = document.getElementById("order#");
 
+    // change the old value of the element by the new one
     buyerName.innerHtml = buyerName1;
     total.innerHtml = total1;
     status.innerHtml = status1;
@@ -91,7 +100,7 @@ function editOrder() {
 //Add function for the product
 function addProduct(){
 
-    // Creat all elements and sets their attributes
+    // Creat all elements and set their respective attributes
     var tr1 = document.createElement("tr");
     var td1 = document.createElement("td");
     td1.setAttribute("id", "name");
@@ -103,11 +112,9 @@ function addProduct(){
     td4.setAttribute("id", "aisle")
     var td5 = document.createElement("td");
 
-
+    //create the two buttons "Edit" and "Add" and set their respective attributes
     var butt1 = document.createElement("button");
     var butt2 = document.createElement("button");
-
-
     butt1.innerHTML = "Edit";
     butt1.setAttribute("type", "button");
     butt1.setAttribute("class", "btn btn-primary btn-sm")
@@ -117,16 +124,17 @@ function addProduct(){
     butt2.setAttribute("type", "button");
     butt2.setAttribute("class", "btn btn-danger btn-sm");
 
+    // Create an a tag and set its attribute
     var aTag = document.createElement("a");
-
     aTag.setAttribute("href", "product-save.html");
 
+    // Create a new text node for each of the variables for the products
      var name = document.createTextNode("name");
-
      var proDes = document.createTextNode("description");
      var price = document.createTextNode("price");
      var aisle = document.createTextNode("aisle");
 
+     // Append child all the variables inside of their respective td that we created earlier
     td1.appendChild(name);
     td2.appendChild(proDes);
     td3.appendChild(price);
@@ -142,14 +150,17 @@ function addProduct(){
     tr1.appendChild(td4);
     tr1.appendChild(td5);
 
+    // Create a tbody by his id
     var tbody = document.getElementById("tbody");
+
+    // Append child everything inside of the tbody tag
     tbody.appendChild(tr1);
 
 }
 //Add function for the order
 function addOrder(){
 
-    // Creat all elements and sets their attributes
+    // Creat all elements and set their respective attributes
     var tr1 = document.createElement("tr");
     var td1 = document.createElement("td");
     td1.setAttribute("id", "buyerName");
@@ -161,7 +172,7 @@ function addOrder(){
     td4.setAttribute("id", "order#")
     var td5 = document.createElement("td");
 
-
+    //create the two buttons "Edit" and "Add" and set their respective attributes
     var butt1 = document.createElement("button");
     var butt2 = document.createElement("button");
     butt1.innerHTML = "Edit";
@@ -173,15 +184,17 @@ function addOrder(){
     butt2.setAttribute("type", "button");
     butt2.setAttribute("class", "btn btn-danger btn-sm");
 
-
+    // Create an a tag and set its attribute
     var aTag = document.createElement("a");
     aTag.setAttribute("href", "product-order.html");
 
+    // Create a new text node for each of the variables for the orders
     var buyerName = document.createTextNode("Buyer Name");
     var total = document.createTextNode("Total");
     var status = document.createTextNode("Status");
     var orderNum = document.createTextNode("Order #");
 
+    // Append child all the variables inside of their respective td that we created earlier
     td1.appendChild(buyerName);
     td2.appendChild(total);
     td3.appendChild(status);
@@ -197,14 +210,17 @@ function addOrder(){
     tr1.appendChild(td4);
     tr1.appendChild(td5);
 
+    // Create a tbody by his id
     var tbody = document.getElementById("tbody");
+
+    // Append child everything inside of the tbody tag
     tbody.appendChild(tr1);
 
 }
 //Add function for the user
 function addUser(){
 
-    // Creat all elements and sets their attributes
+    // Creat all elements and set their respective attributes
     var tr1 = document.createElement("tr");
     var td1 = document.createElement("td");
     td1.setAttribute("id", "fullName");
@@ -214,7 +230,7 @@ function addUser(){
     td3.setAttribute("id", "totOrderAmount");
     var td4 = document.createElement("td");
 
-
+    //create the two buttons "Edit" and "Add" and set their respective attributes
     var butt1 = document.createElement("button");
     var butt2 = document.createElement("button");
     butt1.innerHTML = "Edit";
@@ -226,15 +242,16 @@ function addUser(){
     butt2.setAttribute("type", "button");
     butt2.setAttribute("class", "btn btn-danger btn-sm");
 
-
+    // Create an a tag and set its attribute
     var aTag = document.createElement("a");
     aTag.setAttribute("href", "product-user.html");
 
+    // Create a new text node for each of the variables for the users
     var fullName = document.createTextNode("Full Name");
     var orders = document.createTextNode("Orders");
     var totOrderAmount = document.createTextNode("TotalOrderAmount");
 
-
+    // Append child all the variables inside of their respective td that we created earlier
     td1.appendChild(fullName);
     td2.appendChild(orders);
     td3.appendChild(totOrderAmount);
@@ -248,7 +265,10 @@ function addUser(){
     tr1.appendChild(td3);
     tr1.appendChild(td4);
 
+    // Create a tbody by his id
     var tbody = document.getElementById("tbody");
+
+    // Append child everything inside of the tbody tag
     tbody.appendChild(tr1);
 
 }
