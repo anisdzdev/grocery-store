@@ -276,10 +276,13 @@ h5 {
     padding-bottom: 1%;
     width: 100%;
     justify-content: center;
-    margin-right: 0px;
-    margin-left: 0px;
     overflow: hidden;
     bottom: 0;
+    font-family: 'Londrina Solid';
+    color: black;
+    display: inline-flex;
+    margin-left: 0;
+    margin-right: 0;
 }
 .user-img img{
     height: 9rem;
