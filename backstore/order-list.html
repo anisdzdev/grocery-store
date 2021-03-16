@@ -20,8 +20,6 @@
     <title>Order List</title>
 </head>
 
-
-
 <body>
 
 <nav class="uk-navbar-container backstore-nav" id="backstore-nav" >
@@ -43,7 +41,7 @@
 
 <div class="row" style="margin-top: 50px; margin-left: 10px; margin-right: 10px">
     <div class="col-sm-9 order-title">
-        <h1>Orders</h1>
+        <h1 class="number">Orders</h1>
     </div>
     <div class="col-sm-2">
         <a href="order-save.html"><button type="button" id="add-button" class="btn btn-success" onclick="addOrder()"><i class="fas fa-plus"></i> Add</button></a>
@@ -74,18 +72,33 @@
     <tr id="row2">
 
         <td>Donald</td>
-        <td>6B</td>
+        <td>$34.92</td>
         <td>Fulfilled</td>
         <td>71412AB</td>
         <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
             <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow($(this))">Remove</button></td>
     </tr>
-    <tr>
-    </tr>
     </tbody>
 </table>
 
 
+
+<script>
+    var orderNumberList = [];
+
+    var table = document.getElementById("order-table").getElementsByTagName("tbody")[0].rows;
+    for (let i in table) {
+        let row = table[i];
+        //console.log(row);
+        //let orderNumber = row.cells[0].innerHTML;
+        orderNumberList.push(row.cells[3].innerHTML);
+        console.log(row.cells[3].innerHTML);
+        console.log(orderNumberList)
+
+    }
+    window.localStorage.setItem("order-number-array", JSON.stringify(orderNumberList));
+
+</script>
 
 
 
@@ -94,7 +107,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-<script src="../assets/js/backstore.js"></script>
+
+
 </body>
 
 

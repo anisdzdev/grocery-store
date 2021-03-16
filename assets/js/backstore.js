@@ -1,5 +1,13 @@
 
-var orders = ['12345AB','71412AB'];
+    var orders = JSON.parse(localStorage.getItem("order-number-array"));
+    console.log(orders)
+
+
+
+
+
+var word = $(".number").text();
+
 
 // deletes row on click
 function deleteRow(row){
@@ -9,8 +17,13 @@ function deleteRow(row){
 // checks if the order enter corresponds to an order in the backstore.
 function checkOrderMatch(){
 
+
     // grabs order entered.
     orderInput = $("#order-number").val();
+
+    //checks if order is empty.
+    if(orderInput == "")
+        return;
 
     //  checks if order entered corresponds to the format.
     if (!(/[0-9]{5}[A-Za-z]{2}/g.test(orderInput))){
@@ -29,6 +42,7 @@ function checkOrderMatch(){
             break;
         }
     }
+
 }
 
 
