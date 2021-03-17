@@ -18,7 +18,7 @@ function updateTable(){
         var td3 = document.createElement("td");
         td3.setAttribute("id", "status");
         var td4 = document.createElement("td");
-        td4.setAttribute("id", "order#")
+        td4.setAttribute("id", "orderNum")
         var td5 = document.createElement("td");
 
 //create the two buttons "Edit" and "Add" and set their respective attributes
@@ -29,13 +29,13 @@ function updateTable(){
         butt1.setAttribute("class", "btn btn-primary btn-sm");
         butt1.style.marginRight = "4px";
         butt2.innerHTML = "Remove";
-        butt2.setAttribute("onclick", "deleteRow($(this))");
+        butt2.setAttribute("onclick", "deleteRowOrder($(this))");
         butt2.setAttribute("type", "button");
         butt2.setAttribute("class", "btn btn-danger btn-sm");
 
 // Create an a tag and set its attribute
         var aTag = document.createElement("a");
-        aTag.setAttribute("href", "product-order.html");
+        aTag.setAttribute("href", "order-save.html");
 
 // Create a new text node for each of the variables for the orders
         var buyerName = document.createTextNode(ordersArray2[i].name);
@@ -70,7 +70,25 @@ function updateTable(){
 // deletes row on click
 function deleteRow(row){
     row.closest('tr').remove();
+
 }
+
+function deleteRowOrder(row){
+    var array = JSON.parse(localStorage.getItem('orders-array'));
+    var number = row.closest('tr').find("#orderNum").text();
+    console.log(number);
+    for (var i=0; i<array.length; i++){
+        if(array[i].orderNum === number){
+            console.log(array[i]);
+            array.pop(array[i]);
+            localStorage.setItem('orders-array', JSON.stringify(array));
+        }
+    }
+
+    row.closest('tr').remove();
+
+}
+
 
 // checks if the order enter corresponds to an order in the backstore.
 function checkOrderMatch(){
