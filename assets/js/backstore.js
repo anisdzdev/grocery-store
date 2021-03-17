@@ -173,7 +173,7 @@ function editOrder() {
     var buyerName1 = document.getElementById("buyerName").value;
     var total1 = document.getElementById("total").value;
     var status1 = document.getElementById("status").value;
-    var orderNum1 = document.getElementById("order#").value;
+    var orderNum1 = document.getElementById("orderNum").value;
 
     //--------------------ADD ORDER TO LOCAL STORAGE--------------------//
 
@@ -225,7 +225,7 @@ function editOrder() {
     var buyerName = document.getElementById("buyerName");
     var total = document.getElementById("total");
     var status = document.getElementById("status");
-    var orderNum = document.getElementById("order#");
+    var orderNum = document.getElementById("orderNum");
 
     // change the old value of the element by the new one
     buyerName.innerHtml = buyerName1;
@@ -307,7 +307,7 @@ function addOrder(){
     var td3 = document.createElement("td");
     td3.setAttribute("id", "status");
     var td4 = document.createElement("td");
-    td4.setAttribute("id", "order#")
+    td4.setAttribute("id", "orderNum")
     var td5 = document.createElement("td");
 
     //create the two buttons "Edit" and "Add" and set their respective attributes
