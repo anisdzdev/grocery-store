@@ -449,6 +449,16 @@ input[type=number]:focus {
     background-position: center center;
 }
 
+.weeklyDealsBg{
+    background-image: url("../images/ProductBgs/weekly_deals.png");
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 0;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    background-position: center center;
+}
+
 .fruitsVegBg {
     background-image: url("../images/ProductBgs/fruits_and_veggies.png");
     background-attachment: fixed;
@@ -925,7 +935,13 @@ input[type=number]:focus {
 .form-group{
 }
 
+.oldPrice{
+    text-decoration: line-through;
+}
 
+.deal{
+    color: red;
+}
 /* Credit Card layout */
 
 

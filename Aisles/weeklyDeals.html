@@ -8,6 +8,7 @@
 
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
     <link rel="icon" type="image/png" href="/assets/images/Favicon/favicon-16x16.png"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
     <script src="../assets/js/aisles.js"></script>
 
     <meta charset="UTF-8">
-    <title>Bread and Bakery</title>
+    <title>Dairy and Eggs</title>
 </head>
 <body>
 <div class="background">
@@ -68,9 +69,9 @@
         </div>
     </nav>
 
-    <div class="jumbotron jumbotron-fluid breadBakeBg">
+    <div class="jumbotron jumbotron-fluid weeklyDealsBg">
         <div class="container whiteBorder">
-            <h1 class="display-4 centerWhite">Bread and Bakery</h1>
+            <h1 class="display-4 centerWhite">Weekly Deals</h1>
         </div>
     </div>
 
@@ -86,13 +87,13 @@
                 <a class="filter-option" href="fruitsVeg.html">Fruits and Vegetables</a>
             </p>
             <p class="filterCategory">
-                <a class="filter-option" href="dairyAndEggs.html">Dairy and Eggs</a>
+                <a class="filter-option current" href="dairyAndEggs.html">Dairy and Eggs</a>
             </p>
             <p class="filterCategory">
                 <a class="filter-option" href="meatPoultry.html">Meat and Poultry</a>
             </p>
             <p class="filterCategory">
-                <a class="filter-option current" href="breadAndBakery.html">Bread and Bakery</a>
+                <a class="filter-option" href="breadAndBakery.html">Bread and Bakery</a>
             </p>
             <p class="filterCategory">
                 <a class="filter-option" href="beverages.html">Beverages</a>
@@ -104,6 +105,52 @@
 
         <div class="container mt-5 mb-5">
             <div class="row">
+
+                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="product card-aisle rounded  uk-card-default card product">
+                        <a class="productLink" href="Products/fruitsAndVeg/apple.html">
+                            <img class="productImage" alt="apples" src="../assets/images/articles/apples.png">
+                        </a>
+                        <div class="card-body productDetails">
+                            <p class="productName">Apples</p>
+                            <p class="productPrice"><span class="oldPrice">$0.99 each</span><span class="deal"> $0.79 each</span></p>
+                            <a href="../cart/cart.html">
+                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="product card-aisle rounded  uk-card-default card product">
+                        <a class="productLink" href="Products/dairyAndEggs/cheese.html">
+                            <img class="productImage" alt="cheese" src="../assets/images/articles/cheese_PNG25300.png">
+                        </a>
+                        <div class="card-body productDetails">
+                            <p class="productName">Cheese</p>
+                            <p class="productPrice"><span class="oldPrice">$8.99 each</span><span class="deal"> $7.99 each</span></p>
+                            <a href="../cart/cart.html">
+                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="product card-aisle rounded  uk-card-default card product">
+                        <a class="productLink" href="Products/meat/chickenBreast.html">
+                            <img class="productImage" alt="Chicken Breast" src="../assets/images/articles/Chicken_Breast.png">
+                        </a>
+                        <div class="card-body productDetails">
+                            <p class="productName">Chicken Breast</p>
+                            <p class="productPrice"><span class="oldPrice">21.99/Kg</span><span class="deal"> $19.99/Kg</span></p>
+                            <a href="../cart/cart.html">
+                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="product card-aisle rounded  uk-card-default card product">
                         <a class="productLink" href="Products/breadAndBakery/whiteBread.html">
@@ -111,77 +158,37 @@
                         </a>
                         <div class="card-body productDetails">
                             <p class="productName">White Bread</p>
-                            <p class="productPrice">9.99$</p>
+                            <p class="productPrice"><span class="oldPrice">$9.99</span><span class="deal"> $7.99</span></p>
                             <a href="../cart/cart.html">
                                 <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
                             </a>
                         </div>
                     </div>
                 </div>
+
                 <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/brownBread.html">
-                            <img class="productImage" alt="Brown Bread" src="../assets/images/articles/Brown_Bread.png">
+                        <a class="productLink" href="Products/beverages/apple-juice.html">
+                            <img class="productImage" alt="Apple Juice" src="../assets/images/articles/Apple_Juice.png">
                         </a>
                         <div class="card-body productDetails">
-                            <p class="productName">Brown Bread</p>
-                            <p class="productPrice">19.99$</p>
+                            <p class="productName">Apple Juice</p>
+                            <p class="productPrice"><span class="oldPrice">1.76$<span class="productPriceSpec"> (2.8 ¢/fl oz)</span></span><span class="deal"> 1.56$<span class="productPriceSpec"> (2.2 ¢/fl oz)</span></span></p>
                             <a href="../cart/cart.html">
                                 <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
                             </a>
                         </div>
                     </div>
                 </div>
+
                 <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/frenchBaguette.html">
-                            <img class="productImage" alt="French Baguette" src="../assets/images/articles/French_Baguette.png">
+                    <div class="product card-aisle rounded uk-card-default card product">
+                        <a class="productLink" href="Products/snacks/almond.html">
+                            <img class="productImage" alt="almonds" src="../assets/images/articles/Almond.png">
                         </a>
                         <div class="card-body productDetails">
-                            <p class="productName">French Baguette</p>
-                            <p class="productPrice">0.99$</p>
-                            <a href="../cart/cart.html">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/hotDogBun.html">
-                            <img class="productImage" alt="Hot dog bun" src="../assets/images/articles/HotDogBun.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Hot Dog Bun</p>
-                            <p class="productPrice">4.99$/Lb</p>
-                            <a href="../cart/cart.html">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/hamburger-bun.html">
-                            <img class="productImage" alt="Hamburger Bun" src="../assets/images/articles/Hamburger_Bun.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Hamburger Bun</p>
-                            <p class="productPrice">4.99$/Lb</p>
-                            <a href="../cart/cart.html">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/croissant.html">
-                            <img class="productImage" alt="croissant" src="../assets/images/articles/croissant.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Croissant</p>
-                            <p class="productPrice">4.45$/5pcs</p>
+                            <p class="productName">Almond</p>
+                            <p class="productPrice"><span class="oldPrice">16.37/Kg</span><span class="deal"> $15.37/Kg</span></p>
                             <a href="../cart/cart.html">
                                 <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
                             </a>
@@ -193,7 +200,7 @@
     </div>
 </div>
 
-<footer class="zone">
+<footer id="footer">
     <a class="footer-icon" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
     <a class="footer-icon" href="https://facebook.com/"><i target="_blank" class="fab fa-facebook-f"></i></a>
     <a class="footer-icon" href="https://instagram.com/"><i target="_blank" class="fab fa-instagram"></i></a>
