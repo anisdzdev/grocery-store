@@ -552,6 +552,7 @@ input[type=number]:focus {
     font-weight: lighter;
 }
 
+
 .productLink{
     text-decoration: none;
 }
@@ -633,6 +634,12 @@ input[type=number]:focus {
     background: rgba(255,255,255,.8) !important;
 }
 
+
+
+
+.oldPrice{
+    text-decoration: line-through;
+}
 /*Order list*/
 
 .order-title{
@@ -906,6 +913,10 @@ input[type=number]:focus {
     font-size: 20px;
     font-weight: bold;
     color: coral;
+}
+
+.deal{
+    color: red;
 }
 
 .inStock{
