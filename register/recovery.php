@@ -23,14 +23,24 @@
 <?php include ('../header.php')?>
 
 <div class="d-flex justify-content-center align-items-center recovery-container">
-    <form class="sign-form text-center" id="recovery-form" action="signin.php">
-        <h1 class="mb-5">Thank You!</h1>
-        <p>Thank you for registering with us. Click <a class="link" href="signin.php"> here </a> to login!</p>
+    <form class="sign-form text-center" id="recovery-form" action="recoveryMessage.php">
+        <h1 class="mb-5">Recovery</h1>
+        <div id="recoveryForm">
+            <div class="form-group">
+                <input name="email" id="emailRecovery" type="email" class="form-control form-control-lg"
+                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"
+                       required autofocus>
+            </div>
+            <button name="submit" id="submitRecovery" class="btn btn-primary col-6" type="submit">Reset Password
+            </button>
+            <div class="messageReset">
+                <small>We'll send you instructions to reset your password</small>
+            </div>
+        </div>
     </form>
 </div>
 
 <?php include ('../footer.php')?>
-
 <script src="https://kit.fontawesome.com/45836f3eb4.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

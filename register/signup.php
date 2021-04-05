@@ -20,52 +20,7 @@
 </head>
 
 <body class="sign-body">
-<nav class="navbar navbar-light bg-light homepage-header ">
-    <a class="navbar-brand" href="../index.html">
-        <img src="../assets/images/logo.png" style="height: 85px;">
-    </a>
-
-    <nav>
-        <a class="navbar-brand text" href="signin.html">
-            <i class="fas fa-user"></i> <span class="icon-label">Sign In </span> </a>
-        <a class="navbar-brand text" href="../cart/cart.html">
-            <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
-    </nav>
-
-</nav>
-
-
-<nav class="navbar sticky-top navbar-custom navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="navbar-nav ">
-
-                <a class="nav-link " href="../index.html">Home</a>
-                <a class="nav-link " href="../aisles/weeklyDeals.html">Hot Deals</a>
-                <a class="nav-link " href="../aisles/allProducts.html">All Products</a>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Aisles </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../aisles/fruitsVeg.html">Fruits and Vegetables</a>
-                        <a class="dropdown-item" href="../aisles/dairyAndEggs.html">Dairy & Eggs</a>
-                        <a class="dropdown-item" href="../aisles/meatPoultry.html">Meat and Poultry</a>
-                        <a class="dropdown-item" href="../aisles/snacks.html">Snacks</a>
-                        <a class="dropdown-item" href="../aisles/breadAndBakery.html">Bread and Bakery</a>
-                        <a class="dropdown-item" href="../aisles/beverages.html">Beverages</a>
-                    </div>
-                </li>
-
-            </div>
-        </div>
-    </div>
-</nav>
-
+<?php include ('../header.php')?>
 
 <div class="d-flex justify-content-center align-items-center signup-container">
     <form class="sign-form text-center" id="myForm" onsubmit="return register()" action="write.php" method="POST">
@@ -147,18 +102,7 @@
     </form>
 </div>
 
-<footer class="zone">
-
-    <a class="footer-icon" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a class="footer-icon" href="https://facebook.com/"><i target="_blank" class="fab fa-facebook-f"></i></a>
-    <a class="footer-icon" href="https://instagram.com/"><i target="_blank" class="fab fa-instagram"></i></a>
-    <a class="footer-icon" href="mailto:"><i class="fas fa-envelope"></i></a>
-    <p class="copyright-message">© Copyright 2021: SOEN 287</p>
-    <div style="padding-left: 20px; color: #2A3542" ;>
-        <a class="copyright-message" href="../contact/contact-us.html">Contact Us</a>
-    </div>
-
-</footer>
+<?php include ('../footer.php')?>
 <script src="https://kit.fontawesome.com/45836f3eb4.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

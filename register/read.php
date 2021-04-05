@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 
 if (($handle = fopen("users.csv", "r")) !== FALSE) {
 
@@ -14,16 +17,17 @@ if (($handle = fopen("users.csv", "r")) !== FALSE) {
     }
     fclose($handle);
     if ($found) {
-        $message = "Welcome $row[2]";
+        $welcome = "Welcome $row[2] to Tropical Flavors!";
         $logged = TRUE;
-        include('../index.php');
+//        $_SESSION['logged'] = $logged;
+        $_SESSION['welcome'] = $welcome;
+        header("Location: ../index.php");
+        exit();
     } else {
-        $message = "$email: Invalid username and/or password.";
-        $logged = FALSE;
+        $message = "Invalid username and/or password.";
         include('signin.php');
     }
 } else {
     $message = "Something wrong occurred. Cannot continue!";
-    $logged = FALSE;
     include('signin.php');
 }

@@ -20,17 +20,19 @@
 </head>
 
 <body class="sign-body text">
-<?php include ('../header.php')?>
+<?php include('../header.php') ?>
 
 <div class="d-flex justify-content-center align-items-center recovery-container">
     <form class="sign-form text-center" id="recovery-form" action="signin.php">
         <h1 class="mb-5">Thank You!</h1>
-        <p>Thank you for registering with us. Click <a class="link" href="signin.php"> here </a> to login!</p>
+        <p>Thanks for submitting your email address. If this address exists, an email will be sent with instructions to
+            reset your password. The email might take a couple of minutes to reach your account. Click <a class="link"
+                                                                                                          href="signin.php">
+                here </a> to login!</p>
     </form>
 </div>
 
-<?php include ('../footer.php')?>
-
+<?php include('../footer.php') ?>
 <script src="https://kit.fontawesome.com/45836f3eb4.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
