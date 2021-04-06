@@ -22,10 +22,10 @@
 <body class="sign-body text">
 <?php include ('../header.php')?>
 
-<div class="d-flex justify-content-center align-items-center recovery-container">
+<div class="d-flex justify-content-center align-items-center recovery-container faq">
     <form class="sign-form text-center" id="recovery-form" action="signin.php">
         <h1 class="mb-5">Thank You!</h1>
-        <p>Thank you for registering with us. Click <a class="link" href="signin.php"> here </a> to login!</p>
+        <h5 class="link text">Thank you for registering with us. Click <a class="link" href="signin.php"> here </a> to login!</h5>
     </form>
 </div>
 

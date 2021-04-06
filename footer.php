@@ -1,7 +1,4 @@
-<?php
-?>
-<!doctype html>
-<html lang="en">
+
 <footer class="zone">
 
     <a class="footer-icon" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -31,5 +28,3 @@
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
 </body>
-
-</html>

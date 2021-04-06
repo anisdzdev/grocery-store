@@ -22,13 +22,14 @@
 <body class="sign-body text">
 <?php include('../header.php') ?>
 
-<div class="d-flex justify-content-center align-items-center recovery-container">
+<div class="d-flex justify-content-center align-items-center recovery-container faq">
     <form class="sign-form text-center" id="recovery-form" action="signin.php">
         <h1 class="mb-5">Thank You!</h1>
-        <p>Thanks for submitting your email address. If this address exists, an email will be sent with instructions to
+        <h5 class="text link">Thanks for submitting your email address. If this address exists, an email will be sent
+            with instructions to
             reset your password. The email might take a couple of minutes to reach your account. Click <a class="link"
                                                                                                           href="signin.php">
-                here </a> to login!</p>
+                here </a> to login!</h5>
     </form>
 </div>
 
