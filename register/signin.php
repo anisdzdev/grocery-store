@@ -33,7 +33,7 @@ session_start();
         <h1 class="mb-5">Sign In</h1>
         <small> <?php echo isset($message) ? ($message): ' '?> </small>
         <div class="form-group mb-2">
-            <input name="email" id="emailIn" type="email" class="form-control form-control-lg"
+            <input name="email" id="emailIn" type="text" class="form-control form-control-lg"
                    placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"
                    required autofocus>
         </div>
@@ -51,7 +51,6 @@ session_start();
         <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit">Submit</button>
         <p class="mt-3 font-weight-normal">Don't have an account? <a href="signup.php"><strong>Register
                     Now</strong></a></p>
-        <a href="../backstore/user-list.html">Admin</a>
     </form>
 </div>
 

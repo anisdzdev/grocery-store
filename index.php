@@ -35,7 +35,7 @@ session_start();
     <nav>
         <a class="navbar-brand text" href="register/signin.php">
             <i class="fas fa-user"></i> <span
-                    class="icon-label"><?php echo isset($_SESSION['logged']) ? 'Sign Out' : 'Sign In' ?></span> </a>
+                    class="icon-label">Sign In</span> </a>
         <a class="navbar-brand text" href="cart/cart.html">
             <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
     </nav>
@@ -68,7 +68,7 @@ session_start();
                         <a class="dropdown-item" href="aisles/beverages.html">Beverages</a>
                     </div>
                 </li>
-
+                <a class="nav-link " href="register/logout.php"><?php echo isset($_SESSION['logged']) ? 'Log out' : '' ?>></a>
             </div>
         </div>
     </div>

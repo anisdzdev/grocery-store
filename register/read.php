@@ -1,7 +1,5 @@
 <?php
 session_start();
-?>
-<?php
 
 if (($handle = fopen("users.csv", "r")) !== FALSE) {
 
@@ -19,11 +17,16 @@ if (($handle = fopen("users.csv", "r")) !== FALSE) {
     if ($found) {
         $welcome = "Welcome $row[2] to Tropical Flavors!";
         $logged = TRUE;
-//        $_SESSION['logged'] = $logged;
+        $_SESSION['logged'] = $logged;
         $_SESSION['welcome'] = $welcome;
         header("Location: ../index.php");
         exit();
-    } else {
+    }
+    if($email == 'admin' && $password == 'admin'){
+        header("Location: ../backstore/user-list.html");
+        exit();
+    }
+        else {
         $message = "Invalid username and/or password.";
         include('signin.php');
     }
