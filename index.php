@@ -44,7 +44,7 @@ else echo
             <i class='fas fa-user''></i> <span
                     class='icon-label'>Sign In</span> </a>";
         ?>
-        <a class="navbar-brand text" href="cart/cart.html">
+        <a class="navbar-brand text" href="cart/cart.php">
             <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
     </nav>
 
