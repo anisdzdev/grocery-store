@@ -34,11 +34,11 @@ session_start();
 
     <nav>
         <?php if (isset($_SESSION['logged'])) echo
-        "<a class='navbar-brand text' href='register/signin.php'>
+        "<a class='navbar-brand text' href='register/logout.php'>
             <i class='fas fa-user''></i> <span
                     class='icon-label'>Sign Out</span> </a>";
 else echo
-"<a class='navbar-brand text' href='register/signin.php'>
+"<a class='navbar-brand text' href='register/logout.php'>
             <i class='fas fa-user''></i> <span
                     class='icon-label'>Sign In</span> </a>";
         ?>

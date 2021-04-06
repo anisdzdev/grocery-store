@@ -1,7 +1,7 @@
 <?php
 session_start();
-unset($_SESSION['message']);
-unset($_SESSION['logged']);
+//unset($_SESSION['message']);
+//unset($_SESSION['logged']);
 ?>
 <!doctype html>
 <html lang="en">
