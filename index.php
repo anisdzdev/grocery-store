@@ -172,7 +172,7 @@ else echo
 
     <h3 class="text">Do I need an account to place an order?</h3>
     <h5 class="text link">Yes, an account is required to order from Tropical Flavours. If you haven't created one, click
-        <a class="link" target="_blank" href="register/logout.php"> here </a> to sign up.</h5>
+        <a class="link" target="_blank" href="register/logout2.php"> here </a> to sign up.</h5>
 
 </div>
 
