@@ -1,6 +1,6 @@
 <?php
 
-//include ('order-save.php');
+include ('order-save.php');
 
 
 $orders = fopen("database/orders.csv", "a+");
@@ -24,18 +24,18 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
     if ($row[1] === $orderNum) {
 //        fclose($orders);
 //        $input = fopen("database/orders.csv", 'r');
-//        $output = fopen("database/temp-orders.csv", 'w');
+          $output = fopen("database/temp-orders.csv", 'a+');
           $string = file_get_contents('database/orders.csv');
           $data = explode("\n", $string);
-          array_splice($data, $line, $line);
-          $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status . "\n";
-          array_push($data, $updatedValue);
-          file_put_contents('database/orders.csv', implode(PHP_EOL, $data));
           print_r($data);
-          echo "<br> $line";
-
-
+          $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status;
+          $data[$line] = $updatedValue;
+          file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
+          unlink("database/orders.csv");
+          $orders = rename('database/temp-orders.csv', 'database/orders.csv');
           $found = TRUE;
+          print_r($data); 
+          echo $line;
           break;
     }
     $line++;
