@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -22,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <title>Edit/save Orders</title>
 
@@ -40,7 +46,7 @@
             </li>
 
             <li class="uk-active">
-                <a href="user-list.php">Users</a>
+                <a href="user-list.html">Users</a>
             </li>
             <li class="uk-active">
                 <a href="order-list.html">Orders</a>
@@ -52,7 +58,7 @@
 
 
 <div id="edit-form" class="d-flex justify-content-center align-items-center signBack-container">
-    <form class="sign-form text-center" action="../index.html">
+    <form name="form" method="post" action ="order-write.php" class="sign-form text-center">
         <h1 class="mb-5 font-weight-light">Edit orders</h1>
         <label class="label">Order#</label>
         <div class="form-group mb-2">
@@ -75,18 +81,19 @@
             >
         </div>
         <div class="modal-footer">
-            <a href="order-list.html"><button type="button" class="btn btn-primary" onclick="editOrder()">Save changes</button></a>
+            <button type="submit" class="btn btn-primary" onclick="editOrder(); ">Save changes</button>
 
         </div>
     </form>
 </div>
 
-<!--<script>-->
-<!--    $("#edit-form").submit(function(e) {-->
-<!--        e.preventDefault();-->
-<!--    });-->
 
-<!--</script>-->
+<script>
+    // $("#edit-form").submit(function(e) {
+    //     e.preventDefault();
+    // });
+
+</script>
 
 
 
