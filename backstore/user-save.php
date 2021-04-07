@@ -39,7 +39,7 @@
             </li>
 
             <li class="uk-active">
-                <a href="user-list.html">Users</a>
+                <a href="user-list.php">Users</a>
             </li>
             <li class="uk-active">
                 <a href="order-list.html">Orders</a>
@@ -52,30 +52,38 @@
 
 
 <div class="d-flex justify-content-center align-items-center signBack-container">
-    <form class="sign-form text-center" action="../index.html">
+    <form class="sign-form text-center" action="writeUser.php" method="POST">
         <h1 class="mb-5 font-weight-light">Edit users</h1>
         <label class="label">User name</label>
         <div class="form-group mb-2">
-            <input name="name" id="fullName" class="form-control form-control-lg" placeholder="Full Name"
-                   >
+            <input name="name" id="name" class="form-control form-control-lg" placeholder="Name">
+
         </div>
-        <label class="label">User orders</label>
+        <label class="label">User email</label>
         <div class="form-group mb-2">
-            <input name="orders" id="orders" class="form-control form-control-lg" placeholder="Orders"
-                  >
+            <input name="email" id="email" class="form-control form-control-lg" placeholder="Email">
+
         </div>
-        <label class="label">Total Order Amount</label>
+        <label class="label">User password</label>
         <div class="form-group mb-2">
-            <input name="totOrderAmount" id="totOrderAmount" class="form-control form-control-lg" placeholder="Total order amount"
-                   >
+            <input name="password" id="password" class="form-control form-control-lg" placeholder="Password">
+
         </div>
 
         <div class="modal-footer">
-            <a href="user-list.html"><button type="button" class="btn btn-primary" onclick="editUser()">Save changes</button></a>
+            <button name="submit" type="submit" class="btn btn-primary" >Save changes</button>
 
         </div>
     </form>
 </div>
+
+
+<script>
+    $("#edit-form").submit(function(e) {
+        e.preventDefault();
+    });
+
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
