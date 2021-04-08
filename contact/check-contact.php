@@ -1,15 +1,22 @@
 <?php
 
 function checkUserMatch(){
-    $userList = fopen('../backstore/users.csv', 'a+');
+
+    $userList = fopen('../users.csv', 'r');
+    $_SESSION['isFound'] = false;
 
     $user = filter_input(INPUT_POST, 'user');
+    $_SESSION['inquiryName'] = $user;
 
     while (($row = fgetcsv($userList, 1000, ",")) !== FALSE) {
-        if ($row[0] === $user) {
+        if ($row[2] === $user) {
+            $_SESSION['isFound'] = true;
+            include('contact-result.php');
+
 
         } else {
-            include ('user-not-found.php');
+            $_SESSION['isFound'] = false;
+            include('contact-result.php');
         }
 
     }

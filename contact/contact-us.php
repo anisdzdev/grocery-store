@@ -32,15 +32,15 @@
             <div class="form-group" style="margin-bottom: 3%">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please provide us with more details so we may assist you." required></textarea>
             </div>
-            <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit" onclick="checkOrderMatch();<?php checkUserMatch() ?>">Submit</button>
+            <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit" onclick="checkOrderMatch();">Submit</button>
         </div>
 
 
     </form>
 </div>
 
-<?php include ('../footer.php')?>
 
+<?php include ('../footer.php')?>
 
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

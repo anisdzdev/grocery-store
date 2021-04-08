@@ -22,12 +22,19 @@
 <?php include ('../header.php')?>
 
 <div class="d-flex justify-content-center align-items-center contactus-container">
-    <form id="contact-form" class="sign-form text-center" >
+    <form method='post' action='contact-us.php' id="contact-form" class="sign-form text-center" >
 
         <h1 class="mb-5">Contact Us</h1>
         <div id="form-contact-body">
             <div class="form-group" style="margin-bottom: 3%">
-                <p>Hmmm... We can't seem to find this user. Please try again under a different name!</p>
+                <p> <?php if ($_SESSION['isFound']){
+                    echo "Thank you for contacting us " . $_SESSION['inquiryName'] . "!";
+                    echo "<br>Here is a summary of your order";
+                    } else {
+                    echo "Hmmm... We can't seem to find this user. Please try again under a different name!";
+                    }
+?>
+                    </p>
             </div>
             <a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" >Try Again</button></a>
         </div>
