@@ -19,7 +19,7 @@ $phone = filter_input(INPUT_POST, 'phone');
 $email = filter_input(INPUT_POST, 'email');
 $password = filter_input(INPUT_POST, 'password');
 
-$file = fopen("users.csv", "a+");
+$file = fopen("../users.csv", "a+");
 
 $found = FALSE;
 while (($row = fgetcsv($file, 1000, ",")) !== FALSE) {
