@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION)) {
+if (!isset($_SESSION)) {
     session_start();
 }
 ?>
@@ -36,11 +36,11 @@ if(!isset($_SESSION)) {
 
     <nav>
         <?php if (isset($_SESSION['logged'])) echo
-        "<a class='navbar-brand text' href='register/logout.php'>
+        "<a class='navbar-brand text' href='register/signInLogout.php'>
             <i class='fas fa-user''></i> <span
                     class='icon-label'>Sign Out</span> </a>";
-else echo
-"<a class='navbar-brand text' href='register/logout.php'>
+        else echo
+        "<a class='navbar-brand text' href='register/signInLogout.php'>
             <i class='fas fa-user''></i> <span
                     class='icon-label'>Sign In</span> </a>";
         ?>
@@ -172,7 +172,7 @@ else echo
 
     <h3 class="text">Do I need an account to place an order?</h3>
     <h5 class="text link">Yes, an account is required to order from Tropical Flavours. If you haven't created one, click
-        <a class="link" target="_blank" href="register/logout2.php"> here </a> to sign up.</h5>
+        <a class="link" target="_blank" href="register/signInLogout.php"> here </a> to sign up.</h5>
 
 </div>
 
