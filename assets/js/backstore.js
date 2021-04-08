@@ -35,7 +35,7 @@ function updateTable(){
 
 // Create an a tag and set its attribute
         var aTag = document.createElement("a");
-        aTag.setAttribute("href", "order-save.html");
+        aTag.setAttribute("href", "order-save.php");
 
 // Create a new text node for each of the variables for the orders
         var buyerName = document.createTextNode(ordersArray2[i].name);
@@ -195,9 +195,9 @@ function editOrder() {
 
     //if array already exists
     else {
-        console.log(2);
+
         var ordersArray = JSON.parse(localStorage.getItem('orders-array')); //get the array from local storage
-        console.log(ordersArray);
+
 
 
         //go through the array and and find if ordernumber exists, if so, edit it and get out of the function

@@ -64,6 +64,7 @@
 
 <div class="d-flex justify-content-center align-items-center contactus-container">
     <form id="contact-form" class="sign-form text-center" >
+
         <h1 class="mb-5">Contact Us</h1>
         <div id="form-contact-body">
             <input class="form-control" type="text" placeholder="Your Name" style="margin-bottom: 3%" required>
@@ -87,7 +88,7 @@
     <a class="footer-icon" href="mailto:"><i class="fas fa-envelope"></i></a>
     <p class="copyright-message">© Copyright 2021: SOEN 287</p>
     <div style="padding-left: 20px; color: #2A3542";>
-        <a class="copyright-message" href="contact-us.html">Contact Us</a>
+        <a class="copyright-message" href="contact-us.php">Contact Us</a>
     </div>
 </footer>
 

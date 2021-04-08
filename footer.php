@@ -6,8 +6,8 @@
     <a class="footer-icon" href="https://instagram.com/"><i target="_blank" class="fab fa-instagram"></i></a>
     <a class="footer-icon" href="mailto:"><i class="fas fa-envelope"></i></a>
     <p class="copyright-message">© Copyright 2021: SOEN 287</p>
-    <div style="padding-left: 20px; color: #2A3542" ;>
-        <a class="copyright-message" href="../contact/contact-us.html">Contact Us</a>
+    <div style="padding-left: 20px; color: #2A3542">
+        <a class="copyright-message" href="/grocery-store/contact/contact-us.html">Contact Us</a>
     </div>
 
 </footer>
