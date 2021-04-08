@@ -9,7 +9,7 @@ function checkUserMatch(){
         if ($row[0] === $user) {
 
         } else {
-
+            include ('user-not-found.php');
         }
 
     }

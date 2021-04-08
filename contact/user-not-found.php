@@ -16,7 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Contact</title>
+    <title>Not Found</title>
 </head>
 <body class="contactus">
 <?php include ('../header.php')?>
@@ -29,7 +29,7 @@
             <div class="form-group" style="margin-bottom: 3%">
                 <p>Hmmm... We can't seem to find this user. Please try again under a different name!</p>
             </div>
-            <a href="contact-us.php"><button  class="btn btn-primary col-6" type="submit" >Try Again</button></a>
+            <a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" >Try Again</button></a>
         </div>
 
 
