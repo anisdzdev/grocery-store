@@ -2,6 +2,26 @@
 if(!isset($_SESSION)) {
     session_start();
 }
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [1=>1, 3=>1];
+$cart_len = count($cart);
+$elements = [];
+if (($handle = fopen("../products.csv", "r")) !== FALSE) {
+
+    $found = FALSE;
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        foreach ($cart as $id=>$count) {
+            if($row[0] == $id){
+                array_push($elements, $row);
+            }
+        }
+
+    }
+    fclose($handle);
+
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,51 +43,7 @@ if(!isset($_SESSION)) {
 
 </head>
     <body id="index" class="main-body cart-body">
-
-<!--    <nav class="navbar navbar-light bg-light homepage-header ">-->
-<!--        <a class="navbar-brand" href="../index.html">-->
-<!--            <img src="../assets/images/logo.png" style="height: 85px;">-->
-<!--        </a>-->
-<!---->
-<!--        <nav>-->
-<!--            <a class="navbar-brand text" href="../register/signin.html">-->
-<!--                <i class="fas fa-user"></i> <span class="icon-label">Sign In </span> </a>-->
-<!--            <a class="navbar-brand text" href="cart.php">-->
-<!--                <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>-->
-<!--        </nav>-->
-<!---->
-<!--    </nav>-->
-<!--    <nav class="navbar sticky-top navbar-custom navbar-expand-lg navbar-light">-->
-<!--        <div class="container-fluid">-->
-<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"-->
-<!--                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                <span class="navbar-toggler-icon"></span>-->
-<!--            </button>-->
-<!--            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">-->
-<!--                <div class="navbar-nav ">-->
-<!---->
-<!--                    <a class="nav-link " href="../index.html">Home</a>-->
-<!--                    <a class="nav-link " href="../aisles/weeklyDeals.html">Hot Deals</a>-->
-<!--                    <a class="nav-link " href="../aisles/allProducts.html">All Products</a>-->
-<!--                    <li class="nav-item dropdown">-->
-<!--                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                            Aisles </a>-->
-<!--                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-<!--                            <a class="dropdown-item" href="../aisles/fruitsVeg.html">Fruits and Vegetables</a>-->
-<!--                            <a class="dropdown-item" href="../aisles/dairyAndEggs.html">Dairy & Eggs</a>-->
-<!--                            <a class="dropdown-item" href="../aisles/meatPoultry.html">Meat and Poultry</a>-->
-<!--                            <a class="dropdown-item" href="../aisles/snacks.html">Snacks</a>-->
-<!--                            <a class="dropdown-item" href="../aisles/breadAndBakery.html">Bread and Bakery</a>-->
-<!--                            <a class="dropdown-item" href="../aisles/beverages.html">Beverages</a>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!---->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </nav>-->
-
-<?php include ('../header.php')?>
+    <?php include ('../header.php')?>
 
     <i class="fa fa-accessible-icon"></i>
         <div class="m-5">
@@ -80,71 +56,34 @@ if(!isset($_SESSION)) {
                         </div>
                         <div class="line-break"></div>
                         <h3 class="uk-card-title varela mb-0 font-weight-bold">Shopping Cart</h3>
-                        <p class="mt-1">You have <span id="number-of-items">3 items</span> in your cart</p>
+                        <p class="mt-1">You have <span id="number-of-items"><?php echo $cart_len ?> <?php echo $cart_len===1 ? "item" : "items" ?></span> in your cart</p>
 
                         <div>
                             <div class="row ml-0 mr-0">
                                 <!-- ITEM -->
-                                <div class="uk-card full-width uk-card-default uk-card-body rounded-5 varela p-4 mb-4">
-                                    <div class="row ml-0 mr-0">
-                                        <img class="cart-img" src="../assets/images/articles/bread.jpg" alt="Bread"/>
-                                        <div class="col-md-4 align-self-center">
-                                            <span class="text-dark text-bold">Our Homemade Bread</span>
-                                            <span class="row ml-0 mr-0 text-secondary">Real, Crusty and delicious</span>
-                                        </div>
-                                        <div class=" align-self-center align-right">
-                                            <div class="d-inline-block mr-5">
-                                                <i class="fas plus-icon fa-plus align-self-center mr-2" name="plus" onclick="changeCount(this)"></i>
-                                                <input type="hidden" value="5.99" name="unitary">
-                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number" disabled>
-                                                <i class="fas minus-icon fa-minus align-self-center ml-2" name="minus" onclick="changeCount(this)"></i>
-                                            </div>
-                                            <span class="text-dark text-bold mr-5 text-5 element-price" name="price">$5.99</span>
-                                            <i class="far fa-trash-alt align-self-center icon-trash" onclick="removeElement(this)"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="uk-card full-width uk-card-default uk-card-body rounded-5 varela p-4 mb-4">
-                                    <div class="row ml-0 mr-0">
-                                        <img class="cart-img" src="../assets/images/articles/bread.jpg" alt="Bread"/>
-                                        <div class="col-md-4 align-self-center">
-                                            <span class="text-dark text-bold">Our Homemade Bread</span>
-                                            <span class="row ml-0 mr-0 text-secondary">Real, Crusty and delicious</span>
-                                        </div>
-                                        <div class=" align-self-center align-right">
-                                            <div class="d-inline-block mr-5">
-                                                <i class="fas plus-icon fa-plus align-self-center mr-2" name="plus" onclick="changeCount(this)"></i>
-                                                <input type="hidden" value="5.99" name="unitary">
-                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number" disabled>
-                                                <i class="fas minus-icon fa-minus align-self-center ml-2" name="minus" onclick="changeCount(this)"></i>
-                                            </div>
-                                            <span class="text-dark text-bold mr-5 text-5 element-price" name="price">$5.99</span>
-                                            <i class="far fa-trash-alt align-self-center icon-trash" onclick="removeElement(this)"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="uk-card full-width uk-card-default uk-card-body rounded-5 varela p-4 mb-4">
+                                <?php foreach($elements as $value): ?>
 
+                                <div class="uk-card full-width uk-card-default uk-card-body rounded-5 varela p-4 mb-4">
                                     <div class="row ml-0 mr-0">
-                                        <img class="cart-img" src="../assets/images/articles/bread.jpg" alt="Bread"/>
+                                        <img class="cart-img" src="../assets/images/articles/<?php echo $value[5];?>" alt="Bread"/>
                                         <div class="col-md-4 align-self-center">
-                                            <span class="text-dark text-bold">Our Homemade Bread</span>
-                                            <span class="row ml-0 mr-0 text-secondary">Real, Crusty and delicious</span>
+                                            <span class="text-dark text-bold"><?php echo $value[1];?></span>
+                                            <span class="row ml-0 mr-0 text-secondary"><?php echo $value[7];?></span>
                                         </div>
                                         <div class=" align-self-center align-right">
                                             <div class="d-inline-block mr-5">
                                                 <i class="fas plus-icon fa-plus align-self-center mr-2" name="plus" onclick="changeCount(this)"></i>
-                                                <input type="hidden" value="5.99" name="unitary">
+                                                <input type="hidden" value="<?php echo $value[2];?>" name="unitary">
                                                 <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number" disabled>
                                                 <i class="fas minus-icon fa-minus align-self-center ml-2" name="minus" onclick="changeCount(this)"></i>
                                             </div>
-                                            <span class="text-dark text-bold mr-5 text-5 element-price" name="price">$5.99</span>
+                                            <span class="text-dark text-bold mr-5 text-5 element-price" name="price">$<?php echo $value[2];?></span>
                                             <i class="far fa-trash-alt align-self-center icon-trash" onclick="removeElement(this)"></i>
                                         </div>
                                     </div>
                                 </div>
+                                <?php endforeach; ?>
+
                             </div>
                         </div>
                     </div>
@@ -223,7 +162,7 @@ if(!isset($_SESSION)) {
         <a class="footer-icon" href="https://instagram.com/"><i target="_blank" class="fab fa-instagram"></i></a>
         <a class="footer-icon" href="mailto:"><i class="fas fa-envelope"></i></a>
         <p class="copyright-message">© Copyright 2021: SOEN 287</p>
-        <div style="padding-left: 20px; color: #2A3542";>
+        <div style="padding-left: 20px; color: #2A3542">
             <a class="copyright-message" href="../contact/contact-us.html">Contact Us</a>
         </div>
 
