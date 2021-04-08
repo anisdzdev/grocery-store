@@ -6,7 +6,7 @@ if(!isset($_SESSION)) {
 if (isset($_POST['action']) && isset($_POST['id'])) {
     $action = $_POST['action'];
     $id = $_POST['id'];
-    $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+    $cart = $_SESSION['cart'] ?? [];
     switch ($action){
         case 'remove':
             unset($cart[$id]);
