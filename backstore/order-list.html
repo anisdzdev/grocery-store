@@ -33,7 +33,7 @@
 
             <li class="uk-active"><a href="product-list.html">Products</a></li>
 
-            <li class="uk-active"><a href="user-list.html">Users</a></li>
+            <li class="uk-active"><a href="user-list.php">Users</a></li>
 
             <li class="uk-active"><a href="order-list.html">Orders</a></li>
         </ul>
@@ -47,7 +47,7 @@
         <h1>Orders</h1>
     </div>
     <div class="col-sm-2">
-        <a href="order-save.html"><button type="button" id="add-button" class="btn btn-success" onclick="addOrder()"><i class="fas fa-plus"></i> Add</button></a>
+        <a href="order-save.php"><button type="button" id="add-button" class="btn btn-success" onclick="addOrder()"><i class="fas fa-plus"></i> Add</button></a>
     </div>
 </div>
 
@@ -63,6 +63,25 @@
     </tr>
     </thead>
     <tbody id="tbodyorder">
+
+    <tr>
+
+        <td>Omari Amissi</td>
+        <td>$350.00</td>
+        <td>Fulfilled</td>
+        <td>A5759</td>
+        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
+            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
+    </tr>
+    <tr>
+
+        <td>Feulip Quintero</td>
+        <td>$500.00</td>
+        <td>Fulfilled</td>
+        <td>A5378</td>
+        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
+            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
+    </tr>
     <tr>
     </tr>
     </tbody>

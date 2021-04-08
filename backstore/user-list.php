@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +33,7 @@
             <li class="uk-active"><a href="product-list.html">Products</a></li>
 
             <li class="uk-active">
-                <a href="user-list.html">Users</a>
+                <a href="user-list.php">Users</a>
             </li>
             <li class="uk-active">
                 <a href="order-list.html">Orders</a>
@@ -48,7 +49,7 @@
         <h1>Users</h1>
     </div>
     <div class="col-sm-2">
-        <a href="user-save.html"><button type="button" id="add-button" class="btn btn-success" onclick="addUser()"><i class="fas fa-plus"></i> Add</button></a>
+        <a href="#user-save.php"><button type="button" id="add-button" class="btn btn-success" onclick="addUser()"><i class="fas fa-plus"></i> Add</button></a>
     </div>
 </div>
 
@@ -56,33 +57,14 @@
 <table class="table table-striped">
     <thead>
     <tr>
-            <th scope="col">Full Name</th>
-            <th scope="col">Orders</th>
-            <th scope="col">Total Order Amount</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
             <th scope="col"></th>
     </tr>
     </thead>
     <tbody id="tbody">
-    <tr>
 
-        <td>Lionel Messi</td>
-        <td>3</td>
-        <td>$170.76</td>
-        <td> <a href="user-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
-    </tr>
-    <tr>
-
-        <td>Cristiano Ronaldo</td>
-        <td>25</td>
-        <td>$717.99</td>
-        <td>
-            <a href="user-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button>
-        </td>
-    </tr>
-    <tr>
-    </tr>
     </tbody>
 </table>
 

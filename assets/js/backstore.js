@@ -35,7 +35,7 @@ function updateTable(){
 
 // Create an a tag and set its attribute
         var aTag = document.createElement("a");
-        aTag.setAttribute("href", "order-save.html");
+        aTag.setAttribute("href", "order-save.php");
 
 // Create a new text node for each of the variables for the orders
         var buyerName = document.createTextNode(ordersArray2[i].name);
@@ -195,9 +195,9 @@ function editOrder() {
 
     //if array already exists
     else {
-        console.log(2);
+
         var ordersArray = JSON.parse(localStorage.getItem('orders-array')); //get the array from local storage
-        console.log(ordersArray);
+
 
 
         //go through the array and and find if ordernumber exists, if so, edit it and get out of the function
@@ -361,11 +361,11 @@ function addUser(){
     // Creat all elements and set their respective attributes
     var tr1 = document.createElement("tr");
     var td1 = document.createElement("td");
-    td1.setAttribute("id", "fullName");
+    td1.setAttribute("id", "name");
     var td2 = document.createElement("td");
-    td2.setAttribute("id", "orders");
+    td2.setAttribute("id", "email");
     var td3 = document.createElement("td");
-    td3.setAttribute("id", "totOrderAmount");
+    td3.setAttribute("id", "password");
     var td4 = document.createElement("td");
 
     //create the two buttons "Edit" and "Add" and set their respective attributes
@@ -374,6 +374,7 @@ function addUser(){
     butt1.innerHTML = "Edit";
     butt1.setAttribute("type", "button");
     butt1.setAttribute("class", "btn btn-primary btn-sm");
+
     butt1.style.marginRight = "4px";
     butt2.innerHTML = "Remove";
     butt2.setAttribute("onclick", "deleteRow($(this))");
@@ -382,17 +383,17 @@ function addUser(){
 
     // Create an a tag and set its attribute
     var aTag = document.createElement("a");
-    aTag.setAttribute("href", "product-user.html");
+    aTag.setAttribute("href", "user-save.php");
 
     // Create a new text node for each of the variables for the users
-    var fullName = document.createTextNode("Full Name");
-    var orders = document.createTextNode("Orders");
-    var totOrderAmount = document.createTextNode("TotalOrderAmount");
+    var name = document.createTextNode("Name");
+    var email = document.createTextNode("Email");
+    var password = document.createTextNode("Password");
 
     // Append child all the variables inside of their respective td that we created earlier
-    td1.appendChild(fullName);
-    td2.appendChild(orders);
-    td3.appendChild(totOrderAmount);
+    td1.appendChild(name);
+    td2.appendChild(email);
+    td3.appendChild(password);
 
     td4.appendChild(aTag);
     aTag.appendChild(butt1);
