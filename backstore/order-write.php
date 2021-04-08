@@ -27,15 +27,15 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
           $output = fopen("database/temp-orders.csv", 'a+');
           $string = file_get_contents('database/orders.csv');
           $data = explode("\n", $string);
-          print_r($data);
+       // print_r($data);
           $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status;
           $data[$line] = $updatedValue;
           file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
           unlink("database/orders.csv");
           $orders = rename('database/temp-orders.csv', 'database/orders.csv');
           $found = TRUE;
-          print_r($data); 
-          echo $line;
+//        print_r($data);
+//        echo $line;
           break;
     }
     $line++;

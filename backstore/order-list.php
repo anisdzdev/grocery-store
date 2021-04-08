@@ -35,7 +35,7 @@
 
             <li class="uk-active"><a href="user-list.php">Users</a></li>
 
-            <li class="uk-active"><a href="order-list.html">Orders</a></li>
+            <li class="uk-active"><a href="order-list.php">Orders</a></li>
         </ul>
 
     </div>
@@ -65,22 +65,22 @@
     <tbody id="tbodyorder">
 
     <tr>
-
-        <td>Omari Amissi</td>
-        <td>$350.00</td>
-        <td>Fulfilled</td>
-        <td>A5759</td>
-        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
+<!---->
+<!--        <td>Omari Amissi</td>-->
+<!--        <td>$350.00</td>-->
+<!--        <td>Fulfilled</td>-->
+<!--        <td>A5759</td>-->
+<!--        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>-->
+<!--            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>-->
     </tr>
     <tr>
 
-        <td>Feulip Quintero</td>
-        <td>$500.00</td>
-        <td>Fulfilled</td>
-        <td>A5378</td>
-        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
+<!--        <td>Feulip Quintero</td>-->
+<!--        <td>$500.00</td>-->
+<!--        <td>Fulfilled</td>-->
+<!--        <td>A5378</td>-->
+<!--        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>-->
+<!--            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>-->
     </tr>
     <tr>
     </tr>

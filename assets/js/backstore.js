@@ -116,6 +116,7 @@ function checkOrderMatch(){
             alert("Unknown order. Please check your order number and try again.")
             break;
         } else if (orderInput == numbersArray[i].orderNum) {
+
             $("#form-contact-body").text("Thank you for contacting us. Our team will be in touch as soon as possible!")
             break;
         }

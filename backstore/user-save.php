@@ -49,7 +49,7 @@ if(!isset($_SESSION)) {
                 <a href="user-list.php">Users</a>
             </li>
             <li class="uk-active">
-                <a href="order-list.html">Orders</a>
+                <a href="order-list.php">Orders</a>
             </li>
         </ul>
 

@@ -2,7 +2,7 @@
 ?>
 
 <nav class="navbar navbar-light bg-light homepage-header ">
-    <a class="navbar-brand" href="/index.php">
+    <a class="navbar-brand" href="../index.php">
         <img src="/grocery-store/assets/images/logo.png" style="height: 85px;">
     </a>
 
