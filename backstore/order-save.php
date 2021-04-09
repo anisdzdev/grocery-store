@@ -77,11 +77,9 @@ if(!isset($_SESSION)) {
         </div>
         <label class="label" >Status</label>
         <div class="form-group mb-2">
-            <input type="radio" name="status" id="status"  value="Fulfilled" placeholder="Fulfilled"
+            <input name="status" id="status" class="form-control form-control-lg" placeholder="Fulfilled"
             >Fulfilled
-            <br>
-            <input type="radio" name="status" id="status"  value="Unfilled" placeholder="Unfilled"
-            >Unfilled
+
         </div>
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="editOrder(); ">Save changes</button>
