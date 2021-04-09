@@ -45,42 +45,42 @@ if(!isset($_SESSION)) {
     </form>
 </div>
 
-<script>
-
-    // checks if the order enter corresponds to an order in the backstore.
-    function checkOrderMatch(){
-
-        var numbersArray = JSON.parse(localStorage.getItem('orders-array'));
-        console.log(numbersArray)
-
-        // grabs order entered.
-        orderInput = $("#order-number").val();
-
-        //checks if order is empty.
-        if(orderInput == "")
-            return;
-
-        //  checks if order entered corresponds to the format.
-        if (!(/[0-9]{5}[A-Za-z]{2}/g.test(orderInput))){
-            alert("Order format is incorrect, please try again.")
-            return;
-        }
-
-
-        // checks if a match is found and responds accordingly.
-        for (i=0; i<numbersArray.length; i++) {
-            if (orderInput != numbersArray[i].orderNum) {
-                alert("Unknown order. Please check your order number and try again.")
-                break;
-            } else if (orderInput == numbersArray[i].orderNum) {
-
-                $("#form-contact-body").text("Thank you for contacting us. Our team will be in touch as soon as possible!")
-                break;
-            }
-        }
-
-    }
-</script>
+<!--<script>-->
+<!---->
+<!--    // checks if the order enter corresponds to an order in the backstore.-->
+<!--    function checkOrderMatch(){-->
+<!---->
+<!--        var numbersArray = JSON.parse(localStorage.getItem('orders-array'));-->
+<!--        console.log(numbersArray)-->
+<!---->
+<!--        // grabs order entered.-->
+<!--        orderInput = $("#order-number").val();-->
+<!---->
+<!--        //checks if order is empty.-->
+<!--        if(orderInput == "")-->
+<!--            return;-->
+<!---->
+<!--        //  checks if order entered corresponds to the format.-->
+<!--        if (!(/[0-9]{5}[A-Za-z]{2}/g.test(orderInput))){-->
+<!--            alert("Order format is incorrect, please try again.")-->
+<!--            return;-->
+<!--        }-->
+<!---->
+<!---->
+<!--        // checks if a match is found and responds accordingly.-->
+<!--        for (i=0; i<numbersArray.length; i++) {-->
+<!--            if (orderInput != numbersArray[i].orderNum) {-->
+<!--                alert("Unknown order. Please check your order number and try again.")-->
+<!--                break;-->
+<!--            } else if (orderInput == numbersArray[i].orderNum) {-->
+<!---->
+<!--                $("#form-contact-body").text("Thank you for contacting us. Our team will be in touch as soon as possible!")-->
+<!--                break;-->
+<!--            }-->
+<!--        }-->
+<!---->
+<!--    }-->
+<!--</script>-->
 
 
 
