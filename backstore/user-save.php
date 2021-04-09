@@ -68,17 +68,17 @@ if(!isset($_SESSION)) {
         </div>
         <label class="label">User email</label>
         <div class="form-group mb-2">
-            <input name="email" id="email" class="form-control form-control-lg" placeholder="Email">
+            <input name="email" id="email" class="form-control form-control-lg" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email">
 
         </div>
         <label class="label">User password</label>
         <div class="form-group mb-2">
-            <input name="password" id="password" class="form-control form-control-lg" placeholder="Password">
+            <input name="password" id="password" class="form-control form-control-lg"  placeholder="Password">
 
         </div>
 
         <div class="modal-footer">
-            <button name="submit" type="submit" class="btn btn-primary" >Save changes</button>
+            <button name="submit" type="submit" class="btn btn-primary" onclick="editUser(); ">Save changes</button>
 
         </div>
     </form>
@@ -86,9 +86,9 @@ if(!isset($_SESSION)) {
 
 
 <script>
-    $("#edit-form").submit(function(e) {
-        e.preventDefault();
-    });
+    // $("#edit-form").submit(function(e) {
+    //     e.preventDefault();
+    // });
 
 </script>
 

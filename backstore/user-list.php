@@ -49,7 +49,7 @@
         <h1>Users</h1>
     </div>
     <div class="col-sm-2">
-        <a href="#user-save.php"><button type="button" id="add-button" class="btn btn-success" onclick="addUser()"><i class="fas fa-plus"></i> Add</button></a>
+        <a href="user-save.php"><button type="button" id="add-button" class="btn btn-success" onclick="addUser()"><i class="fas fa-plus"></i> Add</button></a>
     </div>
 </div>
 

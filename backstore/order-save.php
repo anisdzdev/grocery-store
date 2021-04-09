@@ -75,10 +75,13 @@ if(!isset($_SESSION)) {
             <input name="total" id="total" class="form-control form-control-lg" placeholder="Total"
             >
         </div>
-        <label class="label">Status</label>
+        <label class="label" >Status</label>
         <div class="form-group mb-2">
-            <input name="status" id="status" class="form-control form-control-lg" placeholder="Status"
-            >
+            <input type="radio" name="status" id="status"  value="Fulfilled" placeholder="Fulfilled"
+            >Fulfilled
+            <br>
+            <input type="radio" name="status" id="status"  value="Unfilled" placeholder="Unfilled"
+            >Unfilled
         </div>
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="editOrder(); ">Save changes</button>
