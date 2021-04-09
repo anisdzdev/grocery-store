@@ -15,9 +15,9 @@ if (!isset($_SESSION)) {
     $_SESSION['inquiryName'] = $user;
 
     while (($rowUsers = fgetcsv($userList, 1000, ",")) !== FALSE) {
+
         if ($rowUsers[2] === $user) {
-            $string = file_get_contents('database/orders.csv');
-            $data = explode("\n", $string);
+
             $_SESSION['isFound'] = true;
 
             while (($rowOrders = fgetcsv($orderList, 1000, ",")) !== FALSE) {
@@ -38,15 +38,18 @@ if (!isset($_SESSION)) {
 
         }
 
-        if( $_SESSION['isFound'] === false) {
 
-            include('contact-result.php');
-            break;
-        }
 
         //session_unset();
 
 }
+
+
+        if( $_SESSION['isFound'] === false) {
+
+            include('contact-result.php');
+
+        }
 
 fclose($orderList);
 fclose($userList);
