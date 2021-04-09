@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,16 +34,54 @@
         <div id="form-contact-body">
             <input name="user" class="form-control" type="text" placeholder="Your Name" style="margin-bottom: 3%" required>
             <input class="form-control" type="text" placeholder="Item" style="margin-bottom: 3%" required>
-            <input id="order-number" class="form-control" type="text" placeholder="Order #" style="margin-bottom: 3%" required>
+            <input name='orderNum' id="order-number" class="form-control" type="text" placeholder="Order #" style="margin-bottom: 3%" required>
             <div class="form-group" style="margin-bottom: 3%">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please provide us with more details so we may assist you." required></textarea>
             </div>
-            <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit" onclick="checkOrderMatch();">Submit</button>
+            <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit">Submit</button>
         </div>
 
 
     </form>
 </div>
+
+<script>
+
+    // checks if the order enter corresponds to an order in the backstore.
+    function checkOrderMatch(){
+
+        var numbersArray = JSON.parse(localStorage.getItem('orders-array'));
+        console.log(numbersArray)
+
+        // grabs order entered.
+        orderInput = $("#order-number").val();
+
+        //checks if order is empty.
+        if(orderInput == "")
+            return;
+
+        //  checks if order entered corresponds to the format.
+        if (!(/[0-9]{5}[A-Za-z]{2}/g.test(orderInput))){
+            alert("Order format is incorrect, please try again.")
+            return;
+        }
+
+
+        // checks if a match is found and responds accordingly.
+        for (i=0; i<numbersArray.length; i++) {
+            if (orderInput != numbersArray[i].orderNum) {
+                alert("Unknown order. Please check your order number and try again.")
+                break;
+            } else if (orderInput == numbersArray[i].orderNum) {
+
+                $("#form-contact-body").text("Thank you for contacting us. Our team will be in touch as soon as possible!")
+                break;
+            }
+        }
+
+    }
+</script>
+
 
 
 <?php include ('../footer.php')?>

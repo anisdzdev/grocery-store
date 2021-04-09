@@ -27,13 +27,15 @@
         <h1 class="mb-5">Contact Us</h1>
         <div id="form-contact-body">
             <div class="form-group" style="margin-bottom: 3%">
-                <p> <?php if ($_SESSION['isFound']){
+                <p> <?php if (!$_SESSION['isFound']){
+                        echo "Hmmm... We can't seem to find this user. Please try again under a different name!";
+                    } else if (!$_SESSION['orderFound']){
+                        echo "This order number cannot be found! Please try again.";
+                    } else if ($_SESSION['isFound'] && $_SESSION['orderFound']){
                     echo "Thank you for contacting us " . $_SESSION['inquiryName'] . "!";
                     echo "<br>Here is a summary of your order";
-                    } else {
-                    echo "Hmmm... We can't seem to find this user. Please try again under a different name!";
                     }
-?>
+                    ?>
                     </p>
             </div>
             <a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" >Try Again</button></a>
