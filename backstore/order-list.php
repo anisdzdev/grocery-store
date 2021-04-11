@@ -53,9 +53,9 @@
 
 
 <?php
-echo "<html><body><table>\n\n";
-$f = fopen("database/orders.csv", "r");
-echo "<table id='order-table' class='table table-striped order-table'>
+
+$orders = fopen("database/orders.csv", "r");
+echo "<table id='order-table' class='table table-striped order-table'\n\n>
     <thead>
     <tr>
         <th scope='col'>Buyer Name</th>
@@ -67,17 +67,17 @@ echo "<table id='order-table' class='table table-striped order-table'>
     </thead>
     <tbody id='tbodyorder'>";
 
-while (($line = fgetcsv($f)) !== false) {
+while (($row = fgetcsv($orders)) !== false) {
     echo "<tr>";
-    $myName =  $line[0];
-    foreach ($line as $cell) {
-        echo "<td>" . htmlspecialchars($cell) . "</td>";
+    $myName =  $row[0];
+    foreach ($row as $item) {
+        echo "<td>" . htmlspecialchars($item) . "</td>";
     }
     echo "<td><a href='../backstore/order-save.php'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/order-delete.php?var=$myName'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
     echo "</tr>\n";
 }
-fclose($f);
-echo "\n</table></body></html>";
+fclose($orders);
+echo "\n</table>";
 ?>
 
 

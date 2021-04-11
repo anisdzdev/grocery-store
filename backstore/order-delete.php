@@ -1,6 +1,6 @@
 <?php
 
-include ('order-list.php');
+
 
 $buyerName = $_GET['var'];
 
@@ -31,5 +31,6 @@ unlink("database/orders.csv");
 $orders = rename('database/temp-orders.csv', 'database/orders.csv');
 fclose($orders);
 
+include ('order-list.php');
 ?>
 
