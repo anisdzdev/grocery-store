@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
             <div class="navbar-nav ">
 
-                <a class="nav-link " href="/grocery-store/index.html">Home</a>
+                <a class="nav-link " href="/grocery-store/index.php">Home</a>
                 <a class="nav-link " href="/grocery-store/aisles/weeklyDeals.html">Hot Deals</a>
                 <a class="nav-link " href="/grocery-store/aisles/allProducts.html">All Products</a>
                 <li class="nav-item dropdown">

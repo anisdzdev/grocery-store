@@ -33,7 +33,7 @@ if(!isset($_SESSION)) {
         <h1 class="mb-5">Contact Us</h1>
         <div id="form-contact-body">
             <div class="form-group" style="margin-bottom: 3%">
-                <p> <?php if (!$_SESSION['isFound']){
+                <p style="text-align: center; padding-top: 0px;"> <?php if (!$_SESSION['isFound']){
                         echo "Hmmm... We can't seem to find this user. Please try again under a different name!";
                     } else if (!$_SESSION['orderFound']){
                         echo "This order number cannot be found! Please try again.";

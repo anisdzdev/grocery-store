@@ -39,7 +39,7 @@ if(!isset($_SESSION)) {
     <div class="uk-navbar-left">
 
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="../index.html"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
+            <li class="uk-active"><a href="../index.php"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
 
             <li class="uk-active">
                 <a href="product-list.html">Products</a>
