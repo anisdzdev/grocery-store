@@ -33,10 +33,10 @@ if(!isset($_SESSION)) {
         <h1 class="mb-5">Contact Us</h1>
         <div id="form-contact-body">
             <input name="user" class="form-control" type="text" placeholder="Your Name" style="margin-bottom: 3%" required>
-            <input class="form-control" type="text" placeholder="Item" style="margin-bottom: 3%" required>
+            <input name="item" class="form-control" type="text" placeholder="Item" style="margin-bottom: 3%" required>
             <input name='orderNum' id="order-number" class="form-control" type="text" placeholder="Order #" style="margin-bottom: 3%" required>
             <div class="form-group" style="margin-bottom: 3%">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please provide us with more details so we may assist you." required></textarea>
+                <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please provide us with more details so we may assist you." required></textarea>
             </div>
             <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit">Submit</button>
         </div>

@@ -7,11 +7,16 @@ if (!isset($_SESSION)) {
 
 //    $userList = fopen('../backstore/database/users.csv', 'r');
     $orderList = fopen('../backstore/database/orders.csv', 'r');
+
+
     $_SESSION['isFound'] = false;
     $_SESSION['orderFound'] = false;
 
     $user = filter_input(INPUT_POST, 'user');
     $orderNumber = filter_input(INPUT_POST, 'orderNum');
+    $item = filter_input(INPUT_POST, 'item');
+    $message = filter_input(INPUT_POST, 'message');
+
     $_SESSION['inquiryName'] = $user;
 
     while (($rowOrders = fgetcsv($orderList, 1000, ",")) !== FALSE) {
@@ -19,6 +24,10 @@ if (!isset($_SESSION)) {
         if($rowOrders[0] == $user && $rowOrders[1] == $orderNumber){
             $_SESSION['isFound'] = true;
             $_SESSION['orderFound'] = true;
+            $contact =  fopen('../backstore/database/contact.csv', 'a+');
+            $string = $user . "," . $orderNumber . "," . $item . "," . $message . "\n";
+            fwrite($contact, $string);
+            fclose($contact);
             break;
 
         } else if ($rowOrders[0] == $user) {
@@ -73,6 +82,7 @@ if (!isset($_SESSION)) {
 //        }
 
 session_unset();
+
 
 fclose($orderList);
 //fclose($userList);
