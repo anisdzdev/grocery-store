@@ -41,8 +41,7 @@ if (!isset($_SESSION)) {
 
 
         //session_unset();
-
-}
+    }
 
 
         if( $_SESSION['isFound'] === false) {

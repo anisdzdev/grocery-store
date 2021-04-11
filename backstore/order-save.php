@@ -78,7 +78,7 @@ if(!isset($_SESSION)) {
         <label class="label" >Status</label>
         <div class="form-group mb-2">
             <input name="status" id="status" class="form-control form-control-lg" placeholder="Fulfilled"
-            >Fulfilled
+            >
 
         </div>
         <div class="modal-footer">

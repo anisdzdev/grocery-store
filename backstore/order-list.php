@@ -52,43 +52,33 @@
 </div>
 
 
-<table id="order-table" class="table table-striped order-table">
+<?php
+echo "<html><body><table>\n\n";
+$f = fopen("database/orders.csv", "r");
+echo "<table id='order-table' class='table table-striped order-table'>
     <thead>
     <tr>
-        <th scope="col">Buyer Name</th>
-        <th scope="col">Total</th>
-        <th scope="col">Status</th>
-        <th scope="col">Order #</th>
-        <th scope="col"></th>
+        <th scope='col'>Buyer Name</th>
+        <th scope='col'>Order #</th>
+        <th scope='col'>Total</th>
+        <th scope='col'>Status</th>
+        <th scope='col'></th>
     </tr>
     </thead>
-    <tbody id="tbodyorder">
+    <tbody id='tbodyorder'>";
 
-    <tr>
-<!---->
-<!--        <td>Omari Amissi</td>-->
-<!--        <td>$350.00</td>-->
-<!--        <td>Fulfilled</td>-->
-<!--        <td>A5759</td>-->
-<!--        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>-->
-<!--            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>-->
-    </tr>
-    <tr>
-
-<!--        <td>Feulip Quintero</td>-->
-<!--        <td>$500.00</td>-->
-<!--        <td>Fulfilled</td>-->
-<!--        <td>A5378</td>-->
-<!--        <td> <a href="order-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>-->
-<!--            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>-->
-    </tr>
-    <tr>
-    </tr>
-    </tbody>
-</table>
-
-
-
+while (($line = fgetcsv($f)) !== false) {
+    echo "<tr>";
+    $myName =  $line[0];
+    foreach ($line as $cell) {
+        echo "<td>" . htmlspecialchars($cell) . "</td>";
+    }
+    echo "<td><a href='../backstore/order-save.php'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/order-delete.php?var=$myName'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
+    echo "</tr>\n";
+}
+fclose($f);
+echo "\n</table></body></html>";
+?>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

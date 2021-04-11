@@ -22,7 +22,7 @@ if(!isset($_SESSION)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Not Found</title>
+    <title>Contact</title>
 </head>
 <body class="contactus">
 <?php include ('../header.php')?>
@@ -39,12 +39,21 @@ if(!isset($_SESSION)) {
                         echo "This order number cannot be found! Please try again.";
                     } else if ($_SESSION['isFound'] && $_SESSION['orderFound']){
                     echo "Thank you for contacting us " . $_SESSION['inquiryName'] . "!";
-                    echo "<br>Here is a summary of your order";
+                    echo "<br>Here is a summary of your order:<br>";
                     }
                     ?>
                     </p>
             </div>
-            <a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" >Try Again</button></a>
+            <a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" >
+                    <?php
+                    if ($_SESSION['isFound'] && $_SESSION['orderFound']){
+                        echo "Find Another Order";
+                    } else {
+                        echo "Try Again";
+                    }
+                ?>
+
+                </button></a>
         </div>
 
 
