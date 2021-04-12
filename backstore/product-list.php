@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['admin'])){
+    header("Location: ../index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +40,7 @@
         <ul class="uk-navbar-nav">
             <li class="uk-active"><a href="../index.php"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
 
-            <li class="uk-active"><a href="product-list.html">Products</a></li>
+            <li class="uk-active"><a href="product-list.php">Products</a></li>
 
             <li class="uk-active">
                 <a href="user-list.php">Users</a>
@@ -51,55 +59,39 @@
         <h1>Products</h1>
     </div>
     <div class="col-sm-2">
-        <a href="product-save.html"><button type="button" id="add-button" class="btn btn-success" onclick="addProduct()"><i class="fas fa-plus"></i> Add</button></a>
+        <a href="product-save.php"><button type="button" id="add-button" class="btn btn-success" onclick="addProduct()"><i class="fas fa-plus"></i> Add</button></a>
     </div>
 </div>
 
 
+<?php
 
-<table id="tableForm" class="table table-striped">
+$products = fopen("database/products.csv", "r");
+echo "<table id='product-table' class='table table-striped order-table'\n\n>
     <thead>
     <tr>
-            <th scope="col">Product name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Price</th>
-            <th scope="col">Aisle</th>
-            <th scope="col"></th>
+            <th scope='col'>Product name</th>
+            <th scope='col'>Price</th>
+            <th scope='col'>Description</th>
+            <th scope='col'>Aisle</th>
+            <th scope='col'></th>
     </tr>
     </thead>
-    <tbody id="tbody">
-    <tr>
+    <tbody id='tbody'>";
 
-        <td>Banana</td>
-        <td>A delicious banana just for you</td>
-        <td>$1.76</td>
-        <td>Fruits</td>
-        <td> <a href="product-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
-    </tr>
-    <tr>
-
-        <td>Orange</td>
-        <td>A delicious orange full of vitamin C</td>
-        <td>$2.65</td>
-        <td>Fruits</td>
-        <td> <a href="product-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
-    </tr>
-    <tr>
-
-        <td>Bread</td>
-        <td>A delicious piece of bread</td>
-        <td>$7.00</td>
-        <td>Bakery</td>
-        <td> <a href="product-save.html"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-            <button onclick="deleteRow($(this))" type="button" class="btn btn-danger btn-sm">Remove</button></td>
-    </tr>
-    <tr>
-    </tr>
-    </tbody>
-</table>
-
+while (($row = fgetcsv($products)) !== false) {
+    echo "<tr>";
+    $productName =  $row[1];
+    echo "<td>" . htmlspecialchars($row[1]) . "</td>";
+    echo "<td>" . htmlspecialchars($row[3]) . "</td>";
+    echo "<td>" . htmlspecialchars($row[7]) . "</td>";
+    echo "<td>" . htmlspecialchars($row[6]) . "</td>";
+    echo "<td><a href='../backstore/product-save.php?name=$productName'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/user-delete.php?name=$productName'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
+    echo "</tr>\n";
+}
+fclose($products);
+echo "\n</table>";
+?>
 
 
 
