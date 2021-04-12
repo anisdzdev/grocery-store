@@ -20,6 +20,7 @@ function calculateTotal() {
     subtotal_value = 0;
     for (let i = 0; i < prices.length; i++) {
         let value = prices[i].textContent.substr(1, prices[i].textContent.length);
+        prices[i].textContent = "$" + parseFloat(value).toFixed(2);
         subtotal_value += parseFloat(value);
     }
     taxes_value = subtotal_value * 0.15;
@@ -31,6 +32,22 @@ function removeElement(e) {
     e.parentElement.parentElement.parentElement.remove();
     displayTotal();
     displayNumberOfItems();
+    let id = e.parentElement.querySelector('input[name="id"]')
+    $.ajax(
+        'updateCart.php',
+        {
+            type: "POST",
+            data: {
+                action: 'remove',
+                id: id.value
+            },
+            success: function(data) {
+
+            },
+            error: function() {
+            }
+        }
+    );
 }
 
 //Functions that changes the count of an item in the cart and recalculates the total
@@ -41,6 +58,7 @@ function changeCount(e) {
 
     let number = e.parentElement.querySelector('.number-selector')
     let unitary = e.parentElement.querySelector('input[name="unitary"]')
+    let id = e.parentElement.parentElement.querySelector('input[name="id"]')
     let price = e.parentElement.parentElement.querySelector('span[name="price"]')
 
     if(number.value === "1" && !isPlus) return;
@@ -49,6 +67,21 @@ function changeCount(e) {
     number.value = (isPlus) ? (parseInt(number.value)+1): (parseInt(number.value)-1);
     price.textContent = "$" + (parseFloat(unitary.value) * number.value).toFixed(2);
     displayTotal();
+    $.ajax(
+        'updateCart.php',
+        {
+            type: "POST",
+            data: {
+                action: (isPlus) ? "add" : "minus",
+                id: id.value
+            },
+            success: function(data) {
+
+            },
+            error: function() {
+            }
+        }
+    );
 }
 
 //Form validation for the checkout button
@@ -58,27 +91,47 @@ function checkCheckout(){
     let expires = document.getElementById("expires");
     let cvc = document.getElementById("cvc");
 
+    let has_error = false;
     if(card_number.value.length !== 16){
         card_number.style = "border: solid red";
+        has_error = true;
     }else {
         card_number.style = "border: none";
     }
     if(card_holder.value.length < 5){
         card_holder.style = "border: solid red";
+        has_error = true;
     }else {
         card_holder.style = "border: none";
     }
     if(!/^(0[1-9]|1[0-2])\/([0-9]{2})$/g.test(expires.value)){
         expires.style = "border: solid red";
+        has_error = true;
     }else {
         expires.style = "border: none";
     }
     if(cvc.value.length !== 3){
         cvc.style = "border: solid red";
+        has_error = true;
     }else {
         cvc.style = "border: none";
     }
+    if(!has_error){
+        $.ajax(
+            'placeOrder.php',
+            {
+                type: "POST",
+                success: function(data) {
+                    alert("Order was placed successfully with id: " + data)
+                },
+                error: function() {
+                }
+            }
+        );
+    }
 }
+
+
 
 //Displays the "You have n items in your cart" message appropriately
 function displayNumberOfItems(){

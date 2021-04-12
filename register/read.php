@@ -25,6 +25,7 @@ if (($handle = fopen("../users.csv", "r")) !== FALSE) {
         exit();
     }
     if($email == 'admin' && $password == 'admin'){
+        $_SESSION['admin'] = True;
         header("Location: ../backstore/user-list.php");
         exit();
     }

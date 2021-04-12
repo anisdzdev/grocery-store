@@ -5,12 +5,13 @@ if(!isset($_SESSION)) {
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [1=>1, 3=>1];
 $cart_len = count($cart);
 $elements = [];
-if (($handle = fopen("../products.csv", "r")) !== FALSE) {
+if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
 
     $found = FALSE;
     while (($row = fgetcsv($handle)) !== FALSE) {
         foreach ($cart as $id=>$count) {
             if($row[0] == $id){
+                $row["count"] = $count;
                 array_push($elements, $row);
             }
         }
@@ -74,10 +75,12 @@ if (($handle = fopen("../products.csv", "r")) !== FALSE) {
                                             <div class="d-inline-block mr-5">
                                                 <i class="fas plus-icon fa-plus align-self-center mr-2" name="plus" onclick="changeCount(this)"></i>
                                                 <input type="hidden" value="<?php echo $value[2];?>" name="unitary">
-                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="1" type="number" disabled>
+
+                                                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" value="<?php echo $value["count"];?>" type="number" disabled>
                                                 <i class="fas minus-icon fa-minus align-self-center ml-2" name="minus" onclick="changeCount(this)"></i>
                                             </div>
-                                            <span class="text-dark text-bold mr-5 text-5 element-price" name="price">$<?php echo $value[2];?></span>
+                                            <input type="hidden" value="<?php echo $value[0];?>" name="id">
+                                            <span class="text-dark text-bold mr-5 text-5 element-price" name="price">$<?php echo $value[2]*$value["count"];?></span>
                                             <i class="far fa-trash-alt align-self-center icon-trash" onclick="removeElement(this)"></i>
                                         </div>
                                     </div>
@@ -103,7 +106,7 @@ if (($handle = fopen("../products.csv", "r")) !== FALSE) {
                                 <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'></img>
 
                                 <label for="card-number">Card Number</label>
-                                <input id="card-number" type="number" onkeypress="return (event.charCode !==8 && event.charCode ===0 || (event.charCode >= 48 && event.charCode <= 57))" class='input-field'/>
+                                <input id="card-number"  type="number" onkeypress="return (event.charCode !==8 && event.charCode ===0 || (event.charCode >= 48 && event.charCode <= 57))" class='input-field'/>
 
 
                                 <label for="card-holder">Card Holder</label>
@@ -169,7 +172,7 @@ if (($handle = fopen("../products.csv", "r")) !== FALSE) {
     </footer>
 
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit.min.js"></script>
