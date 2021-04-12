@@ -121,6 +121,9 @@ function checkCheckout(){
             'placeOrder.php',
             {
                 type: "POST",
+                data: {
+                    total: total_value
+                },
                 success: function(data) {
                     alert("Order was placed successfully with id: " + data)
                 },

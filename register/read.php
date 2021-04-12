@@ -21,6 +21,7 @@ if (($handle = fopen("../users.csv", "r")) !== FALSE) {
         $logged = TRUE;
         $_SESSION['logged'] = $logged;
         $_SESSION['welcome'] = $welcome;
+        $_SESSION['name'] = $row[2];
         header("Location: ../index.php");
         exit();
     }
