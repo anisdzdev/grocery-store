@@ -1,4 +1,11 @@
-<?php session_start()?>
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['admin'])){
+    header("Location: ../index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,24 +60,32 @@
     </div>
 </div>
 
+<?php
 
-<table class="table table-striped">
+$orders = fopen("database/users.csv", "r");
+echo "<table id='order-table' class='table table-striped order-table'\n\n>
     <thead>
     <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th scope="col"></th>
+            <th scope='col'>Name</th>
+            <th scope='col'>Email</th>
+            <th scope='col'>Password</th>
+            <th scope='col'></th>
     </tr>
     </thead>
-    <tbody id="tbody">
+    <tbody id='tbody'>";
 
-    </tbody>
-</table>
-
-
-
-
+while (($row = fgetcsv($orders)) !== false) {
+    echo "<tr>";
+    $email =  $row[0];
+    echo "<td>" . htmlspecialchars($row[2]) . "</td>";
+    echo "<td>" . htmlspecialchars($row[0]) . "</td>";
+    echo "<td>" . htmlspecialchars($row[1]) . "</td>";
+    echo "<td><a href='../backstore/user-save.php?email=$email'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/user-delete.php?email=$email'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
+    echo "</tr>\n";
+}
+fclose($orders);
+echo "\n</table>";
+?>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

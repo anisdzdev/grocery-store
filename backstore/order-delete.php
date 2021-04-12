@@ -28,8 +28,10 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
 
 file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
 unlink("database/orders.csv");
+fclose($orders);
+fclose($output);
 $orders = rename('database/temp-orders.csv', 'database/orders.csv');
-fclose('database/orders.csv');
+
 
 include ('order-list.php');
 ?>
