@@ -36,7 +36,7 @@
             <li class="uk-active"><a href="../index.html"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
 
             <li class="uk-active">
-                <a href="product-list.html">Products</a>
+                <a href="product-list.php">Products</a>
             </li>
 
             <li class="uk-active">
@@ -78,7 +78,7 @@
                   >
         </div>
         <div class="modal-footer">
-            <a href="product-list.html"><button type="button" class="btn btn-primary" onclick="editProduct();" >Save changes</button></a>
+            <a href="product-list.php"><button type="button" class="btn btn-primary" onclick="editProduct();" >Save changes</button></a>
 
         </div>
     </form>

@@ -42,7 +42,7 @@ if(!isset($_SESSION)) {
             <li class="uk-active"><a href="../index.html"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
 
             <li class="uk-active">
-                <a href="product-list.html">Products</a>
+                <a href="product-list.php">Products</a>
             </li>
 
             <li class="uk-active">
@@ -59,7 +59,7 @@ if(!isset($_SESSION)) {
 
 
 <div class="d-flex justify-content-center align-items-center signBack-container">
-    <form class="sign-form text-center" action="writeUser.php" method="POST">
+    <form class="sign-form text-center" action="user-write.php" method="POST">
         <h1 class="mb-5 font-weight-light">Edit users</h1>
         <label class="label">User name</label>
         <div class="form-group mb-2">
@@ -78,7 +78,7 @@ if(!isset($_SESSION)) {
         </div>
 
         <div class="modal-footer">
-            <button name="submit" type="submit" class="btn btn-primary" onclick="editUser(); ">Save changes</button>
+            <a href="user-list.php"><button name="submit" type="submit" class="btn btn-primary" onclick="editUser(); ">Save changes</button></a>
 
         </div>
     </form>

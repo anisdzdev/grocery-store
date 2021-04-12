@@ -26,7 +26,12 @@ if (($handle = fopen("../users.csv", "r")) !== FALSE) {
         exit();
     }
     if($email == 'admin' && $password == 'admin'){
+        $welcome = "Welcome Admin to Tropical Flavors!";
+        $logged = TRUE;
         $_SESSION['admin'] = True;
+        $_SESSION['logged'] = $logged;
+        $_SESSION['welcome'] = $welcome;
+        $_SESSION['name'] = "Admin";
         header("Location: ../backstore/user-list.php");
         exit();
     }
