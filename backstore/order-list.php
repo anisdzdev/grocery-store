@@ -2,6 +2,7 @@
 if(!isset($_SESSION)) {
     session_start();
 }
+echo $_SESSION['admin'];
 if (!isset($_SESSION['admin'])){
     header("Location: ../index.php");
 }
