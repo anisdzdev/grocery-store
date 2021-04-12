@@ -1,7 +1,5 @@
 <?php
 
-
-
 $buyerName = $_GET['var'];
 
 $orders = fopen("database/orders.csv", "a+");
@@ -11,8 +9,6 @@ if ($orders == false) {
     echo "error opening the file!";
     exit();
 }
-
-
 
 $found = FALSE;
 $line = 0;
