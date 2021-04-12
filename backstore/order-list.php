@@ -38,7 +38,7 @@ if (!isset($_SESSION['admin'])){
         <ul class="uk-navbar-nav">
             <li class="uk-active"><a href="../index.php"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
 
-            <li class="uk-active"><a href="product-list.html">Products</a></li>
+            <li class="uk-active"><a href="product-list.php">Products</a></li>
 
             <li class="uk-active"><a href="user-list.php">Users</a></li>
 

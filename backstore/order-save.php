@@ -42,7 +42,7 @@ if(!isset($_SESSION)) {
             <li class="uk-active"><a href="../index.php"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
 
             <li class="uk-active">
-                <a href="product-list.html">Products</a>
+                <a href="product-list.php">Products</a>
             </li>
 
             <li class="uk-active">
@@ -82,7 +82,7 @@ if(!isset($_SESSION)) {
 
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" onclick="editOrder(); ">Save changes</button>
+            <a href="order-list.php"><button type="submit" class="btn btn-primary" onclick="editOrder(); ">Save changes</button></a>
 
         </div>
     </form>
