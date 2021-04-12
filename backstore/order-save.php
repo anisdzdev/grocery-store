@@ -62,7 +62,7 @@ if(!isset($_SESSION)) {
         <h1 class="mb-5 font-weight-light">Edit orders</h1>
         <label class="label">Order#</label>
         <div class="form-group mb-2">
-            <input name="order#" id="orderNum" class="form-control form-control-lg" placeholder="Order #"
+            <input  pattern="[0-9]{5}[A-Za-z]{2}" name="order#" id="orderNum" class="form-control form-control-lg" placeholder="Order #"
             >
         </div>
         <label class="label">Buyer name</label>
@@ -77,7 +77,7 @@ if(!isset($_SESSION)) {
         </div>
         <label class="label" >Status</label>
         <div class="form-group mb-2">
-            <input name="status" id="status" class="form-control form-control-lg" placeholder="Fulfilled"
+            <input name="status" id="status" class="form-control form-control-lg" placeholder="Fulfilled/Unfulfilled"
             >
 
         </div>

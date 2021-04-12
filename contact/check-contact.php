@@ -1,12 +1,11 @@
-
 <?php
 
 if (!isset($_SESSION)) {
     session_start();
 }
 
-//    $userList = fopen('../backstore/database/users.csv', 'r');
     $orderList = fopen('../backstore/database/orders.csv', 'r');
+    $productsList = fopen('../backstore/database/products.csv', 'r');
 
 
     $_SESSION['isFound'] = false;
@@ -18,13 +17,40 @@ if (!isset($_SESSION)) {
     $message = filter_input(INPUT_POST, 'message');
 
     $_SESSION['inquiryName'] = $user;
+    $items = array();
+    $itemsDict = array();
+
+    while (($rowProducts = fgetcsv($productsList, 1000, ",")) !== FALSE){
+        $itemNumber = $rowProducts[0];
+        $itemName = $rowProducts[1];
+        $itemsDict[$itemNumber] = $itemName;
+    }
+
+
 
     while (($rowOrders = fgetcsv($orderList, 1000, ",")) !== FALSE) {
-        $rowOrders++;
-        if($rowOrders[0] == $user && $rowOrders[1] == $orderNumber){
+           $rowOrders++;
+        $items = array();
+
+        $toTrim = $rowOrders[4];
+        $productString = substr($toTrim, 1, -1);
+        $allProductsArray = explode(",", $productString);
+
+        foreach ($allProductsArray as $product) {
+            $itemAndQuantity = explode(":", $product);
+            $food = $itemAndQuantity[0];
+            $quantity = $itemAndQuantity[1];
+
+            if(array_key_exists($food, $itemsDict)){
+                array_push($items, $quantity . " x " . $itemsDict[$food]);
+            }
+        }
+
+
+        if($rowOrders[0] == $user && $rowOrders[1] == $orderNumber) {
             $_SESSION['isFound'] = true;
             $_SESSION['orderFound'] = true;
-            $contact =  fopen('../backstore/database/contact.csv', 'a+');
+            $contact = fopen('../backstore/database/contact.csv', 'a+');
             $string = $user . "," . $orderNumber . "," . $item . "," . $message . "\n";
             fwrite($contact, $string);
             fclose($contact);
@@ -34,7 +60,7 @@ if (!isset($_SESSION)) {
             $_SESSION['isFound'] = true;
             break;
 
-        }else if ($rowOrders[1] == $orderNumber) {
+        } else if ($rowOrders[1] == $orderNumber) {
             $_SESSION['orderFound'] = true;
             break;
 
@@ -42,47 +68,16 @@ if (!isset($_SESSION)) {
 
     }
 
-    include('contact-result.php');
+    $_SESSION['orders'] = $items;
 
 
-//    while (($rowUsers = fgetcsv($userList, 1000, ",")) !== FALSE) {
-//
-//        if ($rowUsers[2] === $user) {
-//
-//            $_SESSION['isFound'] = true;
-//
-//            while (($rowOrders = fgetcsv($orderList, 1000, ",")) !== FALSE) {
-//                $rowOrders++;
-//               if($rowOrders[1]== $orderNumber){
-//                   $_SESSION['orderFound'] = true;
-//                   include('contact-result.php');
-//                   break;
-//               } else {
-//                   $_SESSION['orderFound'] = false;
-//                   include('contact-result.php');
-//                   echo "order number not there";
-//                   break;
-//               }
-//
-//
-//            }
-//
-//        }
-//
-//
-//
-//        //session_unset();
-//    }
+
+   include('contact-result.php');
 
 
-//        if( $_SESSION['isFound'] === false) {
-//
-//            include('contact-result.php');
-//
-//        }
+
 
 session_unset();
 
 
 fclose($orderList);
-//fclose($userList);

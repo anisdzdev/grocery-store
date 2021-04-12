@@ -77,8 +77,12 @@ echo "<table id='order-table' class='table table-striped order-table'\n\n>
 while (($row = fgetcsv($orders)) !== false) {
     echo "<tr>";
     $myName =  $row[0];
+    $counter = 0;
     foreach ($row as $item) {
+        if ($counter == 4)
+            break;
         echo "<td>" . htmlspecialchars($item) . "</td>";
+        $counter++;
     }
     echo "<td><a href='../backstore/order-save.php'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/order-delete.php?var=$myName'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
     echo "</tr>\n";

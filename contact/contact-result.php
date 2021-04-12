@@ -40,8 +40,15 @@ if(!isset($_SESSION)) {
                     } else if ($_SESSION['isFound'] && $_SESSION['orderFound']){
                     echo "Thank you for contacting us " . $_SESSION['inquiryName'] . "!";
                     echo "<br>Here is a summary of your order:<br>";
+                    $order = $_SESSION['orders'];
+                    foreach ($order as $values){
+                        echo $values . '<br>';
                     }
+
+                    }
+
                     ?>
+
                     </p>
             </div>
             <a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" >
@@ -59,6 +66,8 @@ if(!isset($_SESSION)) {
 
     </form>
 </div>
+
+session_unset();
 
 <?php include ('../footer.php')?>
 
