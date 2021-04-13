@@ -53,7 +53,7 @@
 
 
 <div class="d-flex justify-content-center align-items-center signBack-container">
-    <form class="sign-form text-center" action="../product-list.html">
+    <form class="sign-form text-center" method="POST" action="product-write.php">
         <h1 class="mb-5 font-weight-light">Edit products</h1>
         <label class="label">Product name</label>
         <div class="form-group mb-2">
@@ -82,7 +82,7 @@
                   >
         </div>
         <div class="modal-footer">
-            <a href="product-list.php"><button type="button" class="btn btn-primary" onclick="editProduct();" >Save changes</button></a>
+            <button type="submit" class="btn btn-primary" onclick="" >Save changes</button>
 
         </div>
     </form>

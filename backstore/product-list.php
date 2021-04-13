@@ -72,7 +72,6 @@ echo "<table id='product-table' class='table table-striped order-table'\n\n>
     <tr>
             <th scope='col'>Product name</th>
             <th scope='col'>Price</th>
-            <th scope='col'>Description</th>
             <th scope='col'>Aisle</th>
             <th scope='col'></th>
     </tr>
@@ -84,7 +83,6 @@ while (($row = fgetcsv($products)) !== false) {
     $productName =  $row[1];
     echo "<td>" . htmlspecialchars($row[1]) . "</td>";
     echo "<td>" . htmlspecialchars($row[3]) . "</td>";
-    echo "<td>" . htmlspecialchars($row[7]) . "</td>";
     echo "<td>" . htmlspecialchars($row[6]) . "</td>";
     echo "<td><a href='../backstore/product-save.php?name=$productName'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/product-delete.php?name=$productName'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
     echo "</tr>\n";

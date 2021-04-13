@@ -1,19 +1,15 @@
 <?php
 
-include ('product-save.php');
-
-
 $products = fopen("database/products.csv", "a+");
 
 if ($products == false) {
     echo "error opening the file!";
     exit();
-} else {
-    console.log("File Opened!");
 }
 
 $productName = filter_input(INPUT_POST, 'name');
 $price = filter_input(INPUT_POST, 'price');
+$discount = filter_input(INPUT_POST, 'discount');
 $proDes = filter_input(INPUT_POST, 'proDes');
 $aisle = filter_input(INPUT_POST, 'aisle');
 
@@ -27,7 +23,7 @@ while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
         $string = file_get_contents('database/products.csv');
         $data = explode("\n", $string);
 
-        $updatedValue = $productName . "," . $price . "," . $proDes . "," . $aisle;
+        $updatedValue = $productName . "," . $price . "," . $discount. "," . $proDes . "," . $aisle;
         $data[$line] = $updatedValue;
         file_put_contents('database/temp-products.csv', implode(PHP_EOL, $data));
         unlink("database/products.csv");
@@ -40,13 +36,13 @@ while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
 }
 if ($found == FALSE) {
 
-    fwrite($products, $productName . "," . $price . "," . $proDes . "," . $aisle . "\n");
+    fwrite($products, $productName . "," . $price . "," . $discount. "," . $proDes . "," . $aisle . "\n");
     fclose($products);
 }
 
 fclose($products);
 
-
+include ('product-list.php');
 
 
 //
