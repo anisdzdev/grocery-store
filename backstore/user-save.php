@@ -57,28 +57,59 @@ if(!isset($_SESSION)) {
 </nav>
 
 
+<div class="d-flex justify-content-center align-items-center signup-container">
+    <form class="sign-form text-center" method="POST" action ="user-write.php">
 
-<div class="d-flex justify-content-center align-items-center signBack-container">
-    <form class="sign-form text-center" action="user-write.php" method="POST">
-        <h1 class="mb-5 font-weight-light">Edit users</h1>
-        <label class="label">User name</label>
-        <div class="form-group mb-2">
-            <input name="name" id="name" class="form-control form-control-lg" placeholder="Name">
-
+        <h1 class="mb-5">User edit</h1>
+        <label class="label">First Name</label>
+        <div class="form-group">
+            <input name="firstName" id="firstName" type="text" class="form-control" placeholder="First name"
+                   >
         </div>
-        <label class="label">User email</label>
-        <div class="form-group mb-2">
-            <input name="email" id="email" class="form-control form-control-lg" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email">
-
+        <label class="label">Last Name</label>
+        <div class="form-group">
+            <input name="lastName" id="lastName" type="text" class="form-control" placeholder="Last name" >
         </div>
-        <label class="label">User password</label>
-        <div class="form-group mb-2">
-            <input name="password" id="password" class="form-control form-control-lg"  placeholder="Password">
-
+        <label class="label">Address</label>
+        <div class="form-group">
+            <input name="address" id="address" type="text" class="form-control" placeholder="Address" >
         </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4"><input type="text" name="city" id="city"
+                                                    class="form-control form-control-lg" placeholder="City" >
+            </div>
+
+            <div class="form-group col-md-4"><input type="text" name="zip" id="zip" class="form-control form-control-lg"
+                                                    pattern="[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d" placeholder="Postal code"
+                                                    maxlength="7" >
+            </div>
+
+            <div class="form-group col-md-4">
+                <select id="province" name="province" class="form-control ">
+                <option selected>Quebec</option>
+                <option>Alberta</option>
+                <option>British Columbia</option>
+                <option>Manitoba</option>
+                <option>New Brunswick</option>
+                <option>Ontario</option>
+                </select>
+            </div>
+        </div>
+        <label class="label">Email</label>
+        <div class="form-group">
+            <input name="email" id="email" type="email" class="form-control form-control-lg" placeholder="Email"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        </div>
+        <label class="label">Password</label>
+        <div class="form-group">
+            <input name="password" id="password" type="password" class="form-control form-control-lg"
+                   placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        </div>
+
 
         <div class="modal-footer">
-            <a href="user-list.php"><button name="submit" type="submit" class="btn btn-primary" onclick="editUser(); ">Save changes</button></a>
+            <a href="user-list.php"><button type="button" class="btn btn-primary" onclick="" >Save changes</button></a>
 
         </div>
     </form>
