@@ -8,11 +8,11 @@
 
     <nav>
         <?php if (isset($_SESSION['logged'])) echo
-        "<a class='navbar-brand text' href='register/signInLogout.php'>
+        "<a class='navbar-brand text' href='/grocery-store/register/signInLogout.php'>
             <i class='fas fa-user''></i> <span
                     class='icon-label'>Sign Out</span> </a>";
         else echo
-        "<a class='navbar-brand text' href='register/signInLogout.php'>
+        "<a class='navbar-brand text' href='/grocery-store/register/signInLogout.php'>
             <i class='fas fa-user''></i> <span
                     class='icon-label'>Sign In</span> </a>";
         ?>
