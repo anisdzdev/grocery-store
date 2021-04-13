@@ -109,7 +109,7 @@ if(!isset($_SESSION)) {
 
 
         <div class="modal-footer">
-            <a href="user-list.php"><button type="button" class="btn btn-primary" onclick="" >Save changes</button></a>
+            <button type="submit" class="btn btn-primary" onclick="" >Save changes</button>
 
         </div>
     </form>

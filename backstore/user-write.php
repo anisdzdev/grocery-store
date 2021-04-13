@@ -1,6 +1,6 @@
 <?php
 
-include ('user-save.php');
+
 
 
 $users = fopen("database/users.csv", "a+");
@@ -8,8 +8,6 @@ $users = fopen("database/users.csv", "a+");
 if ($users == false) {
     echo "error opening the file!";
     exit();
-} else {
-    console.log("File Opened!");
 }
 
 $firstName = filter_input(INPUT_POST, 'firstName');
@@ -50,6 +48,6 @@ if ($found == FALSE) {
 
 fclose($users);
 
-
+include ('user-list.php');
 
 
