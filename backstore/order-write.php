@@ -14,6 +14,8 @@ $buyerName = filter_input(INPUT_POST, 'name');
 $orderNum = filter_input(INPUT_POST, 'order#');
 $total = filter_input(INPUT_POST, 'total');
 $status = filter_input(INPUT_POST, 'status');
+$cart = filter_input(INPUT_POST, 'cart');
+
 
 
 $found = FALSE;
@@ -24,7 +26,7 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
           $output = fopen("database/temp-orders.csv", 'a+');
           $string = file_get_contents('database/orders.csv');
           $data = explode("\n", $string);
-          $updatedValue = '\n' . $buyerName . "," . $orderNum . "," . $total . "," . $status;
+          $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\""  . $cart . "\"" . "\n";
           $data[$line] = $updatedValue;
           file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
           unlink("database/orders.csv");
@@ -35,7 +37,7 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
     $line++;
 }
 if ($found == FALSE) {
-    fwrite($orders, $buyerName . "," . $orderNum . "," . $total . "," . $status . "\n");
+    fwrite($orders, $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\"" .  $cart . "\"" . "\n");
     fclose($orders);
 }
 

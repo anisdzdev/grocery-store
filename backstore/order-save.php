@@ -79,7 +79,11 @@ if(!isset($_SESSION)) {
         <div class="form-group mb-2">
             <input name="status" id="status" class="form-control form-control-lg" placeholder="Fulfilled/Unfulfilled"
             >
-
+        </div>
+        <label class="label">Cart</label>
+        <div class="form-group mb-2">
+            <input name="cart" class="form-control form-control-lg" placeholder="[:]"
+            >
         </div>
         <div class="modal-footer">
             <a href="order-list.php"><button type="submit" class="btn btn-primary" onclick="editOrder(); ">Save changes</button></a>
