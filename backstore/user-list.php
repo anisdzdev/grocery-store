@@ -66,9 +66,9 @@ $users = fopen("database/users.csv", "r");
 echo "<table id='order-table' class='table table-striped order-table'\n\n>
     <thead>
     <tr>
-            <th scope='col'>Name</th>
+            <th scope='col'>First Name</th>
+            <th scope='col'>Last Name</th>
             <th scope='col'>Email</th>
-            <th scope='col'>Password</th>
             <th scope='col'></th>
     </tr>
     </thead>
@@ -78,8 +78,8 @@ while (($row = fgetcsv($users)) !== false) {
     echo "<tr>";
     $email =  $row[0];
     echo "<td>" . htmlspecialchars($row[2]) . "</td>";
+    echo "<td>" . htmlspecialchars($row[3]) . "</td>";
     echo "<td>" . htmlspecialchars($row[0]) . "</td>";
-    echo "<td>" . htmlspecialchars($row[1]) . "</td>";
     echo "<td><a href='../backstore/user-save.php?email=$email'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/user-delete.php?email=$email'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
     echo "</tr>\n";
 }
