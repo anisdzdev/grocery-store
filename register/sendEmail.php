@@ -47,7 +47,7 @@ if ($found) {
         //Recipients
         $mail->setFrom('tropicalflavorsoen228@gmail.com', 'Tropical Flavors');
         $mail->addAddress($emailRecovery, $firstName." ".$lastName);     //Add a recipient     //Name is optional
-        $mail->addReplyTo('tropicalflavorsoen228@gmail.com', 'Tropical Flavor Email Service');
+        $mail->addReplyTo('tropicalflavorsoen228@gmail.com', 'Tropical Flavors Email Service');
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
