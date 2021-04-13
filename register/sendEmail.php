@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$handle = fopen("../users.csv", "r");
+$handle = fopen("../backstore/database/users.csv", "r");
 $emailRecovery = $_POST["emailRecovery"];
 
 use PHPMailer\PHPMailer\PHPMailer;
