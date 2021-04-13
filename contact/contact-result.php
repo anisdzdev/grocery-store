@@ -36,13 +36,13 @@ if(!isset($_SESSION)) {
                 <p style="text-align: center; padding-top: 0px;"> <?php if (!$_SESSION['isFound']){
                         echo "Hmmm... We can't seem to find this user. Please try again under a different name!";
                     } else if (!$_SESSION['orderFound']){
-                        echo "This order number cannot be found! Please try again.";
+                         echo "This order number cannot be found! Please try again.";
                     } else if ($_SESSION['isFound'] && $_SESSION['orderFound']){
-                    echo "Thank you for contacting us " . $_SESSION['inquiryName'] . "!";
-                    echo "<br>Here is a summary of your order:<br>";
-                    $order = $_SESSION['orders'];
+                         echo "Thank you for contacting us " . $_SESSION['inquiryName'] . "!";
+                         echo "<br>Here is a summary of your order:<br>";
+                         $order = $_SESSION['orders'];
                     foreach ($order as $values){
-                        echo $values . '<br>';
+                         echo $values . '<br>';
                     }
 
                     }
