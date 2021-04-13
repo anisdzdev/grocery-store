@@ -27,8 +27,9 @@
         <h1 class="mb-5">Thank You!</h1>
         <h5 class="text link">Thanks for submitting your email address. If this address exists, an email will be sent
             with instructions to
-            reset your password. The email might take a couple of minutes to reach your account. Click <a class="link"
-                                                                                                          href="signin.php">
+            get your password back. The email might take a couple of minutes to reach your account. Don't forget to also
+            check your spams. Click <a class="link"
+                                       href="signin.php">
                 here </a> to login!</h5>
     </form>
 </div>

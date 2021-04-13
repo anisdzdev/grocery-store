@@ -45,14 +45,14 @@ if ($found) {
         $mail->Port = 465;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
         //Recipients
-        $mail->setFrom('tropicalflavorsoen228@gmail.com', 'Tropical Flavor');
+        $mail->setFrom('tropicalflavorsoen228@gmail.com', 'Tropical Flavors');
         $mail->addAddress($emailRecovery, $firstName." ".$lastName);     //Add a recipient     //Name is optional
         $mail->addReplyTo('tropicalflavorsoen228@gmail.com', 'Tropical Flavor Email Service');
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Recovery e-mail';
-        $mail->Body = "This is you password: "."<b>".$passwordRecovery."<b>";
+        $mail->Body = "This is your password: "."<b>".$passwordRecovery."<b>";
         $mail->AltBody = 'This is you password: '.$passwordRecovery;
 
         $mail->send();

@@ -31,10 +31,10 @@
                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"
                        required autofocus>
             </div>
-            <button name="submit" id="submitRecovery" class="btn btn-primary col-6" type="submit">Reset Password
+            <button name="submit" id="submitRecovery" class="btn btn-primary col-6" type="submit">Send Email
             </button>
             <div class="messageReset">
-                <small>We'll send you instructions to reset your password</small>
+                <small>We'll send you instructions to get your password back!</small>
             </div>
         </div>
     </form>
