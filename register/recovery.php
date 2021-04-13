@@ -23,7 +23,7 @@
 <?php include ('../header.php')?>
 
 <div class="d-flex justify-content-center align-items-center recovery-container">
-    <form class="sign-form text-center" id="recovery-form" method="post" action="recoveryMessage.php">
+    <form class="sign-form text-center" id="recovery-form" method="post" action="sendEmail.php">
         <h1 class="mb-5">Recovery</h1>
         <div id="recoveryForm">
             <div class="form-group">

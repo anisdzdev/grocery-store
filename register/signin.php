@@ -48,7 +48,7 @@ if(!isset($_SESSION)) {
                 <input type="checkbox" name="rememberMe" id="remember" class="form-check-input">
                 <label class="form-check-label">Remember me </label>
             </div>
-            <a href="recovery.html" target="_blank">Forgot Password?</a>
+            <a href="recovery.php" target="_blank">Forgot Password?</a>
         </div>
         <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit">Submit</button>
         <p class="mt-3 font-weight-normal">Don't have an account? <a href="signup.php"><strong>Register
