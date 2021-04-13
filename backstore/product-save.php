@@ -1,17 +1,18 @@
 <?php
-$id = $_GET["id"];
-$product = [];
-if (($handle = fopen("database/products.csv", "r")) !== FALSE) {
-    while (($row = fgetcsv($handle)) !== FALSE) {
-        if($row[0] == $id){
-            $product = $row;
+if(isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $product = [];
+    if (($handle = fopen("database/products.csv", "r")) !== FALSE) {
+        while (($row = fgetcsv($handle)) !== FALSE) {
+            if ($row[0] == $id) {
+                $product = $row;
+            }
         }
+        fclose($handle);
+    } else {
+        $error = "Something wrong occurred. Cannot continue!";
     }
-    fclose($handle);
-} else {
-    $error = "Something wrong occurred. Cannot continue!";
 }
-
 ?>
 
 <!doctype html>
@@ -101,7 +102,7 @@ if (($handle = fopen("database/products.csv", "r")) !== FALSE) {
         <div class="form-group col-md-6">
             <select id="aisle" name="aisle" class="form-control ">
 
-                <option selected><?php echo isset($product[6]) ? ($product[6]) : '' ?></option>
+                <option selected ><?php echo isset($product[6]) ? ($product[6]) : '' ?></option>
 
                 <option>Fruits and Vegetables</option>
                 <option>Meat and Poultry</option>

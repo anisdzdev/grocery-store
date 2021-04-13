@@ -62,7 +62,7 @@ if (!isset($_SESSION['admin'])){
 
 <?php
 
-$orders = fopen("database/users.csv", "r");
+$users = fopen("database/users.csv", "r");
 echo "<table id='order-table' class='table table-striped order-table'\n\n>
     <thead>
     <tr>
@@ -74,7 +74,7 @@ echo "<table id='order-table' class='table table-striped order-table'\n\n>
     </thead>
     <tbody id='tbody'>";
 
-while (($row = fgetcsv($orders)) !== false) {
+while (($row = fgetcsv($users)) !== false) {
     echo "<tr>";
     $email =  $row[0];
     echo "<td>" . htmlspecialchars($row[2]) . "</td>";
@@ -83,7 +83,7 @@ while (($row = fgetcsv($orders)) !== false) {
     echo "<td><a href='../backstore/user-save.php?email=$email'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/user-delete.php?email=$email'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
     echo "</tr>\n";
 }
-fclose($orders);
+fclose($users);
 echo "\n</table>";
 ?>
 

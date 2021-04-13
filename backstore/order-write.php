@@ -26,7 +26,7 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
           $output = fopen("database/temp-orders.csv", 'a+');
           $string = file_get_contents('database/orders.csv');
           $data = explode("\n", $string);
-          $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\""  . $cart . "\"" . "\n";
+          $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\""  . $cart . "\"" ;
           $data[$line] = $updatedValue;
           file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
           unlink("database/orders.csv");
