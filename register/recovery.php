@@ -34,7 +34,7 @@
             <button name="submit" id="submitRecovery" class="btn btn-primary col-6" type="submit">Send Email
             </button>
             <div class="messageReset">
-                <small>We'll send you instructions to get your password back!</small>
+                <small>We'll send you instructions to get your password back</small>
             </div>
         </div>
     </form>
