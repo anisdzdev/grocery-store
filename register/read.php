@@ -36,7 +36,7 @@ if (($handle = fopen("../users.csv", "r")) !== FALSE) {
         exit();
     }
         else {
-        $message = "Invalid username and/or password.";
+        $message = "Invalid email and/or password.";
         include('signin.php');
     }
 } else {

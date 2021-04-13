@@ -1,3 +1,32 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+if (($handle = fopen("../users.csv", "r")) !== FALSE) {
+    $emailRecovery = $_POST["emailRecovery"];
+
+    $found = FALSE;
+    while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        if ($row[0] === $emailRecovery) {
+            $_SESSION['passwordRecovery'] = $row[1];
+            $found = TRUE;
+            break;
+        }
+    }
+    fclose($handle);
+    if ($found) {
+        $passwordRecovery = $_SESSION['passwordRecovery'];
+        $subject = "Recovery e-mail";
+        $mailFrom = "tropicalFlavorsoen228@gmail.com";
+        $message = "Your password is " . $passwordRecovery;
+        $mailTo = $emailRecovery;
+        $headers = "From: " . $mailFrom;
+
+        mail($mailTo, $subject, $message, $headers);
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 

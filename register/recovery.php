@@ -23,11 +23,11 @@
 <?php include ('../header.php')?>
 
 <div class="d-flex justify-content-center align-items-center recovery-container">
-    <form class="sign-form text-center" id="recovery-form" action="recoveryMessage.php">
+    <form class="sign-form text-center" id="recovery-form" method="post" action="recoveryMessage.php">
         <h1 class="mb-5">Recovery</h1>
         <div id="recoveryForm">
             <div class="form-group">
-                <input name="email" id="emailRecovery" type="email" class="form-control form-control-lg"
+                <input name="emailRecovery" id="emailRecovery" type="email" class="form-control form-control-lg"
                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"
                        required autofocus>
             </div>
