@@ -94,12 +94,12 @@ if(!isset($_SESSION)) {
                 <small id="errorConfirmPassword">Password doesn't match</small>
             </div>
         </div>
-        <div class="forgot-link form-group d-flex justify-content-between align-items-center">
-            <div class="form-check">
-                <input name="remember" id="rememberPassword" type="checkbox" class="form-check-input" id="remember">
-                <label class="form-check-label">Remember Password</label>
-            </div>
-        </div>
+<!--        <div class="forgot-link form-group d-flex justify-content-between align-items-center">-->
+<!--            <div class="form-check">-->
+<!--                <input name="remember" id="rememberPassword" type="checkbox" class="form-check-input" id="remember">-->
+<!--                <label class="form-check-label">Remember Password</label>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="d-grid gap-2">
             <button name="submit" class="btn btn-primary col-4" type="submit">Submit</button>
             <button name="reset" class="btn col-3 btn-secondary" type="reset">Reset</button>
