@@ -2,7 +2,18 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-
+$email = $_GET["email"];
+$user = [];
+if (($handle = fopen("database/users.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        if($row[0] == $email){
+            $user = $row;
+        }
+    }
+    fclose($handle);
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
 ?>
 
 <!doctype html>
@@ -63,31 +74,32 @@ if(!isset($_SESSION)) {
         <h1 class="mb-5">User edit</h1>
         <label class="label">First Name</label>
         <div class="form-group">
-            <input name="firstName" id="firstName" type="text" class="form-control" placeholder="First name"
+            <input name="firstName" id="firstName" type="text" class="form-control" placeholder="First name" value="<?php echo isset($user[2]) ? ($user[2]) : '' ?>"
                    >
         </div>
         <label class="label">Last Name</label>
         <div class="form-group">
-            <input name="lastName" id="lastName" type="text" class="form-control" placeholder="Last name" >
+            <input name="lastName" id="lastName" type="text" class="form-control" placeholder="Last name" value="<?php echo isset($user[3]) ? ($user[3]) : '' ?>">
         </div>
         <label class="label">Address</label>
         <div class="form-group">
-            <input name="address" id="address" type="text" class="form-control" placeholder="Address" >
+            <input name="address" id="address" type="text" class="form-control" placeholder="Address" value="<?php echo isset($user[4]) ? ($user[4]) : '' ?>">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-4"><input type="text" name="city" id="city"
-                                                    class="form-control form-control-lg" placeholder="City" >
+                                                    class="form-control form-control-lg" placeholder="City" value="<?php echo isset($user[5]) ? ($user[5]) : '' ?>">
             </div>
 
             <div class="form-group col-md-4"><input type="text" name="zip" id="zip" class="form-control form-control-lg"
-                                                    pattern="[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d" placeholder="Postal code"
+                                                    pattern="[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d" placeholder="Postal code" value="<?php echo isset($user[6]) ? ($user[6]) : '' ?>"
                                                     maxlength="7" >
             </div>
 
             <div class="form-group col-md-4">
                 <select id="province" name="province" class="form-control ">
-                <option selected>Quebec</option>
+                <option selected><?php echo isset($user[7]) ? ($user[7]) : '' ?></option>
+                    <option >Quebec</option>
                 <option>Alberta</option>
                 <option>British Columbia</option>
                 <option>Manitoba</option>
@@ -98,13 +110,13 @@ if(!isset($_SESSION)) {
         </div>
         <label class="label">Email</label>
         <div class="form-group">
-            <input name="email" id="email" type="email" class="form-control form-control-lg" placeholder="Email"
+            <input name="email" id="email" type="email" class="form-control form-control-lg" placeholder="Email" value="<?php echo isset($user[0]) ? ($user[0]) : '' ?>"
                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div>
         <label class="label">Password</label>
         <div class="form-group">
             <input name="password" id="password" type="password" class="form-control form-control-lg"
-                   placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                   placeholder="Password" value="<?php echo isset($user[1]) ? ($user[1]) : '' ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         </div>
 
 

@@ -84,7 +84,7 @@ while (($row = fgetcsv($products)) !== false) {
     echo "<td>" . htmlspecialchars($row[1]) . "</td>";
     echo "<td>" . htmlspecialchars($row[3]) . "</td>";
     echo "<td>" . htmlspecialchars($row[6]) . "</td>";
-    echo "<td><a href='../backstore/product-save.php?name=$productName'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/product-delete.php?name=$productName'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
+    echo "<td><a href='../backstore/product-save.php?id=$row[0]'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/product-delete.php?name=$productName'><button onclick='deleteRowOrder($(this))' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
     echo "</tr>\n";
 }
 fclose($products);

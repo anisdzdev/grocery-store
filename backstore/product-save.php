@@ -1,3 +1,19 @@
+<?php
+$id = $_GET["id"];
+$product = [];
+if (($handle = fopen("database/products.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        if($row[0] == $id){
+            $product = $row;
+        }
+    }
+    fclose($handle);
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -55,32 +71,48 @@
 <div class="d-flex justify-content-center align-items-center signBack-container">
     <form class="sign-form text-center" method="POST" action="product-write.php">
         <h1 class="mb-5 font-weight-light">Edit products</h1>
+
         <label class="label">Product name</label>
         <div class="form-group mb-2">
-            <input name="name" id="name" class="form-control form-control-lg" placeholder="Name"
-            >
+            <input name="name" id="name" class="form-control form-control-lg" placeholder="Name" value="<?php echo isset($product[1]) ? ($product[1]) : '' ?>"
+                   >
         </div>
         <label class="label">Product description</label>
         <div class="form-group mb-2">
-            <input name="proDes" id="proDes" class="form-control form-control-lg" placeholder="Description"
+            <input name="proDes" id="proDes" class="form-control form-control-lg" placeholder="Description" value="<?php echo isset($product[7]) ? ($product[7]) : '' ?>"
                   >
         </div>
         <label class="label">Price</label>
         <div class="form-group mb-2">
             <input name="price" id="price" class="form-control form-control-lg" placeholder="Price"
-                   >
+                   value="<?php echo isset($product[3]) ? ($product[3]) : '' ?>">
         </div>
-        <label class="label">Discount</label>
+        <label class="label">Price after discount</label>
         <div class="form-group mb-2">
-            <input name="discount" id="discount" class="form-control form-control-lg" placeholder="Discount"
+            <input name="discount" id="discount" class="form-control form-control-lg" placeholder="Discount" value="<?php echo isset($product[2]) ? ($product[2]) : '' ?>"
             >
         </div>
-
-        <label class="label">Product aisle</label>
+        <label class="label">Quantity type</label>
         <div class="form-group mb-2">
-            <input name="aisle" id="aisle" class="form-control form-control-lg" placeholder="Aisle"
-                  >
+            <input name="quantityType" id="quantityType" class="form-control form-control-lg" placeholder="Quantity Type" value="<?php echo isset($product[4]) ? ($product[4]) : '' ?>"
+            >
         </div>
+        <label class="label">Product aisle</label>
+        <div class="form-group col-md-6">
+            <select id="aisle" name="aisle" class="form-control ">
+
+                <option selected><?php echo isset($product[6]) ? ($product[6]) : '' ?></option>
+
+                <option>Fruits and Vegetables</option>
+                <option>Meat and Poultry</option>
+                <option>Snacks</option>
+                <option>Beverages</option>
+                <option>Bread And Bakery</option>
+                <option>Dairy And Eggs</option>
+
+            </select>
+        </div>
+
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="" >Save changes</button>
 
