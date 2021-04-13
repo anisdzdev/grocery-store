@@ -25,12 +25,12 @@
 <body>
 <div class="background">
     <nav class="navbar navbar-light bg-light homepage-header ">
-        <a class="navbar-brand" href="../../../index.html">
+        <a class="navbar-brand" href="../../../index.php">
             <img src="../../../assets/images/logo.png" style="height: 85px;">
         </a>
 
         <nav>
-            <a class="navbar-brand text" href="../../../register/signin.html">
+            <a class="navbar-brand text" href="../../../register/signin.php">
                 <i class="fas fa-user"></i> <span class="icon-label">Sign In </span> </a>
             <a class="navbar-brand text" href="../../../cart/cart.php">
                 <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
 
-                    <a class="nav-link " href="../../../index.html">Home</a>
+                    <a class="nav-link " href="../../../index.php">Home</a>
                     <a class="nav-link " href="../../weeklyDeals.php">Hot Deals</a>
                     <a class="nav-link " href="../../allProducts.php">All Products</a>
                     <li class="nav-item dropdown">
@@ -114,7 +114,7 @@
                 <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="product card-aisle rounded uk-card-default card product">
                         <a class="productLink" href="../snacks/almond.php">
-                            <img class="productImage" alt="almonds" src="../../../assets/images/articles/almond.png">
+                            <img class="productImage" alt="almonds" src="../../../assets/images/articles/Almond.png">
                         </a>
                         <div class="card-body productDetails">
                             <p class="productName">Almond</p>
