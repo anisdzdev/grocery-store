@@ -2,13 +2,6 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-if(!empty($_POST["remember"])) {
-    setcookie ("username",$_POST["username"],time()+ 3600);
-    setcookie ("password",$_POST["password"],time()+ 3600);
-} else {
-    setcookie("username","");
-    setcookie("password","");
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -40,7 +33,9 @@ if(!empty($_POST["remember"])) {
             <img src="../assets/images/face.png">
         </div>
         <h1 class="mb-5">Sign In</h1>
-        <small> <?php echo isset($message) ? ($message): ' '?> </small>
+        <div class="errorSign">
+            <small><?php echo isset($message) ? ($message): ' '?></small>
+        </div>
         <div class="form-group mb-2">
             <input name="email" id="emailIn" type="text" class="form-control form-control-lg"
                    placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"
