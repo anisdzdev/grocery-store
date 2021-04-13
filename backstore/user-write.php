@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 $users = fopen("database/users.csv", "a+");
 
 if ($users == false) {
@@ -45,8 +42,6 @@ if ($found == FALSE) {
     fwrite($users, $email . "," . $password . "," . $firstName . "," . $lastName. "," .$address. "," .$city. "," .$zip. "," .$province . "\n");
     fclose($users);
 }
-
-fclose($users);
 
 include ('user-list.php');
 
