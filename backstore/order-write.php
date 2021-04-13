@@ -8,8 +8,6 @@ $orders = fopen("database/orders.csv", "a+");
 if ($orders == false) {
     echo "error opening the file!";
     exit();
-} else {
-    console.log("File Opened!");
 }
 
 $buyerName = filter_input(INPUT_POST, 'name');
@@ -30,7 +28,6 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
           $data[$line] = $updatedValue;
           file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
           unlink("database/orders.csv");
-
           $orders = rename('database/temp-orders.csv', 'database/orders.csv');
           $found = TRUE;
           break;
