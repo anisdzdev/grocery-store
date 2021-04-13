@@ -1,54 +1,60 @@
-function register() { // function check the emails and passwords
-    checkEmail(); // call checkEmail()
-    checkPassword(); // call checkPassword
+// function check the emails and passwords
+function register() {
+    checkEmail();
+    checkPassword();
 
-    if(checkEmail() == true && checkPassword() == true) // verify if emails and password are the same
+// verify if emails and password are the same
+    if(checkEmail() == true && checkPassword() == true)
         return true; // submit
     else return false; // don't submit
 }
 
-function checkEmail(){ // function to check the emails
-    const emailUp = document.getElementById("emailUp").value; // get the value of the first email
-    const confirmEmailUp = document.getElementById("confirmEmailUp").value; // get the email of the second email
+// function to check the emails
+function checkEmail(){
+    const emailUp = document.getElementById("emailUp").value;
+    const confirmEmailUp = document.getElementById("confirmEmailUp").value;
 
-    if (emailUp != confirmEmailUp) { // if they are different
-        visible("errorConfirmEmail", "emailFas"); // call function visible
+    if (emailUp != confirmEmailUp) {
+        visible("errorConfirmEmail", "emailFas");
         return false; // don't submit
     }
 
-    else if(emailUp == confirmEmailUp){ // if they are the same
-        hidden("errorConfirmEmail", "emailFas"); // call function hidden
+    else if(emailUp == confirmEmailUp){
+        hidden("errorConfirmEmail", "emailFas");
         return true; // submit
     }
 }
 
-function checkPassword(){ // function to check the passwords
-    const passwordUp = document.getElementById("passwordUp").value; // get the first password
-    const confirmPasswordUp = document.getElementById("confirmPasswordUp").value; // get the second password
+// function to check the passwords
+function checkPassword(){
+    const passwordUp = document.getElementById("passwordUp").value;
+    const confirmPasswordUp = document.getElementById("confirmPasswordUp").value;
 
-    if (passwordUp != confirmPasswordUp) { // if they are different
-        visible("errorConfirmPassword", "passwordFas"); // call function visible
+    if (passwordUp != confirmPasswordUp) {
+        visible("errorConfirmPassword", "passwordFas");
         return false; // don't submit
     }
 
-    else if(passwordUp == confirmPasswordUp){ // if they are the same
-        hidden("errorConfirmPassword", "passwordFas"); // call function hidden
+    else if(passwordUp == confirmPasswordUp){
+        hidden("errorConfirmPassword", "passwordFas");
         return true; // submit
     }
 }
 
-function visible(error, fas){ // function to set the message visible with two parameters
-    const small = document.getElementById(error); // get error message text
-    const i = document.getElementById(fas); // get the error message icon
-    small.style.visibility = "visible"; // set the error message text visible
-    i.style.visibility = "visible"; // set the error message icon visible
+// function to set the message visible with two parameters
+function visible(error, fas){
+    const small = document.getElementById(error);
+    const i = document.getElementById(fas);
+    small.style.visibility = "visible";
+    i.style.visibility = "visible";
 }
 
-function hidden(error, fas){ // function to set the message visible with two parameters
-    const small = document.getElementById(error); // get error message text
-    const i = document.getElementById(fas); // get the error message icon
-    small.style.visibility = "hidden"; // set the error message text hidden
-    i.style.visibility = "hidden"; // set the error message icon visible
+// function to set the message visible with two parameters
+function hidden(error, fas){
+    const small = document.getElementById(error);
+    const i = document.getElementById(fas);
+    small.style.visibility = "hidden";
+    i.style.visibility = "hidden";
 }
 
 
