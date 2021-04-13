@@ -1,10 +1,73 @@
- window.onload = initialize()
+window.onload = initialize()
 
 function initialize(){
-    //updateTable();
+    // updateTable();
     updateUserTable()
     updateProductTable()
 }
+
+
+// function updateTable(){
+//     console.log("loading");
+//     var ordersArray2 = JSON.parse(localStorage.getItem('orders-array'));
+//     for(let i=0; i<ordersArray2.length; i++){
+//         // Creat all elements and set their respective attributes
+//         var tr1 = document.createElement("tr");
+//         var td1 = document.createElement("td");
+//         td1.setAttribute("id", "buyerName");
+//         var td2 = document.createElement("td");
+//         td2.setAttribute("id", "total");
+//         var td3 = document.createElement("td");
+//         td3.setAttribute("id", "status");
+//         var td4 = document.createElement("td");
+//         td4.setAttribute("id", "orderNum")
+//         var td5 = document.createElement("td");
+//
+// //create the two buttons "Edit" and "remove" and set their respective attributes
+//         var butt1 = document.createElement("button");
+//         var butt2 = document.createElement("button");
+//         butt1.innerHTML = "Edit";
+//         butt1.setAttribute("type", "button");
+//         butt1.setAttribute("class", "btn btn-primary btn-sm");
+//         butt1.style.marginRight = "4px";
+//         butt2.innerHTML = "Remove";
+//         butt2.setAttribute("onclick", "deleteRowOrder($(this))");
+//         butt2.setAttribute("type", "button");
+//         butt2.setAttribute("class", "btn btn-danger btn-sm");
+//
+// // Create an a tag and set its attribute
+//         var aTag = document.createElement("a");
+//         aTag.setAttribute("href", "order-save.php");
+//
+// // Create a new text node for each of the variables for the orders
+//         var buyerName = document.createTextNode(ordersArray2[i].name);
+//         var total = document.createTextNode(ordersArray2[i].total);
+//         var status = document.createTextNode(ordersArray2[i].status);
+//         var orderNum = document.createTextNode(ordersArray2[i].orderNum);
+//
+// // Append child all the variables inside of their respective td that we created earlier
+//         td1.appendChild(buyerName);
+//         td2.appendChild(total);
+//         td3.appendChild(status);
+//         td4.appendChild(orderNum);
+//
+//         td5.appendChild(aTag);
+//         aTag.appendChild(butt1);
+//         td5.appendChild(butt2);
+//
+//         tr1.appendChild(td1);
+//         tr1.appendChild(td2);
+//         tr1.appendChild(td3);
+//         tr1.appendChild(td4);
+//         tr1.appendChild(td5);
+//
+// // Create a tbody by his id
+//         var tbody = document.getElementById("tbodyorder");
+//
+// // Append child everything inside of the tbody tag
+//         tbody.appendChild(tr1);
+//     }
+// }
 
 
 
@@ -97,7 +160,7 @@ function updateProductTable(){
 
         // Create an a tag and set its attribute
         var aTag = document.createElement("a");
-        aTag.setAttribute("href", "product-save.html");
+        aTag.setAttribute("href", "product-save.php");
 
         // Create a new text node for each of the variables for the products
         var name = document.createTextNode(productsArray2[i].name);
@@ -140,13 +203,11 @@ function deleteRow(row){
 
 function deleteRowOrder(row){
     var array = JSON.parse(localStorage.getItem('orders-array'));
-    console.log(array);
     var number = row.closest('tr').find("#orderNum").text();
     console.log(number);
     for (var i=0; i<array.length; i++){
         if(array[i].orderNum === number){
             console.log(array[i]);
-            array.pop(array[i]);
             array.pop(array[i]);
             localStorage.setItem('orders-array', JSON.stringify(array));
         }
@@ -447,7 +508,7 @@ function addProduct(){
 
     // Create an a tag and set its attribute
     var aTag = document.createElement("a");
-    aTag.setAttribute("href", "product-save.html");
+    aTag.setAttribute("href", "product-save.php");
 
     // Create a new text node for each of the variables for the products
      var name = document.createTextNode("name");

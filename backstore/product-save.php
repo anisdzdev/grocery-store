@@ -58,19 +58,23 @@
         <label class="label">Product name</label>
         <div class="form-group mb-2">
             <input name="name" id="name" class="form-control form-control-lg" placeholder="Name"
-                   >
+            >
         </div>
         <label class="label">Product description</label>
         <div class="form-group mb-2">
-            <input name="description" id="proDes" class="form-control form-control-lg" placeholder="Description"
+            <input name="proDes" id="proDes" class="form-control form-control-lg" placeholder="Description"
                   >
         </div>
         <label class="label">Price</label>
         <div class="form-group mb-2">
-            <input name="description" id="price" class="form-control form-control-lg" placeholder="Price"
+            <input name="price" id="price" class="form-control form-control-lg" placeholder="Price"
                    >
         </div>
-
+        <label class="label">Discount</label>
+        <div class="form-group mb-2">
+            <input name="discount" id="discount" class="form-control form-control-lg" placeholder="Discount"
+            >
+        </div>
 
         <label class="label">Product aisle</label>
         <div class="form-group mb-2">

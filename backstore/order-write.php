@@ -30,6 +30,7 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
           $data[$line] = $updatedValue;
           file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
           unlink("database/orders.csv");
+
           $orders = rename('database/temp-orders.csv', 'database/orders.csv');
           $found = TRUE;
           break;
