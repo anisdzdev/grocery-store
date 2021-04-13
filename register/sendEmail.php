@@ -60,4 +60,7 @@ if ($found) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
+unset($_SESSION['passwordRecovery']);
+unset($_SESSION['firstName']);
+unset($_SESSION['lastName']);
 header("Location: recoveryMessage.php");
