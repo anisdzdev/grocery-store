@@ -1,6 +1,6 @@
 <?php
 
-$buyerName = $_GET['var'];
+$orderNumber = $_GET['var'];
 
 $orders = fopen("database/orders.csv", "a+");
 $output = fopen("database/temp-orders.csv", 'a+');
@@ -13,7 +13,7 @@ if ($orders == false) {
 $found = FALSE;
 $line = 0;
 while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
-    if ($row[0] !== $buyerName) {
+    if ($row[1] !== $orderNumber) {
         fputcsv($output, $row);
         $string = file_get_contents("database/temp-orders.csv");
         $data = explode("\n", $string);

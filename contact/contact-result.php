@@ -67,7 +67,7 @@ if(!isset($_SESSION)) {
     </form>
 </div>
 
-session_unset();
+<?php session_unset(); ?>
 
 <?php include ('../footer.php')?>
 
