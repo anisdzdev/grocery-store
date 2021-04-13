@@ -6,7 +6,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $name = $_POST['name'];
 
-$file = fopen("users.csv", 'a+');
+$file = fopen("database/users.csv", 'a+');
 fwrite($file,$email . "," . $password ."," .$name."\n");
 fclose($file);
 
