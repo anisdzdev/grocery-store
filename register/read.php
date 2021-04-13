@@ -3,7 +3,7 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
-if (($handle = fopen("../users.csv", "r")) !== FALSE) {
+if (($handle = fopen("../backstore/database/users.csv", "r")) !== FALSE) {
 
     $email = $_POST["email"];
     $password = $_POST["password"];
