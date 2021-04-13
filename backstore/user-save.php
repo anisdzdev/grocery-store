@@ -127,7 +127,7 @@ if (isset($_GET["email"])) {
         <div class="form-group">
             <input name="password" id="password" type="password" class="form-control form-control-lg"
                    placeholder="Password" value="<?php echo isset($user[1]) ? ($user[1]) : '' ?>"
-                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                   required>
         </div>
 
 
