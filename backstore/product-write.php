@@ -22,26 +22,24 @@ $found = FALSE;
 $line = 0;
 while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
     if ($row[1] === $productName) {
-        // fclose($orders);
-        // $input = fopen("database/orders.csv", 'r');
+
         $output = fopen("database/temp-products.csv", 'a+');
         $string = file_get_contents('database/products.csv');
         $data = explode("\n", $string);
-        // print_r($data);
+
         $updatedValue = $productName . "," . $price . "," . $proDes . "," . $aisle;
         $data[$line] = $updatedValue;
         file_put_contents('database/temp-products.csv', implode(PHP_EOL, $data));
         unlink("database/products.csv");
         $orders = rename('database/temp-products.csv', 'database/products.csv');
         $found = TRUE;
-        // print_r($data);
-        // echo $line;
+
         break;
     }
     $line++;
 }
 if ($found == FALSE) {
-//    $no_of_lines = count(file($products));
+
     fwrite($products, $productName . "," . $price . "," . $proDes . "," . $aisle . "\n");
     fclose($products);
 }
