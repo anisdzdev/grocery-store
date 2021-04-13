@@ -82,7 +82,7 @@
                   >
         </div>
         <div class="modal-footer">
-            <a href="product-list.php"><button type="submit" class="btn btn-primary" onclick="editProduct();" >Save changes</button></a>
+            <button type="submit" class="btn btn-primary" onclick="" >Save changes</button>
 
         </div>
     </form>
