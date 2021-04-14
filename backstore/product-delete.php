@@ -14,7 +14,7 @@ $found = FALSE;
 $line = 0;
 $data = "";
 while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
-    if ($row[0] !== $productName) {
+    if ($row[1] !== $productName) {
         fputcsv($output, $row);
         $string = file_get_contents("database/temp-products.csv");
         $data = explode("\n", $string);
