@@ -117,6 +117,11 @@ if (isset($_GET["email"])) {
                 </select>
             </div>
         </div>
+        <label class="label">Phone Number</label>
+        <div class="form-group">
+            <input name="phone" id="phone" type="tel" class="form-control form-control-lg" placeholder="Phone"
+                   pattern="[0-9]{3}-? ?[0-9]{3}-? ?[0-9]{4}" value="<?php echo isset($user[8]) ? ($user[8]) : '' ?>" required>
+        </div>
         <label class="label">Email</label>
         <div class="form-group">
             <input name="email" id="email" type="email" class="form-control form-control-lg" placeholder="Email"
