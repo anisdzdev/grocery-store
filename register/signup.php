@@ -33,7 +33,9 @@ if(!isset($_SESSION)) {
             <img src="../assets/images/face.png">
         </div>
         <h1 class="mb-5">Sign Up</h1>
+        <div class="errorSign">
         <small> <?php echo isset($email) ? "Account already exists for username: $email": ' '?> </small>
+        </div>
         <div class="form-group">
             <input name="firstName" id="firstName" type="text" class="form-control" placeholder="First name" value="<?php echo isset($firstName) ? ($firstName) : '' ?>" required
                    autofocus>
