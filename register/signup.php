@@ -34,7 +34,7 @@ if(!isset($_SESSION)) {
         </div>
         <h1 class="mb-5">Sign Up</h1>
         <div class="errorSign">
-        <small> <?php echo isset($email) ? "Account already exists for username: $email": ' '?> </small>
+        <small> <?php echo isset($email) ? "Account already exists for email: $email": ' '?> </small>
         </div>
         <div class="form-group">
             <input name="firstName" id="firstName" type="text" class="form-control" placeholder="First name" value="<?php echo isset($firstName) ? ($firstName) : '' ?>" required
