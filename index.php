@@ -29,57 +29,9 @@ if (!isset($_SESSION)) {
 <body>
 
 
-<nav class="navbar navbar-light bg-light homepage-header ">
-    <a class="navbar-brand" href="#">
-        <img src="assets/images/logo.png" style="height: 85px;">
-    </a>
-
-    <nav>
-        <?php if (isset($_SESSION['logged'])) echo
-        "<a class='navbar-brand text' href='register/signInLogout.php'>
-            <i class='fas fa-user''></i> <span
-                    class='icon-label'>Sign Out</span> </a>";
-        else echo
-        "<a class='navbar-brand text' href='register/signInLogout.php'>
-            <i class='fas fa-user''></i> <span
-                    class='icon-label'>Sign In</span> </a>";
+<?php
+        include('header.php')
         ?>
-        <a class="navbar-brand text" href="cart/cart.php">
-            <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
-    </nav>
-
-</nav>
-
-
-<nav class="navbar sticky-top navbar-custom navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="navbar-nav ">
-
-                <a class="nav-link " href="index.html">Home</a>
-                <a class="nav-link " href="aisles/weeklyDeals.html">Hot Deals</a>
-                <a class="nav-link " href="aisles/allProducts.html">All Products</a>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Aisles </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="aisles/fruitsVeg.html">Fruits and Vegetables</a>
-                        <a class="dropdown-item" href="aisles/dairyAndEggs.html">Dairy & Eggs</a>
-                        <a class="dropdown-item" href="aisles/meatPoultry.html">Meat and Poultry</a>
-                        <a class="dropdown-item" href="aisles/snacks.html">Snacks</a>
-                        <a class="dropdown-item" href="aisles/breadAndBakery.html">Bread and Bakery</a>
-                        <a class="dropdown-item" href="aisles/beverages.html">Beverages</a>
-                    </div>
-                </li>
-            </div>
-        </div>
-    </div>
-</nav>
 
 <div class="jumbotron jumbotron-homepage jumbotron-fluid">
     <div class="container">
@@ -176,18 +128,9 @@ if (!isset($_SESSION)) {
 
 </div>
 
-<footer class="zone">
-
-    <a class="footer-icon" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a class="footer-icon" href="https://facebook.com/"><i target="_blank" class="fab fa-facebook-f"></i></a>
-    <a class="footer-icon" href="https://instagram.com/"><i target="_blank" class="fab fa-instagram"></i></a>
-    <a class="footer-icon" href="mailto:"><i class="fas fa-envelope"></i></a>
-    <p class="copyright-message">© Copyright 2021: SOEN 287</p>
-    <div style="padding-left: 20px; color: #2A3542" ;>
-        <a class="copyright-message" style="color: black; " href="contact/contact-us.php">Contact Us</a>
-    </div>
-
-</footer>
+<?php
+include('footer.php')
+?>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

@@ -32,19 +32,19 @@
             <div class="navbar-nav ">
 
                 <a class="nav-link " href="/grocery-store/index.php">Home</a>
-                <a class="nav-link " href="/grocery-store/aisles/weeklyDeals.html">Hot Deals</a>
-                <a class="nav-link " href="/grocery-store/aisles/allProducts.html">All Products</a>
+                <a class="nav-link " href="/grocery-store/aisles/weeklyDeals.php">Hot Deals</a>
+                <a class="nav-link " href="/grocery-store/aisles/allProducts.php">All Products</a>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Aisles </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/grocery-store/aisles/fruitsVeg.html">Fruits and Vegetables</a>
-                        <a class="dropdown-item" href="/grocery-store/aisles/dairyAndEggs.html">Dairy & Eggs</a>
-                        <a class="dropdown-item" href="/grocery-store/aisles/meatPoultry.html">Meat and Poultry</a>
-                        <a class="dropdown-item" href="/grocery-store/aisles/snacks.html">Snacks</a>
-                        <a class="dropdown-item" href="/grocery-store/aisles/breadAndBakery.html">Bread and Bakery</a>
-                        <a class="dropdown-item" href="/grocery-store/aisles/beverages.html">Beverages</a>
+                        <a class="dropdown-item" href="/grocery-store/aisles/fruitsVeg.php">Fruits and Vegetables</a>
+                        <a class="dropdown-item" href="/grocery-store/aisles/dairyAndEggs.php">Dairy & Eggs</a>
+                        <a class="dropdown-item" href="/grocery-store/aisles/meatPoultry.php">Meat and Poultry</a>
+                        <a class="dropdown-item" href="/grocery-store/aisles/snacks.php">Snacks</a>
+                        <a class="dropdown-item" href="/grocery-store/aisles/breadAndBakery.php">Bread and Bakery</a>
+                        <a class="dropdown-item" href="/grocery-store/aisles/beverages.php">Beverages</a>
                     </div>
                 </li>
             </div>
