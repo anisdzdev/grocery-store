@@ -98,6 +98,11 @@ if(isset($_GET["id"])) {
             <input name="quantityType" id="quantityType" class="form-control form-control-lg" placeholder="Quantity Type" value="<?php echo isset($product[4]) ? ($product[4]) : '' ?>"
             >
         </div>
+        <label class="label">Image file</label>
+        <div class="custom-file">
+            <input type="file" name="image" class="custom-file-input" id="image" >
+            <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
         <label class="label">Product aisle</label>
         <div class="form-group col-md-6">
             <select id="aisle" name="aisle" class="form-control ">
