@@ -49,7 +49,7 @@ $( document ).ready(function() {
         console.log(value);
     })
 
-    $(".btn").on("click", function(){
+    $(".add").on("click", function(){
         alert("Added " + value + " " + productName +" to the cart!");
     })
 });

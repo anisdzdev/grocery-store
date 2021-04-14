@@ -32,12 +32,13 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" type="text/css"
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!--    <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../assets/js/productsJQ.js"></script>
 
     <title>
         <?php
@@ -47,8 +48,7 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
 
 </head>
 
-<body>
-<div class="background">
+<body class="background">
 
 <?php include ('../../header.php')?>
 
@@ -66,17 +66,30 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
 
             <h4 class="pro-d-title product-title" id="title"><?php echo $product[1]?></h4>
 
-            <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Link with href
-                </a>
 
-            </p>
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body">
+
+
+
+
+
+
+
+
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">More info</button>
+                <div id="demo" class="collapse">
                     <?php echo $product[7] ?>
                 </div>
-            </div>
+
+
+
+
+
+
+
+
+
+
 
                     <?php
                         if($product[2] == $product[3]){
@@ -101,15 +114,14 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
                 <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" id="input" value="1" type="number" disabled>
                 <i class="fas minus-icon fa-minus align-self-center ml-2 minus" name="minus"></i>
             </label>
-            <button type="button" class="btn btn-outline-success">Add to cart</button>
+            <button type="button" class="btn btn-outline-success add">Add to cart</button>
             <p id="change"></p>
             <p>
         </div>
     </div>
-</div>
-</div>
 
 
+</div>
 <?php include ('../../recommended.php')?>
 
 <?php include ('../../footer.php')?>
@@ -120,3 +132,5 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
