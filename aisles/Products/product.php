@@ -8,10 +8,10 @@ $id = $_GET["id"];
 $product = [];
 if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
     while (($row = fgetcsv($handle)) !== FALSE) {
-            if($row[0] == $id){
-                $product = $row;
-            }
+        if($row[0] == $id){
+            $product = $row;
         }
+    }
     fclose($handle);
 } else {
     $error = "Something wrong occurred. Cannot continue!";
@@ -35,7 +35,7 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<!--        <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />-->
+    <!--        <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../assets/js/productsJQ.js"></script>
@@ -56,10 +56,10 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
 
 <div class="container">
     <div class="row">
-        <div class="col-md-5 marg">
+        <div class="col-md-5 ">
             <br>
 
-                <img src="../../assets/images/articles/<?php echo $product[5] ?>" alt="">
+            <img class="product-image" src="../../assets/images/articles/<?php echo $product[5] ?>" alt="<?php $product[1] ?>">
 
         </div>
 
@@ -68,35 +68,26 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
 
             <h4 class="pro-d-title product-title" id="title"><?php echo $product[1]?></h4>
 
-
-
-
-
-
-
-
-
-
-
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">More info</button>
+            <div class="margin">
+                <button type="button" class="btn btn-info moreInfoColor" data-toggle="collapse" data-target="#demo">More info</button>
                 <div id="demo" class="collapse">
                     <?php echo $product[7] ?>
                 </div>
+            </div>
 
-
-                    <?php
-                        if($product[2] == $product[3]){
-                            echo "<p class='product-price'>
+            <?php
+            if($product[2] == $product[3]){
+                echo "<p class='product-price'>
                             $<span id='productPrice'>
                                 $product[2]
                             </span>
                             $product[4]
                             </p>";
-                        }
-                        else{
-                            echo "<p class='productPrice'><span class='oldPrice'>$product[3] $product[4]</span><span class='deal'>&nbsp&nbsp&nbsp<span id='productPrice'>$product[2]</span> $product[4]</span></p>";
-                        }
-                    ?>
+            }
+            else{
+                echo "<p class='productPrice'><span class='oldPrice'>$product[3] $product[4]</span><span class='deal'>&nbsp&nbsp&nbsp<span id='productPrice'>$product[2]</span> $product[4]</span></p>";
+            }
+            ?>
             <div class="product_meta">
                 <span class="posted_in"> <strong>Availability:</strong> <a class="inStock" href="#">In Stock</a></span>
             </div>
@@ -107,7 +98,7 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
                 <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" id="input" value="1" type="number" disabled>
                 <i class="fas minus-icon fa-minus align-self-center ml-2 minus" name="minus"></i>
             </label>
-            <button type="button" class="btn btn-outline-success add">Add to cart</button>
+            <button type="button" class="btn btn-outline-success add" >Add to cart</button>
             <p id="change"></p>
             <p>
         </div>
@@ -115,6 +106,7 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
 
 
 </div>
+
 <?php include('recommended.php') ?>
 
 <?php include ('../../footer.php')?>

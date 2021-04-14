@@ -539,6 +539,10 @@ input[type=number]:focus {
     object-fit: contain;
 }
 
+.product-image {
+    height: 20em;
+}
+
 .productName {
     margin-bottom: 0;
     margin-top: 0;
@@ -910,6 +914,19 @@ input[type=number]:focus {
 
 .marg{
     text-align: left;
+}
+
+.margin{
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.moreInfoColor {
+    background-color: rgb(210, 229, 233) !important;
+}
+
+.moreInfoColor:hover {
+    background-color: rgb(210, 229, 233) !important;
 }
 
 .product-price {
