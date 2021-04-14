@@ -10,7 +10,7 @@ if ($products == false) {
 $productName = filter_input(INPUT_POST, 'name');
 $price = filter_input(INPUT_POST, 'price');
 $discount = filter_input(INPUT_POST, 'discount');
-$quantityType = filter_input(INPUT_POST, '');
+$quantityType = filter_input(INPUT_POST, 'quantityType');
 $image = filter_input(INPUT_POST, 'image');
 $proDes = filter_input(INPUT_POST, 'proDes');
 $aisle = filter_input(INPUT_POST, 'aisle');
@@ -38,6 +38,12 @@ while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
     $line++;
 }
 if ($found == FALSE) {
+    $no_of_lines = count(file("database/products.csv"));
+    $data = file("database/products.csv");
+    $line = $data[count($data)-1];
+    $realData = explode(",", $line);
+    $id = $realData[0] + 1;
+    echo $line;
 
     fwrite($products, $id . "," .$productName . "," . $discount . "," . $price. "," . $quantityType. "," . $image. "," .$aisle . "," . $proDes . "\n");
     fclose($products);
