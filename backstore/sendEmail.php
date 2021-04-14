@@ -1,4 +1,25 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+$name = $_POST["name"];
+$orderNum = $_POST["orderNum"];
+$total = $_POST["total"];
+$status = $_POST["status"];
+$cart = $_POST["cart"];
+
+$handle = fopen("../backstore/database/users.csv", "r");
+
+while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
+    $fullName = $row[2]." ".$row[3];
+    if ($fullName === $name) {
+        $_SESSION['emailOrder'] = $row[0];
+        break;
+    }
+}
+fclose($handle);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -22,16 +43,18 @@ try {
 
     //Recipients
     $mail->setFrom('tropicalflavorsoen228@gmail.com', 'Tropical Flavors');
-    $mail->addAddress($emailRecovery, $firstName." ".$lastName);     //Add a recipient     //Name is optional
+    $mail->addAddress($_SESSION['emailOrder'], $name);     //Add a recipient     //Name is optional
     $mail->addReplyTo('tropicalflavorsoen228@gmail.com', 'Tropical Flavors Email Service');
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Recovery e-mail';
-    $mail->Body = "This is your password: "."<b>".$passwordRecovery."<b>";
-    $mail->AltBody = 'This is you password: '.$passwordRecovery;
+    $mail->Subject = 'Updated Order';
+    $mail->Body = "Your order has been updated";
+    $mail->AltBody = "Your order has been updated";
 
     $mail->send();
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+
+header("Location: order-list.php");
