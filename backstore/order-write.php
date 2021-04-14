@@ -1,8 +1,4 @@
 <?php
-
-include ('order-save.php');
-
-
 $orders = fopen("database/orders.csv", "a+");
 
 if ($orders == false) {
@@ -11,7 +7,7 @@ if ($orders == false) {
 }
 
 $buyerName = filter_input(INPUT_POST, 'name');
-$orderNum = filter_input(INPUT_POST, 'order#');
+$orderNum = filter_input(INPUT_POST, 'orderNum');
 $total = filter_input(INPUT_POST, 'total');
 $status = filter_input(INPUT_POST, 'status');
 $cart = filter_input(INPUT_POST, 'cart');
@@ -40,8 +36,7 @@ if ($found == FALSE) {
     fwrite($orders, $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\"" .  $cart . "\"" . "\n");
     fclose($orders);
 }
-
-fclose($orders);
+include ('order-list.php');
 
 
 
