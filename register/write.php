@@ -29,7 +29,7 @@ while (($row = fgetcsv($file, 1000, ",")) !== FALSE) {
     }
 }
 if ($found == FALSE) {
-    fwrite($file,$email . "," . $password . "," . $firstName . "," . $lastName. "," . $address. "," . $city. "," . $zip. "," . $province. "\n");
+    fwrite($file,$email . "," . $password . "," . $firstName . "," . $lastName. "," . $address. "," . $city. "," . $zip. "," . $province. "," . $phone . "\n");
     fclose($file);
     include('success.php');
 }
