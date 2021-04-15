@@ -3,17 +3,17 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$name = $_POST["name"];
-$orderNum = $_POST["orderNum"];
-$total = $_POST["total"];
-$status = $_POST["status"];
-$cart = $_POST["cart"];
+$buyerName = filter_input(INPUT_POST, 'name');
+$orderNum = filter_input(INPUT_POST, 'orderNum');
+$total = filter_input(INPUT_POST, 'total');
+$status = filter_input(INPUT_POST, 'status');
+$cart = filter_input(INPUT_POST, 'cart');
 
 $handle = fopen("../backstore/database/users.csv", "r");
 
 while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
     $fullName = $row[2]." ".$row[3];
-    if ($fullName === $name) {
+    if ($fullName === $buyerName) {
         $_SESSION['emailOrder'] = $row[0];
         break;
     }
@@ -43,7 +43,7 @@ try {
 
     //Recipients
     $mail->setFrom('tropicalflavorsoen228@gmail.com', 'Tropical Flavors');
-    $mail->addAddress($_SESSION['emailOrder'], $name);     //Add a recipient     //Name is optional
+    $mail->addAddress($_SESSION['emailOrder'], $buyerName);     //Add a recipient     //Name is optional
     $mail->addReplyTo('tropicalflavorsoen228@gmail.com', 'Tropical Flavors Email Service');
 
     //Content
@@ -56,5 +56,5 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
+unset($_SESSION['emailOrder']);
 header("Location: order-list.php");

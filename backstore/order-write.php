@@ -30,7 +30,7 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
         unlink("database/orders.csv");
         $orders = rename('database/temp-orders.csv', 'database/orders.csv');
         $found = TRUE;
-        header("Location: sendEmail.php");
+        include('sendEmail.php');
         break;
     }
     $line++;
