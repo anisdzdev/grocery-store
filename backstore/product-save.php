@@ -70,7 +70,7 @@ if(isset($_GET["id"])) {
 
 
 <div class="d-flex justify-content-center align-items-center signBack-container">
-    <form class="sign-form text-center" method="POST" action="product-write.php">
+    <form enctype="multipart/form-data" class="sign-form text-center" method="POST" action="product-write.php">
         <h1 class="mb-5 font-weight-light">Edit products</h1>
 
         <label class="label">Product name</label>
@@ -100,8 +100,8 @@ if(isset($_GET["id"])) {
         </div>
         <label class="label">Image file</label>
         <div class="custom-file">
-            <input type="file" name="image" class="custom-file-input" id="image" >
-            <label class="custom-file-label" for="customFile">Choose file</label>
+            <input type="file" name="image" class="custom-file-input" id="image" required accept="image/*">
+            <label class="custom-file-label" for="image"><?php echo isset($product[5]) ? ($product[5]) : 'Choose file' ?></label>
         </div>
         <label class="label">Product aisle</label>
         <div class="form-group col-md-6">
@@ -127,12 +127,6 @@ if(isset($_GET["id"])) {
 </div>
 
 
-<script>
-    $("#edit-form").submit(function(e) {
-        e.preventDefault();
-    });
-
-</script>
 
 
 
@@ -144,6 +138,14 @@ if(isset($_GET["id"])) {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="../assets/js/backstore.js"></script>
+
+<script>
+    document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+        var name = document.getElementById("image").files[0].name;
+        var nextSibling = e.target.nextElementSibling
+        nextSibling.innerText = name
+    })
+</script>
 
 </body>
 
