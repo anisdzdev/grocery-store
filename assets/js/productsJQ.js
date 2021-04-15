@@ -69,7 +69,31 @@ $( document ).ready(function() {
             title : 'Success',
             text : text,
             icon: 'success',
-            buttons: ["Continue shopping", "Go to cart"],
+            // buttons: ["Continue shopping", "Go to cart"],
+            buttons: {
+                cancel: "Continue shopping",
+                defeat: 'Go to cart',
+            },
         })
+            .then((value) => {
+                switch (value) {
+
+                    case "defeat":
+
+                        $.ajax({
+
+                            url:"../../cart/cart.php",
+
+                            success:function(data)
+                            {
+                                location.href='../../cart/cart.php';
+                            }
+                        })
+                        break;
+
+                    case "cancel":
+                        break;
+                }
+            })
     })
 });
