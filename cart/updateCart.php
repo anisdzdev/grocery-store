@@ -5,9 +5,13 @@ if(!isset($_SESSION)) {
 
 if (isset($_POST['action']) && isset($_POST['id'])) {
     $action = $_POST['action'];
+    echo $action;
     $id = $_POST['id'];
+    echo $id;
     $value = $_POST['value'] ?? 1;
+    echo $value;
     $cart = $_SESSION['cart'] ?? [];
+    echo $cart;
     switch ($action){
         case 'remove':
             unset($cart[$id]);
