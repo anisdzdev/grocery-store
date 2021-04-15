@@ -48,7 +48,7 @@ $( document ).ready(function() {
     })
 
     $(".add").on("click", function(){
-        alert("Added " + value + " " + productName +" to the cart!");
+
         $.ajax(
             '../../cart/updateCart.php',
             {
@@ -64,5 +64,12 @@ $( document ).ready(function() {
                 }
             }
         );
+        var text = "Added " + value + " " + productName +" to the cart!";
+        swal({
+            title : 'Success',
+            text : text,
+            icon: 'success',
+            buttons: ["Continue shopping", "Go to cart"],
+        })
     })
 });
