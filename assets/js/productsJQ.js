@@ -50,51 +50,94 @@ $( document ).ready(function() {
 
     $(".add").on("click", function(){
 
-        $.ajax(
-            '../../cart/updateCart.php',
-            {
-                type: "POST",
-                data: {
-                    action: "set",
-                    value: value,
-                    id: $("#id").text()
-                },
-                success: function(data) {
-                },
-                error: function() {
+        if(value===1) {
+
+
+            $.ajax(
+                '../../cart/updateCart.php',
+                {
+                    type: "POST",
+                    data: {
+                        action: "set",
+                        value: value,
+                        id: $("#id").text()
+                    },
+                    success: function (data) {
+                    },
+                    error: function () {
+                    }
                 }
-            }
-        );
-        var text = "Added " + value + " " + productName +" to the cart!";
-        swal({
-            title : 'Success',
-            text : text,
-            icon: 'success',
-            // buttons: ["Continue shopping", "Go to cart"],
-            buttons: {
-                cancel: "Continue shopping",
-                defeat: 'Go to cart',
-            },
-        })
-            .then((value) => {
-                switch (value) {
-
-                    case "defeat":
-
-                        $.ajax({
-
-                            url:"../../cart/cart.php",
-
-                            success:function(data)
-                            {
-                                location.href='../../cart/cart.php';
-                            }
-                        })
-                        break;
-
-                    case "cancel":
-                        break;
-                }
+            );
+            var text = "Added " + value + " " + productName + " to the cart!";
+            swal({
+                title: 'Success',
+                text: text,
+                icon: 'success',
+                buttons: {
+                    cancel: "Continue shopping",
+                    defeat: 'Go to cart',
+                },
             })
+                .then((value) => {
+                    switch (value) {
+
+                        case "defeat":
+
+                            $.ajax({
+
+                                url: "../../cart/cart.php",
+
+                                success: function (data) {
+                                    location.href = '../../cart/cart.php';
+                                }
+                            })
+                            break;
+
+                        case "cancel":
+                            break;
+                    }
+                })
+        }
+
+        else{
+
+            swal({
+                title: 'You are not logged in!',
+                text: 'Please sign in or create an account',
+                icon: 'warning',
+                buttons: {
+                    catch: "Sign In",
+                    defeat: 'Register',
+                },
+            })
+                .then((value) => {
+                    switch (value) {
+
+                        case "defeat":
+
+                            $.ajax({
+
+                                url: "../../register/signup.php",
+
+                                success: function (data) {
+                                    location.href = '../../register/signup.php';
+                                }
+                            })
+                            break;
+
+                        case "catch":
+                            $.ajax({
+
+                                url: "../../register/signin.php",
+
+                                success: function (data) {
+                                    location.href = '../../register/signin.php';
+                                }
+                            })
+                            break;
+                    }
+                })
+
+        }
     })
 });
