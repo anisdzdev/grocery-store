@@ -4,8 +4,6 @@ $( document ).ready(function() {
     let e;
     var value = 1;
 
-
-
     var price = parseFloat($("#productPrice").text());
     var totalPrice = parseFloat(value)*price;
     var estPrice = "estimated total : $" + totalPrice;
@@ -51,5 +49,20 @@ $( document ).ready(function() {
 
     $(".add").on("click", function(){
         alert("Added " + value + " " + productName +" to the cart!");
+        $.ajax(
+            '../../cart/updateCart.php',
+            {
+                type: "POST",
+                data: {
+                    action: "set",
+                    value: value,
+                    id: $("#id").text()
+                },
+                success: function(data) {
+                },
+                error: function() {
+                }
+            }
+        );
     })
 });

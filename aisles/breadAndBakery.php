@@ -1,3 +1,20 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+$products = [];
+if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        if($row[6] == "Bread And Bakery")
+            array_push($products, $row);
+    }
+    fclose($handle);
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,48 +42,9 @@
 </head>
 <body>
 <div class="background">
-    <nav class="navbar navbar-light bg-light homepage-header ">
-        <a class="navbar-brand" href="../index.php">
-            <img src="../assets/images/logo.png" style="height: 85px;">
-        </a>
 
-        <nav>
-            <a class="navbar-brand text" href="../register/signin.php">
-                <i class="fas fa-user"></i> <span class="icon-label">Sign In </span> </a>
-            <a class="navbar-brand text" href="../cart/cart.php">
-                <i class="fas fa-shopping-cart"></i> <span class="icon-label">Cart </span> </a>
-        </nav>
-    </nav>
+    <?php include ('../header.php')?>
 
-    <nav class="navbar sticky-top navbar-custom navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav ">
-
-                    <a class="nav-link " href="../index.php">Home</a>
-                    <a class="nav-link " href="weeklyDeals.php">Hot Deals</a>
-                    <a class="nav-link " href="allProducts.php">All Products</a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Aisles </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="fruitsVeg.php">Fruits and Vegetables</a>
-                            <a class="dropdown-item" href="dairyAndEggs.php">Dairy & Eggs</a>
-                            <a class="dropdown-item" href="meatPoultry.php">Meat and Poultry</a>
-                            <a class="dropdown-item" href="snacks.php">Snacks</a>
-                            <a class="dropdown-item" href="breadAndBakery.php">Bread and Bakery</a>
-                            <a class="dropdown-item" href="beverages.php">Beverages</a>
-                        </div>
-                    </li>
-
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <div class="jumbotron jumbotron-fluid breadBakeBg">
         <div class="container whiteBorder">
@@ -106,91 +84,33 @@
         </div>
 
         <div class="container mt-5 mb-5">
+
             <div class="row">
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/whiteBread.php">
-                            <img class="productImage" alt="White Bread" src="../assets/images/articles/white-bread.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">White Bread</p>
-                            <p class="productPrice"><span class="oldPrice">$9.99</span><span class="deal"> $7.99</span></p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
+                <?php
+                foreach($products as $product):
+                    ?>
+
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                        <div class="product card-aisle rounded uk-card-default card product">
+                            <a class="productLink" href="Products/product.php?id=<?php echo $product[0] ?>">
+                                <img class="productImage" alt="<?php echo $product[1] ?>" src="../assets/images/articles/<?php echo $product[5] ?>">
                             </a>
+                            <div class="card-body productDetails">
+                                <p class="productName"><?php echo $product[1] ?></p>
+                                <?php
+                                if($product[2]==$product[3]){
+                                    echo "<p class='productPrice'> \$$product[2] </p>";
+                                }
+                                else{
+                                    echo "<p class='productPrice'><span class='oldPrice'>\$$product[3] $product[4]</span><span class='deal'> \$$product[2] $product[4]</span></p>";
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/brownBread.php">
-                            <img class="productImage" alt="Brown Bread" src="../assets/images/articles/brown-bread.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Brown Bread</p>
-                            <p class="productPrice">19.99$</p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/frenchBaguette.php">
-                            <img class="productImage" alt="French Baguette" src="../assets/images/articles/french-baguette.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">French Baguette</p>
-                            <p class="productPrice">0.99$</p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/hotDogBun.php">
-                            <img class="productImage" alt="Hot dog bun" src="../assets/images/articles/hotdog-bun.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Hot Dog Bun</p>
-                            <p class="productPrice">4.99$/Lb</p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/hamburger-bun.php">
-                            <img class="productImage" alt="Hamburger Bun" src="../assets/images/articles/hamburger-bun.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Hamburger Bun</p>
-                            <p class="productPrice">4.99$/Lb</p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/croissant.php">
-                            <img class="productImage" alt="croissant" src="../assets/images/articles/croissant.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Croissant</p>
-                            <p class="productPrice">4.45$/5pcs</p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+                <?php endforeach; ?>
+
             </div>
         </div>
     </div>

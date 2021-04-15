@@ -139,7 +139,7 @@
                 <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="product card-aisle rounded  uk-card-default card product">
                         <a class="productLink" href="Products/fruitsAndVeg/grapes.php">
-                            <img class="productImage" alt="grapes" src="../assets/images/articles/grape.png">
+                            <img class="productImage" alt="grapes" src="../assets/images/articles/grapes.png">
                         </a>
                         <div class="card-body productDetails">
                             <p class="productName">Grapes</p>

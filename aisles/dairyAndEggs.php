@@ -1,3 +1,20 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+$products = [];
+if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        if($row[6] == "Bread And Bakery")
+            array_push($products, $row);
+    }
+    fclose($handle);
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
