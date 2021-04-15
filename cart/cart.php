@@ -5,7 +5,7 @@ if(!isset($_SESSION)) {
 if (!isset($_SESSION['logged'])){
     header("Location: ../register/signin.php");
 }
-$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [1=>1, 3=>1];
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $cart_len = count($cart);
 $elements = [];
 if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {

@@ -21,14 +21,11 @@ $line = 0;
 while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
     if ($row[1] === $orderNum) {
 
-        $output = fopen("database/temp-orders.csv", 'a+');
         $string = file_get_contents('database/orders.csv');
         $data = explode("\n", $string);
         $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\"" . $cart . "\"";
         $data[$line] = $updatedValue;
-        file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
-        unlink("database/orders.csv");
-        $orders = rename('database/temp-orders.csv', 'database/orders.csv');
+        file_put_contents('database/orders.csv', implode(PHP_EOL, $data));
         $found = TRUE;
         include('sendEmail.php');
         break;
@@ -37,8 +34,9 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
 }
 if ($found == FALSE) {
     fwrite($orders, $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\"" . $cart . "\"" . "\n");
-    fclose($orders);
+
 }
+fclose($orders);
 include('order-list.php');
 
 
