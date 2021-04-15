@@ -21,18 +21,12 @@ $line = 0;
 while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
     if ($row[1] === $productName) {
         $id = $row[0];
-
-        $output = fopen("database/temp-products.csv", 'a+');
         $string = file_get_contents('database/products.csv');
         $data = explode("\n", $string);
-
         $updatedValue = $id . "," .$productName . "," . $discount . "," . $price. "," . $quantityType. "," . $image. "," . $aisle . "," . $proDes;
         $data[$line] = $updatedValue;
-        file_put_contents('database/temp-products.csv', implode(PHP_EOL, $data));
-        unlink("database/products.csv");
-        $orders = rename('database/temp-products.csv', 'database/products.csv');
+        file_put_contents('database/products.csv', implode(PHP_EOL, $data));
         $found = TRUE;
-
         break;
     }
     $line++;
@@ -46,9 +40,9 @@ if ($found == FALSE) {
     echo $line;
 
     fwrite($products, $id . "," .$productName . "," . $discount . "," . $price. "," . $quantityType. "," . $image. "," .$aisle . "," . $proDes . "\n");
-    fclose($products);
+
 }
 
-
+fclose($products);
 
 include ('product-list.php');

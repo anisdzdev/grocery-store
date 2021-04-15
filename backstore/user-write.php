@@ -24,26 +24,21 @@ $line = 0;
 while (($row = fgetcsv($users, 1000, ",")) !== FALSE) {
     if ($row[0] === $email) {
 
-        $output = fopen("database/temp-users.csv", 'a+');
         $string = file_get_contents('database/users.csv');
         $data = explode("\n", $string);
         $updatedValue = $email . "," . $password . "," . $firstName . "," . $lastName. "," .$address. "," .$city. "," .$zip. "," .$province. "," .$phone;
         $data[$line] = $updatedValue;
-        file_put_contents('database/temp-users.csv', implode(PHP_EOL, $data));
-        unlink("database/users.csv");
-
-        $users = rename('database/temp-users.csv', 'database/users.csv');
+        file_put_contents('database/users.csv', implode(PHP_EOL, $data));
         $found = TRUE;
-
         break;
     }
     $line++;
 }
 if ($found == FALSE) {
     fwrite($users, $email . "," . $password . "," . $firstName . "," . $lastName. "," .$address. "," .$city. "," .$zip. "," .$province. "," .$phone . "\n");
-    fclose($users);
-}
 
+}
+fclose($users);
 include ('user-list.php');
 
 

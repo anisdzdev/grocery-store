@@ -61,7 +61,7 @@ if (isset($_GET["orderNum"])) {
             </li>
 
             <li class="uk-active">
-                <a href="user-list.html">Users</a>
+                <a href="user-list.php">Users</a>
             </li>
             <li class="uk-active">
                 <a href="order-list.php">Orders</a>

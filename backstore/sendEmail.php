@@ -49,7 +49,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Updated Order #'.$orderNum;
-    $mail->Body = "Your order #" . $orderNum. " has been updated."."\n"."Please contact us for more information.";
+    $mail->Body = "Dear " . $buyerName . ", your order #" . $orderNum. " has been updated. Here is your new total: \$". $total . ". Please contact us for more information.";
     $mail->AltBody = "Your order " . $orderNum. " has been updated."."\n"."Please contact us for more information.";
 
     $mail->send();
