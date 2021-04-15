@@ -2,6 +2,9 @@
 if(!isset($_SESSION)) {
     session_start();
 }
+if (!isset($_SESSION['logged'])){
+    header("Location: ../register/signin.php");
+}
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [1=>1, 3=>1];
 $cart_len = count($cart);
 $elements = [];
@@ -66,7 +69,7 @@ if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
 
                                 <div class="uk-card full-width uk-card-default uk-card-body rounded-5 varela p-4 mb-4">
                                     <div class="row ml-0 mr-0">
-                                        <img class="cart-img" src="../assets/images/articles/<?php echo $value[5];?>" alt="Bread"/>
+                                        <img class="cart-img" src="../assets/images/articles/<?php echo $value[5];?>" alt="<?php echo $value[1];?>"/>
                                         <div class="col-md-4 align-self-center">
                                             <span class="text-dark text-bold"><?php echo $value[1];?></span>
                                             <span class="row ml-0 mr-0 text-secondary"><?php echo $value[7];?></span>
