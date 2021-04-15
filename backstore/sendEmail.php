@@ -48,9 +48,9 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Updated Order';
-    $mail->Body = "Your order has been updated";
-    $mail->AltBody = "Your order has been updated";
+    $mail->Subject = 'Updated Order #'.$orderNum;
+    $mail->Body = "Your order #" . $orderNum. " has been updated."."\n"."Please contact us for more information.";
+    $mail->AltBody = "Your order " . $orderNum. " has been updated."."\n"."Please contact us for more information.";
 
     $mail->send();
 } catch (Exception $e) {
