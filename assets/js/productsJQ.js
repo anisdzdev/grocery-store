@@ -11,10 +11,13 @@ $( document ).ready(function() {
     console.log(productName);
 
     $(".plus").on("click",function(e){
-        value++;
-        console.log(value);
+        if(value === 9){
+            value=9;
+        }
+        else{
+            value++;
+        }
         document.getElementById("input").value = value;
-
 
         price = parseFloat($("#productPrice").text());
         totalPrice = parseFloat(value)*price;
@@ -26,11 +29,9 @@ $( document ).ready(function() {
     })
 
     $(".minus").on("click", function(e){
-        if(value === 0){
-            value = 0
+        if(value === 1){
+            value = 1
             document.getElementById("input").value = value;
-            $("#change").html("estimated total : $0.00");
-            console.log("estimated total : $0.00")
         }
         else{
             value--;
