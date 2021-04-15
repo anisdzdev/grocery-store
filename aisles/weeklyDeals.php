@@ -1,3 +1,22 @@
+<?php
+
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+$products = [];
+if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        if($row[2]!==$row[3]){
+            array_push($products, $row);
+        }
+    }
+    fclose($handle);
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,93 +128,30 @@
         <div class="container mt-5 mb-5">
             <div class="row">
 
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/fruitsAndVeg/apple.php">
-                            <img class="productImage" alt="apples" src="../assets/images/articles/apples.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Apples</p>
-                            <p class="productPrice"><span class="oldPrice">$0.99 each</span><span class="deal"> $0.79 each</span></p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
+                <?php
+                foreach($products as $product):
+                    ?>
+
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                        <div class="product card-aisle rounded uk-card-default card product">
+                            <a class="productLink" href="Products/product.php?id=<?php echo $product[0] ?>">
+                                <img class="productImage" alt="<?php echo $product[1] ?>" src="../assets/images/articles/<?php echo $product[5] ?>">
                             </a>
+                            <div class="card-body productDetails">
+                                <p class="productName"><?php echo $product[1] ?></p>
+                                <?php
+                                if($product[2]==$product[3]){
+                                    echo "<p class='productPrice'> \$$product[2] </p>";
+                                }
+                                else{
+                                    echo "<p class='productPrice'><span class='oldPrice'>\$$product[3] $product[4]</span><span class='deal'> \$$product[2] $product[4]</span></p>";
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/dairyAndEggs/cheese.php">
-                            <img class="productImage" alt="cheese" src="../assets/images/articles/cheese.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Cheese</p>
-                            <p class="productPrice"><span class="oldPrice">$8.99 each</span><span class="deal"> $7.99 each</span></p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/meat/chickenBreast.php">
-                            <img class="productImage" alt="Chicken Breast" src="../assets/images/articles/chicken-breast.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Chicken Breast</p>
-                            <p class="productPrice"><span class="oldPrice">21.99/Kg</span><span class="deal"> $19.99/Kg</span></p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/breadAndBakery/whiteBread.php">
-                            <img class="productImage" alt="White Bread" src="../assets/images/articles/white-bread.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">White Bread</p>
-                            <p class="productPrice"><span class="oldPrice">$9.99</span><span class="deal"> $7.99</span></p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded  uk-card-default card product">
-                        <a class="productLink" href="Products/beverages/apple-juice.php">
-                            <img class="productImage" alt="Apple Juice" src="../assets/images/articles/apple-juice.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Apple Juice</p>
-                            <p class="productPrice"><span class="oldPrice">1.76$<span class="productPriceSpec"> (2.8 ¢/fl oz)</span></span><span class="deal"> 1.56$<span class="productPriceSpec"> (2.2 ¢/fl oz)</span></span></p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a></div>
-                    </div>
-                </div>
-
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="product card-aisle rounded uk-card-default card product">
-                        <a class="productLink" href="Products/snacks/almond.php">
-                            <img class="productImage" alt="almonds" src="../assets/images/articles/almond.png">
-                        </a>
-                        <div class="card-body productDetails">
-                            <p class="productName">Almond</p>
-                            <p class="productPrice"><span class="oldPrice">16.37/Kg</span><span class="deal"> $15.37/Kg</span></p>
-                            <a href="../cart/cart.php">
-                                <button name="submit" class="btn btn-primary" type="submit">Add to cart</button>
-                            </a></div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
         </div>
