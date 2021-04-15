@@ -34,9 +34,9 @@ if(!isset($_SESSION)) {
         <div id="form-contact-body">
             <div class="form-group" style="margin-bottom: 3%">
                 <p style="text-align: center; padding-top: 0px;"> <?php if (!$_SESSION['isFound']){
-                        echo "Hmmm... We can't seem to find this user. Please try again under a different name!";
-                    } else if (!$_SESSION['orderFound']){
-                         echo "This order number cannot be found! Please try again.";
+                        echo "Hmmm... We can't seem to find this user. Don't have an account? Click <a  style='color: dodgerblue; text-decoration: underline' href='../register/signup.php'>here</a> to sign up!";
+                    } else if (!$_SESSION['orderFound']) {
+                        echo "We can't seem to find this order. Check the order number and try again.";
                     } else if ($_SESSION['isFound'] && $_SESSION['orderFound']){
                          echo "Thank you for contacting us " . $_SESSION['inquiryName'] . "!";
                          echo "<br>Here is a summary of your order:<br>";
@@ -51,23 +51,24 @@ if(!isset($_SESSION)) {
 
                     </p>
             </div>
-            <a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" >
+
                     <?php
                     if ($_SESSION['isFound'] && $_SESSION['orderFound']){
-                        echo "Find Another Order";
-                    } else {
-                        echo "Try Again";
-                    }
+                        echo  '<a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" > Find Another Order </button></a>';
+                    } else if (!$_SESSION['isFound']){
+
+                    } else if (!$_SESSION['orderFound']) {
+                        echo '<a href="../contact/contact-us.php"><button  class="btn btn-primary col-6" type="submit" > Try Again </button></a>';
+                  }
                 ?>
 
-                </button></a>
         </div>
 
 
     </form>
 </div>
 
-<?php session_unset(); ?>
+<?php //session_unset(); ?>
 
 <?php include ('../footer.php')?>
 
