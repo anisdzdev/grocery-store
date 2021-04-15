@@ -125,7 +125,24 @@ function checkCheckout(){
                     total: total_value
                 },
                 success: function(data) {
-                    alert("Order was placed successfully with id: " + data)
+                    var text = "Order with id " + data + " was placed successfully!";
+                    swal({
+                        title : 'Success',
+                        text : text,
+                        icon: 'success',
+                        // buttons: ["Continue shopping", "Go to cart"],
+                        buttons: {
+                            confirm: 'Go to Home',
+                        },
+                    })
+                        .then((value) => {
+                            switch (value) {
+                                case "confirm":
+                                    window.location.href = "/grocery-store/index.php";
+                                    break;
+
+                            }
+                        })
                 },
                 error: function() {
                 }
