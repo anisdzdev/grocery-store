@@ -6,7 +6,9 @@ if ($products == false) {
     echo "error opening the file!";
     exit();
 }
-
+echo 'file count=', count($_FILES),"\n";
+var_dump($_FILES);
+echo "\n";
 $productName = filter_input(INPUT_POST, 'name');
 $price = filter_input(INPUT_POST, 'price');
 $discount = filter_input(INPUT_POST, 'discount');
