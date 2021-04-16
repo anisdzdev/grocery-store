@@ -12,6 +12,20 @@ $price = filter_input(INPUT_POST, 'price');
 $discount = filter_input(INPUT_POST, 'discount');
 $quantityType = filter_input(INPUT_POST, 'quantityType');
 $image = filter_input(INPUT_POST, 'image');
+$target_dir = dirname(__FILE__)."/../assets/images/articles/";
+
+$target_file = $target_dir . basename($_FILES["image"]["name"]);
+$image = basename($_FILES["image"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+if (file_exists($target_file)) {
+    $uploadOk = 0;
+}
+if ($uploadOk != 0) {
+    if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+        $uploadOk = 0;
+    }
+}
 $proDes = filter_input(INPUT_POST, 'proDes');
 $aisle = filter_input(INPUT_POST, 'aisle');
 

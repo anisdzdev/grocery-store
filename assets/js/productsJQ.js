@@ -48,11 +48,18 @@ $( document ).ready(function() {
         console.log(value);
     })
 
+
+    var isLogged = false;
+    if($("#logged").text()==="true"){
+        isLogged = true;
+    }
+    else{
+        isLogged = false;
+    }
+
     $(".add").on("click", function(){
 
-        if(value===1) {
-
-
+        if(isLogged) {
             $.ajax(
                 '../../cart/updateCart.php',
                 {
