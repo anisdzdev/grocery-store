@@ -106,7 +106,8 @@ if (($handle = fopen("../../backstore/database/products.csv", "r")) !== FALSE) {
     <p id="id" style="display:none;"><?php echo $product[0]?></p>
 
     <?php
-        if(isset($_SESSION["logged"]) && $_SESSION["logged"] == 1){ ?>
+        if(isset($_SESSION["logged"] ) && $_SESSION["logged"] == 1){ ?>
+
          <p id="logged" style="display:none;"><?php echo "true" ?></p>
     <?php
         }
