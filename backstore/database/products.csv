@@ -1,8 +1,8 @@
-1,Apples,0.79,0.98,each,,Fruits and Vegetables,"Delicious honey crisp apples, freshly picked just for you."
+1,Apples,0.79,0.98,each,apples.png,Fruits and Vegetables,"Delicious honey crisp apples, freshly picked just for you."
 2,Oranges,1.50,1.50,each,oranges.png,Fruits and Vegetables,"Our famous oranges are all grown in the great state of Florida! Florida oranges are famous for the sweetness and juiciness, and now you get to enjoy them!"
 3,Grapes,0.70,0.70,each,grapes.png,Fruits and Vegetables,"Green seedless grapes."
 4,Spinach,0.99,0.99,each,spinach.png,Fruits and Vegetables,"Fresh spinach full of nutrients to make you strong and BIG!"
-5,Tomato,0.20,0.20,each,tomato.png,Fruits and Vegetables,"Our tomatoes can cater for any of your needs, whether it be for pizza sauce or a simple salad!"
+5,Tomato,0.19,0.20,each,,Fruits and Vegetables,Our tomatoes can cater for any of your needs, whether it be for pizza sauce or a simple salad!
 6,Beef,25.99,25.99,/kg,beef.png,Meat and Poultry,Fresh Canadian Grain Fed AAA Filet Mignon steaks aged a minimum of 28 days to perfection.
 7,Chicken Wings,7.99,7.99,/8pcs,chicken-wing.png,Meat and Poultry,Fried chicken wing.
 8,Chicken Brest,19.99,21.99,/kg,chicken-breast.png,Meat and Poultry,Boneless Skinless Chicken Breasts.
@@ -31,3 +31,4 @@
 31,Brown Eggs,5.99,5.99,/dz,brown-eggs.png,Dairy And Eggs,A dozen brown eggs
 32,Milk,5.99,5.99,each,milk-bag.png,Dairy And Eggs,The best milk for your coffee
 33,White Eggs,5.99,5.99,each,white-eggs.png,Dairy And Eggs,A dozen white eggs
+34,,,,,,,
