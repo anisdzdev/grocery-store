@@ -3,7 +3,6 @@
 $productName = $_GET['name'];
 
 $products = fopen("database/products.csv", "a+");
-$output = fopen("database/temp-products.csv", 'a+');
 
 if ($products == false) {
     echo "error opening the file!";
@@ -12,21 +11,17 @@ if ($products == false) {
 
 $found = FALSE;
 $line = 0;
-$data = "";
+$string = file_get_contents("database/products.csv");
+$data = explode("\n", $string);
 while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
-    if ($row[1] !== $productName) {
-        fputcsv($output, $row);
-        $string = file_get_contents("database/temp-products.csv");
-        $data = explode("\n", $string);
+    if ($row[1] === $productName) {
+        unset($data[$line]);
+        break;
     }
+    $line++;
 }
 
-file_put_contents('database/products.csv', implode(PHP_EOL, $data));
-unlink("database/products.csv");
+file_put_contents('database/products.csv', implode("\n", $data));
 fclose($products);
-fclose($output);
-$products1 = rename('database/temp-products.csv', 'database/products.csv');
 
 include ('product-list.php');
-?>
-

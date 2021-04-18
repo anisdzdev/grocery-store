@@ -73,8 +73,8 @@ echo "<table id='order-table' class='table table-striped order-table'\n\n>
     </tr>
     </thead>
     <tbody id='tbody'>";
+while (($row = fgetcsv($users, 1000, ",")) !== FALSE) {
 
-while (($row = fgetcsv($users)) !== false) {
     echo "<tr>";
     $email =  $row[0];
     echo "<td>" . htmlspecialchars($row[2]) . "</td>";

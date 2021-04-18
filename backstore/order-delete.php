@@ -3,7 +3,6 @@
 $orderNumber = $_GET['var'];
 
 $orders = fopen("database/orders.csv", "a+");
-$output = fopen("database/temp-orders.csv", 'a+');
 
 if ($orders == false) {
     echo "error opening the file!";
@@ -12,23 +11,17 @@ if ($orders == false) {
 
 $found = FALSE;
 $line = 0;
+$string = file_get_contents("database/orders.csv");
+$data = explode("\n", $string);
 while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
-    if ($row[1] !== $orderNumber) {
-        fputcsv($output, $row);
-        $string = file_get_contents("database/temp-orders.csv");
-        $data = explode("\n", $string);
-
-        continue;
+    if ($row[1] === $orderNumber) {
+        unset($data[$line]);
+        break;
     }
+    $line++;
 }
-
-file_put_contents('database/temp-orders.csv', implode(PHP_EOL, $data));
-unlink("database/orders.csv");
+file_put_contents('database/orders.csv', implode("\n", $data));
 fclose($orders);
-fclose($output);
-$orders = rename('database/temp-orders.csv', 'database/orders.csv');
 
 
 include ('order-list.php');
-?>
-
