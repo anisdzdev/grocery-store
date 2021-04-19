@@ -55,7 +55,7 @@ if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="row ml-0 mb-3 continue-shopping">
-                            <a href="../aisles/allProducts.html"><i class="fas fa-arrow-left align-self-center text-secondary mr-3"></i></a>
+                            <a href="../index.php"><i class="fas fa-arrow-left align-self-center text-secondary mr-3"></i></a>
                             <h6 class="uk-card-title m-0 text-5 text-secondary varela"> <a class="uk-card-title m-0 text-5 text-secondary varela" href="../aisles/allProducts.html">Continue Shopping</a></h6>
                         </div>
                         <div class="line-break"></div>
@@ -163,7 +163,8 @@ if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
 
     <?php include ('../footer.php')?>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
-        <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/cart.js"></script>
     </body>
 </html>
