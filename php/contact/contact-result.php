@@ -42,7 +42,7 @@ if(!isset($_SESSION)) {
                          echo "<br>Here is a summary of your order:<br>";
                          $order = $_SESSION['orders'];
                     foreach ($order as $values){
-                         echo $values . '<br>';
+                         echo $values . '<br>'; // responds according to user exists but not id/ id exists but not user/ both exist
                     }
 
                     }
@@ -53,6 +53,7 @@ if(!isset($_SESSION)) {
             </div>
 
                     <?php
+                    // if order is found they can find another order, if not they can create account
                     if ($_SESSION['isFound'] && $_SESSION['orderFound']){
                         echo '<a href="contact-us.php"><button  class="btn btn-primary col-6" type="submit" > Find Another Order </button></a>';
                     } else if (!$_SESSION['isFound']){
