@@ -76,11 +76,11 @@ echo "<table id='order-table' class='table table-striped order-table'\n\n>
 
 while (($row = fgetcsv($orders)) !== false) {
     echo "<tr>";
-    $orderNum =  $row[1];
+    $orderNum =  $row[1];   // grabs each row from csv file and puts it on backstore table (reads from csv to display)
     $counter = 0;
     foreach ($row as $item) {
-        if ($counter == 4)
-            break;
+        if ($counter == 4)    // counter makes sure it only shows necessary items on table to not make it cluttered
+            break;            // so it doesnt show cart items.
         echo "<td>" . htmlspecialchars($item) . "</td>";
         $counter++;
     }
