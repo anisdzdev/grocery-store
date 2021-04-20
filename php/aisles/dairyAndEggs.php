@@ -46,6 +46,12 @@ if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
 
     <?php include('../header.php') ?>
 
+    <div class="jumbotron jumbotron-fluid dairyEggBg">
+        <div class="container whiteBorder">
+            <h1 class="display-4 centerWhite">Dairy and Eggs</h1>
+        </div>
+    </div>
+
     <div class="all">
         <div class="filter text">
             <p>
