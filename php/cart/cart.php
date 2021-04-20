@@ -56,7 +56,7 @@ if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
                     <div class="col-lg-7">
                         <div class="row ml-0 mb-3 continue-shopping">
                             <a href="../index.php"><i class="fas fa-arrow-left align-self-center text-secondary mr-3"></i></a>
-                            <h6 class="uk-card-title m-0 text-5 text-secondary varela"> <a class="uk-card-title m-0 text-5 text-secondary varela" href="../aisles/allProducts.html">Continue Shopping</a></h6>
+                            <h6 class="uk-card-title m-0 text-5 text-secondary varela"> <a class="uk-card-title m-0 text-5 text-secondary varela" href="../aisles/allProducts.php">Continue Shopping</a></h6>
                         </div>
                         <div class="line-break"></div>
                         <h3 class="uk-card-title varela mb-0 font-weight-bold">Shopping Cart</h3>
