@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-if (isset($_GET["orderNum"])) {
+if (isset($_GET["orderNum"])) {  // saves the order number in case we want to edit
     $orderNum = $_GET["orderNum"];
     $order = [];
     if (($handle = fopen("database/orders.csv", "r")) !== FALSE) {
@@ -71,7 +71,7 @@ if (isset($_GET["orderNum"])) {
     </div>
 </nav>
 
-
+<!--if we want to change the order (edit it), clicking on edit will bring us to this page, but all inputs will hold previous values-->
 <div id="edit-form" class="d-flex justify-content-center align-items-center signBack-container">
     <form name="form" method="post" action="order-write.php" class="sign-form text-center">
         <h1 class="mb-5 font-weight-light">Edit orders</h1>
