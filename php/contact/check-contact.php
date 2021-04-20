@@ -11,6 +11,7 @@ if (!isset($_SESSION)) {
     $_SESSION['isFound'] = false;
     $_SESSION['orderFound'] = false;
 
+    // takes from form
     $user = filter_input(INPUT_POST, 'user');
     $orderNumber = filter_input(INPUT_POST, 'orderNum');
     $item = filter_input(INPUT_POST, 'item');
@@ -20,6 +21,7 @@ if (!isset($_SESSION)) {
     $items = array();
     $itemsDict = array();
 
+    // item dictionary to determine what items a user ordered
     while (($rowProducts = fgetcsv($productsList, 1000, ",")) !== FALSE){
         $itemNumber = $rowProducts[0];
         $itemName = $rowProducts[1];
@@ -32,10 +34,12 @@ if (!isset($_SESSION)) {
            $rowOrders++;
         $items = array();
 
+        // grabs products and puts them in array
         $toTrim = $rowOrders[4];
         $productString = substr($toTrim, 1, -1);
         $allProductsArray = explode(",", $productString);
 
+        // writes it out on contanct
         foreach ($allProductsArray as $product) {
             $itemAndQuantity = explode(":", $product);
             $food = $itemAndQuantity[0];
@@ -47,6 +51,7 @@ if (!isset($_SESSION)) {
         }
 
 
+        // writes down contact message in another file
         if($rowOrders[0] == $user && $rowOrders[1] == $orderNumber) {
             $_SESSION['isFound'] = true;
             $_SESSION['orderFound'] = true;
