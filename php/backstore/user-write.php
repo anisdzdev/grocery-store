@@ -28,7 +28,7 @@ while (($row = fgetcsv($users, 1000, ",")) !== FALSE) {
         $data = explode("\n", $string);
         $updatedValue = $email . "," . $password . "," . $firstName . "," . $lastName. "," .$address. "," .$city. "," .$zip. "," .$province. "," .$phone;
         $data[$line] = $updatedValue;
-        file_put_contents('database/users.csv', implode(PHP_EOL, $data));
+        file_put_contents('database/users.csv', implode("\n", $data));
         $found = TRUE;
         break;
     }

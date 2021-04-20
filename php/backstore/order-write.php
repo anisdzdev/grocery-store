@@ -26,7 +26,7 @@ while (($row = fgetcsv($orders, 1000, ",")) !== FALSE) {
         $data = explode("\n", $string);
         $updatedValue = $buyerName . "," . $orderNum . "," . $total . "," . $status . "," . "\"" . $cart . "\""; //overwrite previous
         $data[$line] = $updatedValue; //overwrite previous
-        file_put_contents('database/orders.csv', implode(PHP_EOL, $data));
+        file_put_contents('database/orders.csv', implode("\n", $data));
         $found = TRUE;
         include('sendEmail.php'); // sends email after editing
         break;

@@ -42,7 +42,7 @@ while (($row = fgetcsv($products, 1000, ",")) !== FALSE) {
         $data = explode("\n", $string);
         $updatedValue = $id . "," .$productName . "," . $discount . "," . $price. "," . $quantityType. "," . $old_image. "," . $aisle . "," . $proDes;
         $data[$line] = $updatedValue;
-        file_put_contents('database/products.csv', implode(PHP_EOL, $data));
+        file_put_contents('database/products.csv', implode("\n", $data));
         $found = TRUE;
         break;
     }

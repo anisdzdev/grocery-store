@@ -25,6 +25,7 @@ if (($handle = fopen("../backstore/database/users.csv", "r")) !== FALSE) {
         $_SESSION['logged'] = $logged;
         $_SESSION['welcome'] = $welcome;
         $_SESSION['name'] = $row[2];
+        $_SESSION['full_name'] = $row[2] . " " . $row[3];
         header("Location: ../index.php");
         exit();
     }

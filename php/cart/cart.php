@@ -1,15 +1,20 @@
 <?php
+//Start session if not started
 if(!isset($_SESSION)) {
     session_start();
 }
+
+//If user is not logged in, redirect to login page
 if (!isset($_SESSION['logged'])){
     header("Location: ../register/signin.php");
 }
+
+//Initialise variables
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $cart_len = count($cart);
 $elements = [];
 if (($handle = fopen("../backstore/database/products.csv", "r")) !== FALSE) {
-
+    //Add all product ids in the cart to the elements variable
     $found = FALSE;
     while (($row = fgetcsv($handle)) !== FALSE) {
         foreach ($cart as $id=>$count) {
