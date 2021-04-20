@@ -77,7 +77,7 @@ echo "<table id='product-table' class='table table-striped order-table'\n\n>
     </tr>
     </thead>
     <tbody id='tbody'>";
-
+//Print all products to the table
 while (($row = fgetcsv($products)) !== false) {
     echo "<tr>";
     $productName =  $row[1];

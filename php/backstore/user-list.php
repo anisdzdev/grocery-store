@@ -73,6 +73,7 @@ echo "<table id='order-table' class='table table-striped order-table'\n\n>
     </tr>
     </thead>
     <tbody id='tbody'>";
+//Print all users to the table
 while (($row = fgetcsv($users, 1000, ",")) !== FALSE) {
 
     echo "<tr>";
