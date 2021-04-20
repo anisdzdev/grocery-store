@@ -46,10 +46,6 @@ if(!isset($_SESSION)) {
                    placeholder="Password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" required>
         </div>
         <div class="forgot-link form-group mb-2 d-flex justify-content-between align-items-center">
-<!--            <div class="form-check">-->
-<!--                <input type="checkbox" name="rememberMe" id="remember" class="form-check-input">-->
-<!--                <label class="form-check-label">Remember me </label>-->
-<!--            </div>-->
             <a href="recovery.php" target="_blank">Forgot Password?</a>
         </div>
         <button name="submit" id="submitIn" class="btn btn-primary col-6" type="submit">Submit</button>

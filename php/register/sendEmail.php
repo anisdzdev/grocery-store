@@ -4,13 +4,16 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+// open the users file
 $handle = fopen("../backstore/database/users.csv", "r");
 $emailRecovery = $_POST["emailRecovery"];
 
+// I am using PHPMailer library
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+// set the session variables
 $found = FALSE;
 while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
     if ($row[0] === $emailRecovery) {
@@ -22,6 +25,8 @@ while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
     }
 }
 fclose($handle);
+
+// send an email
 if ($found) {
     $passwordRecovery = $_SESSION['passwordRecovery'];
     $firstName = $_SESSION['firstName'];

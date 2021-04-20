@@ -3,12 +3,14 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
+// open the users file
 if (($handle = fopen("../backstore/database/users.csv", "r")) !== FALSE) {
 
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     $found = FALSE;
+    // check if the user exists
     while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
         if ($row[0] === $email && $row[1] === $password) {
             $found = TRUE;
@@ -16,6 +18,7 @@ if (($handle = fopen("../backstore/database/users.csv", "r")) !== FALSE) {
         }
     }
     fclose($handle);
+    // accept the user
     if ($found) {
         $welcome = "Welcome $row[2] to Tropical Flavors!";
         $logged = TRUE;
@@ -25,6 +28,7 @@ if (($handle = fopen("../backstore/database/users.csv", "r")) !== FALSE) {
         header("Location: ../index.php");
         exit();
     }
+    // accept the admin or not
     if($email == 'admin' && $password == 'admin'){
         $welcome = "Welcome Admin to Tropical Flavors!";
         $logged = TRUE;

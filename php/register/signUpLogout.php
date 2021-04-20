@@ -1,4 +1,6 @@
 <?php
+
+// Set/unset the session and it's variables
 session_start();
 unset($_SESSION['logged']);
 unset($_SESSION['welcome']);
